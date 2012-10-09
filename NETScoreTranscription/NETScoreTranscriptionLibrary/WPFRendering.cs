@@ -87,27 +87,6 @@ namespace NETScoreTranscriptionLibrary
         public Canvas RenderPage(Page page)
         {
             Canvas canvas = new Canvas();
-            System.Windows.Shapes.Line line = new System.Windows.Shapes.Line();
-            line.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
-            line.X1 = 1;
-            line.X2 = 50;
-            line.Y1 = 1;
-            line.Y2 = 50;
-            line.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-            line.VerticalAlignment = System.Windows.VerticalAlignment.Center;
-            line.StrokeThickness = 2;
-
-            canvas.Children.Add(line);
-            Label l = GetMusicalLabel(char.ConvertFromUtf32(0x1D100) + char.ConvertFromUtf32(0x1D11A) + Constants.Clefs.TREBLE + char.ConvertFromUtf32(0x1D11A) + char.ConvertFromUtf32(0x1D11A));
-            l.Margin = new Thickness(80);
-            canvas.Children.Add(l);
-            l = GetMusicalLabel(char.ConvertFromUtf32(0x1D15F));
-            l.Margin = new Thickness(130, 63, 80, 80);
-            canvas.Children.Add(l);
-            
-            //todo: figure out how to include ttf font in this so that don't have to draw treble cleff self
-            
-
             //todo: render score info (large on page 1, small on pages after) (optionally selectable)
             //todo: render each line
             //todo: render page number

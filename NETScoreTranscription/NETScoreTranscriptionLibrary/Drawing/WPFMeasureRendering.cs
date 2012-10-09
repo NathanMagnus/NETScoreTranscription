@@ -26,60 +26,94 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">The note to parse and create a label for</param>
         /// <returns>A label with the note in it</returns>
-        public static FrameworkElement ParseNote(Note note)
+        public static FrameworkElement RenderNote(Note note)
         {
+            //todo: Render appropriate connectors
+            //todo: render barline
+
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
             Console.Out.WriteLine("Note");
             String noteChar = Constants.NoteCharacters.WHOLE_NOTE; //todo: decide on default
+            Grid noteGrid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
             FrameworkElement noteHead = null;
-            
+
             //todo: if it has a rest, then parse as rest, otherwise parse as note
-
-            if (string.IsNullOrEmpty(note.color))
-                note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
-            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
-
-            switch (note.type.Value)
+            bool isRest = false;
+            try
             {
-                case NoteTypeValue.whole:
-                    noteChar = Constants.NoteCharacters.WHOLE_NOTE;
-                    break;
-                case NoteTypeValue.half:
-                    noteChar = Constants.NoteCharacters.HALF_NOTE;
-                    break;
-                case NoteTypeValue.quarter:
-                    noteHead = new Ellipse() { Fill = brush }; //todo: size properly
-                    noteChar = Constants.NoteCharacters.QUARTER_NOTE;
-                    break;
-                case NoteTypeValue.eighth:
-                    noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
-                    break;
-                case NoteTypeValue.Item16th:
-                    noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
-                    break;
-                case NoteTypeValue.Item32nd:
-                    noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
-                    break;
-                case NoteTypeValue.Item64th:
-                    noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
-                    break;
-                case NoteTypeValue.Item128th:
-                    noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
-                    break;
-                case NoteTypeValue.Item256th:
-                    noteChar = "!";
-                    break;
-                case NoteTypeValue.Item512th:
-                    noteChar = "!";
-                    break;
+                note.Items.Single(i => i.GetType() == typeof(Rest));
+                isRest = true;
+            }
+            catch { }
+
+            if (!isRest)
+            {
+                if (string.IsNullOrEmpty(note.color))
+                    note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
+                Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
+
+                switch (note.type.Value)
+                {
+                    //todo: size note heads properly
+                    case NoteTypeValue.whole:
+                        noteChar = Constants.NoteCharacters.WHOLE_NOTE;
+                        break;
+                    case NoteTypeValue.half:
+                        noteChar = Constants.NoteCharacters.HALF_NOTE;
+                        break;
+                    case NoteTypeValue.quarter:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                        noteChar = Constants.NoteCharacters.QUARTER_NOTE;
+                        break;
+                    case NoteTypeValue.eighth:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                        noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
+                        break;
+                    case NoteTypeValue.Item16th:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                        noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
+                        break;
+                    case NoteTypeValue.Item32nd:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                        noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
+                        break;
+                    case NoteTypeValue.Item64th:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                        noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
+                        break;
+                    case NoteTypeValue.Item128th:
+                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                        noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
+                        break;
+                    case NoteTypeValue.Item256th:
+                        noteChar = "!";
+                        break;
+                    case NoteTypeValue.Item512th:
+                        noteChar = "!";
+                        break;
+                }
+                WPFRendering.RecalculateSize(noteHead);
+                //todo: Render modifiers
+
+                noteGrid.Children.Add(noteHead);
+            }
+            else
+            {
+                //todo: it is a rest
+                noteHead = new Label() { Content = "r" };
+
+                WPFRendering.RecalculateSize(noteHead);
+                noteGrid.Children.Add(noteHead);
             }
 
-            //Label noteLabel = WPFRendering.GetMusicalLabel(noteChar);
-            noteHead.Height = 10;
-            noteHead.Width = noteHead.Height * 3 / 2;
+            //todo: figure out if should be rotated and rotate appropriately
+            // rotate head
+            //RotateTransform rt = new RotateTransform();
+            //rt.Angle = -20;
+            //noteHead.LayoutTransform = rt;
 
-            WPFRendering.RecalculateSize(noteHead);
-            return noteHead;
+            WPFRendering.RecalculateSize(noteGrid);
+            return noteGrid;
         }
 
         /// <summary>
@@ -151,13 +185,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 else if (type == typeof(Note))
                 {
                     Note note = (Note)obj;
-                    element = ParseNote(note);
-
-                    //todo: figure out if should be rotated and rotate appropriately
-                    //(element as Label).Background = Brushes.Aqua;
-                    RotateTransform rt = new RotateTransform();
-                    rt.Angle = -20;
-                    element.LayoutTransform = rt;
+                    element = RenderNote(note);                    
                 }
                 else if (type == typeof(Barline))
                 {
@@ -208,7 +236,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             //todo: render multiple clefs because of multi-line parts
             Label clefLabel = ParseClef(attributes.clef[0]);
-            clefLabel.Background = Brushes.Orange;
             clefLabel.Margin = new Thickness(left, top, 0, 0);
             c.Children.Add(clefLabel);
 
@@ -256,14 +283,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             Label clefLabel = WPFRendering.GetMusicalLabel(symbol); //todo: get the clef from getmusic label
             return clefLabel;
-        }
-
-        public static void RenderNote()
-        {
-            //todo: Render the note
-            //todo: Render modifiers
-            //todo: Render appropriate connectors
-            //todo: render barline
         }
 
         public static void RenderNoteModifier()

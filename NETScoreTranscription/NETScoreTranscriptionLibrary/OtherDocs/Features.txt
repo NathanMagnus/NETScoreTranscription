@@ -1,5 +1,6 @@
 ﻿Features of ScoreTranscription
 
+Todo:
 - Highlight notes on command
 	- next note
 	- within a range
@@ -10,12 +11,18 @@
 	- best fit
 - Display notes
 	- 8va
+	- different types
 - Display key signature
 - Display clef
 - Display lyrics
 - Display staff
-- Read Music XML
 - Change visibility
 	- of score
 	- of single note
 	- of NoteInstruction
+- WPF
+- Windows Forms
+
+
+Completed:
+- Read Music XML

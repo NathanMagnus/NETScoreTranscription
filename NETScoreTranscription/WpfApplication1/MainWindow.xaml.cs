@@ -50,7 +50,7 @@ namespace WpfApplication1
                                     "</measure></part></score-partwise>";
 
                 //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
-                ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\ScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
+                ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
 
                 WPFRendering wpfmr = new WPFRendering();
                 Canvas c = wpfmr.RenderMeasure(sp.part[0].measure[0]);

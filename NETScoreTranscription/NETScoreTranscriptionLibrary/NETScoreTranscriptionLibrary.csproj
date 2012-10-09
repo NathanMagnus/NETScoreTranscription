@@ -77,7 +77,6 @@
     <Content Include="musicxml30\to11.xsl" />
     <Content Include="musicxml30\to20.xsl" />
     <Content Include="OtherDocs\Features.txt" />
-    <Content Include="OtherDocs\Test1.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Drawing\Render.cd" />
