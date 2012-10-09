@@ -30,25 +30,31 @@ namespace NETScoreTranscriptionLibrary
          * - Change of color only needs to invalidate affected elements
          * - Have items inherit System.Windows.Shapes.Shape?
          */
-        public void CalculateMeasuresPerLine() 
+        public int CalculateMeasuresPerLine()
         { 
             //todo: add up measure widths until line full
             //      if measure in X column on next line is larger, recalc all previous lines
+            return 0;
         }
 
-        public void CalculateLinesPerPage() 
+        public int CalculateLinesPerPage(IList<Line> scoreLines)
         { 
             //todo: for each line use max height so far and calculate until page full
+            return 0;
         }
 
-        public void CalculateMeasureWidth() 
+
+        public double CalculateMeasureWidth()
         { 
             //todo: for each item, calculate width, then add it all up
+            //      maybe just render it and then take the width of that, though that is a lot of processing for nothing
+            return 0d;
         }
-
-        public void CalculateLineHeight() 
+        
+        public double CalculateLineHeight(Line line)
         {
             //todo: for each measure, calculate height of all measures then take max
+            return 0d;
         }
 
         /// <summary>
@@ -84,13 +90,13 @@ namespace NETScoreTranscriptionLibrary
         /// definition of MusicXML can be passed in.
         /// </summary>
         /// <returns>Canvas with a page rendered on it</returns>
-        public Canvas RenderPage(Page page)
+        public Grid RenderPage(Page page)
         {
-            Canvas canvas = new Canvas();
+            Grid grid = new Grid();
             //todo: render score info (large on page 1, small on pages after) (optionally selectable)
             //todo: render each line
             //todo: render page number
-            return canvas;
+            return grid;
         }
 
         /// <summary>
@@ -99,20 +105,32 @@ namespace NETScoreTranscriptionLibrary
         /// </summary>
         /// <param name="measure">The measure to render</param>
         /// <returns>Measure drawn on a canvas</returns>
-        public Canvas RenderMeasure(ScorePartwisePartMeasure measure)
+        public Grid RenderMeasure(ScorePartwisePartMeasure measure)
         {
             return WPFMeasureRendering.RenderMeasure(measure);
         }
 
-        public void RenderLine() 
-        { 
+        /// <summary>
+        /// Render a line of music
+        /// </summary>
+        /// <returns>A Grid containing a line of the musical score</returns>
+        public Grid RenderLine() 
+        {
+            Grid grid = new Grid();
             //todo: render staff
             //todo: render each masure
+            return grid;
         }
 
-        public void RenderScoreInformation() 
-        { 
-        
+        /// <summary>
+        /// Render the score information
+        /// </summary>
+        /// <returns>A Grid containing the score information</returns>
+        public Grid RenderScoreInformation() 
+        {
+            Grid grid = new Grid();
+
+            return grid;
         }
     }
 }
