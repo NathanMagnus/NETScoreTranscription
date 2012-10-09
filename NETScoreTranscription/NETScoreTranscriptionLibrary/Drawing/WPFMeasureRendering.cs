@@ -26,7 +26,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">The note to parse and create a label for</param>
         /// <returns>A label with the note in it</returns>
-        public static FrameworkElement RenderNote(Note note)
+        public static FrameworkElement RenderNoteOrRest(Note note)
         {
             //todo: Render appropriate connectors
             //todo: render barline
@@ -34,7 +34,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
             Console.Out.WriteLine("Note");
             String noteChar = Constants.NoteCharacters.WHOLE_NOTE; //todo: decide on default
-            Grid noteGrid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
+            Grid grid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
             FrameworkElement noteHead = null;
 
             //todo: if it has a rest, then parse as rest, otherwise parse as note
@@ -48,72 +48,153 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
-                if (string.IsNullOrEmpty(note.color))
-                    note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
-                Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
-
-                switch (note.type.Value)
-                {
-                    //todo: size note heads properly
-                    case NoteTypeValue.whole:
-                        noteChar = Constants.NoteCharacters.WHOLE_NOTE;
-                        break;
-                    case NoteTypeValue.half:
-                        noteChar = Constants.NoteCharacters.HALF_NOTE;
-                        break;
-                    case NoteTypeValue.quarter:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
-                        noteChar = Constants.NoteCharacters.QUARTER_NOTE;
-                        break;
-                    case NoteTypeValue.eighth:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
-                        noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
-                        break;
-                    case NoteTypeValue.Item16th:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
-                        noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
-                        break;
-                    case NoteTypeValue.Item32nd:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
-                        noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
-                        break;
-                    case NoteTypeValue.Item64th:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
-                        noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
-                        break;
-                    case NoteTypeValue.Item128th:
-                        noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
-                        noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
-                        break;
-                    case NoteTypeValue.Item256th:
-                        noteChar = "!";
-                        break;
-                    case NoteTypeValue.Item512th:
-                        noteChar = "!";
-                        break;
-                }
-                WPFRendering.RecalculateSize(noteHead);
-                //todo: Render modifiers
+                Grid noteGrid = new Grid();
+                noteHead = RenderNote(note);
 
                 noteGrid.Children.Add(noteHead);
+                noteGrid.Children.Add(new System.Windows.Shapes.Line()
+                    { 
+                        X1 = noteHead.ActualWidth,
+                        X2 = noteHead.ActualWidth,
+                        Y1 = noteHead.ActualHeight / 2,
+                        Y2 = noteHead.ActualHeight / 2 - 30,
+                        StrokeThickness = 2, //todo: thickness same as staff
+                        Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color))
+                    });
+                
+                //todo: if is above half of the staff, rotate so everything points down
+                // rotate head
+                //RotateTransform rt = new RotateTransform();
+                //rt.Angle = 180;
+                //noteGrid.LayoutTransform = rt;
+
+
+                WPFRendering.RecalculateSize(noteGrid);
+                grid.Children.Add(noteGrid);
             }
             else
             {
-                //todo: it is a rest
-                noteHead = new Label() { Content = "r" };
-
-                WPFRendering.RecalculateSize(noteHead);
-                noteGrid.Children.Add(noteHead);
+                noteHead = RenderRest(note);
+                grid.Children.Add(noteHead);
             }
 
-            //todo: figure out if should be rotated and rotate appropriately
+            WPFRendering.RecalculateSize(grid);
+            return grid;
+        }
+
+        /// <summary>
+        /// Render a note.
+        /// </summary>
+        /// <param name="note">Information for the note to render</param>
+        /// <returns>A note rendered on a Fraemwork Element</returns>
+        private static FrameworkElement RenderNote(Note note)
+        {
+            String noteChar = "";
+            FrameworkElement noteHead = new Grid();
+
+            if (string.IsNullOrEmpty(note.color))
+                note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
+            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
+
+            switch (note.type.Value)
+            {
+                //todo: size note heads using width expected for font
+                case NoteTypeValue.whole:
+                    noteChar = Constants.NoteCharacters.WHOLE_NOTE;
+                    break;
+                case NoteTypeValue.half:
+                    noteChar = Constants.NoteCharacters.HALF_NOTE;
+                    break;
+                case NoteTypeValue.quarter:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                    noteChar = Constants.NoteCharacters.QUARTER_NOTE;
+                    break;
+                case NoteTypeValue.eighth:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                    noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
+                    break;
+                case NoteTypeValue.Item16th:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                    noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
+                    break;
+                case NoteTypeValue.Item32nd:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                    noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
+                    break;
+                case NoteTypeValue.Item64th:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                    noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
+                    break;
+                case NoteTypeValue.Item128th:
+                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
+                    noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
+                    break;
+                case NoteTypeValue.Item256th:
+                    noteChar = "!";
+                    break;
+                case NoteTypeValue.Item512th:
+                    noteChar = "!";
+                    break;
+            }
+
+            //todo: figure out how to slant note heads just a bit
             // rotate head
             //RotateTransform rt = new RotateTransform();
             //rt.Angle = -20;
             //noteHead.LayoutTransform = rt;
 
-            WPFRendering.RecalculateSize(noteGrid);
-            return noteGrid;
+            WPFRendering.RecalculateSize(noteHead);
+            //todo: Render modifiers
+
+            return noteHead;
+        }
+
+        /// <summary>
+        /// Render a rest
+        /// </summary>
+        /// <param name="note">Representation of the rest to render</param>
+        /// <returns>The rest rendered on a Framework Element</returns>
+        private static FrameworkElement RenderRest(Note note)
+        {
+            string restChar = "";
+            switch (note.type.Value)
+            {
+                case NoteTypeValue.whole:
+                    restChar = Constants.RestCharacters.WHOLE_REST;
+                    break;
+                case NoteTypeValue.half:
+                    restChar = Constants.RestCharacters.HALF_REST;
+                    break;
+                case NoteTypeValue.quarter:
+                    restChar = Constants.RestCharacters.QUARTER_REST;
+                    break;
+                case NoteTypeValue.eighth:
+                    restChar = Constants.RestCharacters.EIGHTH_REST;
+                    break;
+                case NoteTypeValue.Item16th:
+                    restChar = Constants.RestCharacters.SIXTEETH_REST;
+                    break;
+                case NoteTypeValue.Item32nd:
+                    restChar = Constants.RestCharacters.THIRTYSECOND_REST;
+                    break;
+                case NoteTypeValue.Item64th:
+                    restChar = Constants.RestCharacters.SIXTYFOURTH_REST;
+                    break;
+                case NoteTypeValue.Item128th:
+                    restChar = Constants.RestCharacters.ONETWENTYEIGHTH_REST;
+                    break;
+                case NoteTypeValue.Item256th:
+                    restChar = "!";
+                    break;
+                case NoteTypeValue.Item512th:
+                    restChar = "!";
+                    break;
+            }
+            //todo: it is a rest
+            FrameworkElement restLabel = WPFRendering.GetMusicalLabel(restChar);
+
+            WPFRendering.RecalculateSize(restLabel);
+            return restLabel;
         }
 
         /// <summary>
@@ -155,19 +236,21 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Render a measure onto a canvas
         /// </summary>
         /// <param name="measure">The measure to render</param>
-        /// <returns>A canvas with the measure rendered onto it</returns>
-        public static Canvas RenderMeasure(ScorePartwisePartMeasure measure) //todo: not return canvas
+        /// <returns>A Framework Element with the measure rendered onto it</returns>
+        public static Grid RenderMeasure(ScorePartwisePartMeasure measure) //todo: not return canvas
         {
             //todo: stack/queue for tie
             //todo: stack/queue for slur
             //todo: stack/queue for beam
 
             ICollection<object> itemList = measure.Items;
-            Canvas c = new Canvas(); //todo: remove canvas
+            Grid grid = new Grid();
+
             double left = 90; //todo: padding/margin
             double top = 50; //todo: padding/margin
 
             //todo: render staff
+            grid = RenderStaff(grid);
 
             //todo: render each item
             for (int i = 0; i < itemList.Count; i++)
@@ -179,13 +262,12 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 if (type == typeof(Attributes))
                 {
                     Attributes attributes = (Attributes)obj;
-
                     element = RenderAttributes(attributes);
                 }
                 else if (type == typeof(Note))
                 {
                     Note note = (Note)obj;
-                    element = RenderNote(note);                    
+                    element = RenderNoteOrRest(note);                    
                 }
                 else if (type == typeof(Barline))
                 {
@@ -206,7 +288,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 if (element != null)
                 {
                     element.Margin = new Thickness(left, top, 0, 0);
-                    c.Children.Add(element);
+                    grid.Children.Add(element);
                     left += element.ActualWidth + 0; //todo: margin
                 }
                 else
@@ -215,8 +297,17 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 }
             }
 
-            WPFRendering.RecalculateSize(c);
-            return c;
+            WPFRendering.RecalculateSize(grid);
+            return grid;
+        }
+
+        private static Grid RenderStaff(Grid grid)
+        {
+            //todo: implement
+            //get the height of the staff for the font and use that to draw the lines.
+
+
+            return grid;
         }
 
 
@@ -226,9 +317,9 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <param name="attributes">The attributes object to render</param>
         /// <param name="c">The canvas to render onto</param>
         /// <returns>A canvas with the attributes of a measure rendered onto it</returns>
-        private static Canvas RenderAttributes(Attributes attributes)
+        private static Grid RenderAttributes(Attributes attributes)
         {
-            Canvas c = new Canvas();
+            Grid grid = new Grid();
 
             // lef and right for elements within
             double left = 0;
@@ -237,7 +328,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: render multiple clefs because of multi-line parts
             Label clefLabel = ParseClef(attributes.clef[0]);
             clefLabel.Margin = new Thickness(left, top, 0, 0);
-            c.Children.Add(clefLabel);
+            grid.Children.Add(clefLabel);
 
             //todo: render time signature
 
@@ -245,8 +336,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: render key signature
 
 
-            WPFRendering.RecalculateSize(c);
-            return c;
+            WPFRendering.RecalculateSize(grid);
+            return grid;
         }
 
         public static void RenderKeySignature()

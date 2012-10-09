@@ -59,6 +59,22 @@ namespace NETScoreTranscription
         }
 
         /// <summary>
+        /// Definition of the Unicode characters for different rests
+        /// </summary>
+        public static class RestCharacters
+        {
+            public static string WHOLE_REST = char.ConvertFromUtf32(0x1D13B);
+            public static string HALF_REST = char.ConvertFromUtf32(0x1D13C);
+            public static string QUARTER_REST = char.ConvertFromUtf32(0x1D13D);
+            public static string EIGHTH_REST = char.ConvertFromUtf32(0x1D13E);
+            public static string SIXTEETH_REST = char.ConvertFromUtf32(0x1D13F);
+            public static string THIRTYSECOND_REST = char.ConvertFromUtf32(0x1D140);
+            public static string SIXTYFOURTH_REST = char.ConvertFromUtf32(0x1D141);
+            public static string ONETWENTYEIGHTH_REST = char.ConvertFromUtf32(0x1D142);
+            //todo: smaller rests
+        }
+
+        /// <summary>
         /// Defition of unicode characters for different barlines
         /// </summary>
         public static class Barlines
