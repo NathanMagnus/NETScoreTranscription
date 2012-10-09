@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5ABED275-FF22-4E07-A9A6-4AF5FF849830}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NETScoreTranscriptionLibrary</RootNamespace>
+    <AssemblyName>NETScoreTranscriptionLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Drawing\Interfaces\IRendering.cs" />
+    <Compile Include="Drawing\WPFMeasureRendering.cs" />
+    <Compile Include="Exceptions\Drawing\NullElementException.cs" />
+    <Compile Include="Exceptions\Drawing\NullMeasureElementException.cs" />
+    <Compile Include="Exceptions\NETScoreTranscriptionLibraryException.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="musicxml30\musicxml30.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="PropertyGenerator.cs" />
+    <Compile Include="Drawing\Constants.cs" />
+    <Compile Include="Drawing\Interfaces\IScoreObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPFRendering.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="musicxml30\attributes.mod" />
+    <Content Include="musicxml30\barline.mod" />
+    <Content Include="musicxml30\common.mod" />
+    <Content Include="musicxml30\direction.mod" />
+    <Content Include="musicxml30\identity.mod" />
+    <Content Include="musicxml30\layout.mod" />
+    <Content Include="musicxml30\license.html" />
+    <Content Include="musicxml30\link.mod" />
+    <Content Include="musicxml30\midixml.xsl" />
+    <Content Include="musicxml30\note.mod" />
+    <Content Include="musicxml30\parttime.xsl" />
+    <Content Include="musicxml30\score.mod" />
+    <Content Include="musicxml30\sounds.xml" />
+    <Content Include="musicxml30\timepart.xsl" />
+    <Content Include="musicxml30\to10.xsl" />
+    <Content Include="musicxml30\to11.xsl" />
+    <Content Include="musicxml30\to20.xsl" />
+    <Content Include="OtherDocs\Features.txt" />
+    <Content Include="OtherDocs\Test1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Drawing\Render.cd" />
+    <Resource Include="Musica.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="musicxml30\container.dtd" />
+    <None Include="musicxml30\isolat1.ent" />
+    <None Include="musicxml30\isolat2.ent" />
+    <None Include="musicxml30\midixml.dtd" />
+    <None Include="musicxml30\musicxml-index.xls" />
+    <Content Include="musicxml30\musicxml.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="musicxml30\opus.dtd" />
+    <None Include="musicxml30\opus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="musicxml30\partwise.dtd" />
+    <None Include="musicxml30\sounds.dtd" />
+    <None Include="musicxml30\timewise.dtd" />
+    <None Include="musicxml30\xlink.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="musicxml30\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Drawing\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

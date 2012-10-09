@@ -1,0 +1,21 @@
+﻿Features of ScoreTranscription
+
+- Highlight notes on command
+	- next note
+	- within a range
+	- any color
+- Resize transcription
+	- font size
+	- size of page
+	- best fit
+- Display notes
+	- 8va
+- Display key signature
+- Display clef
+- Display lyrics
+- Display staff
+- Read Music XML
+- Change visibility
+	- of score
+	- of single note
+	- of NoteInstruction
