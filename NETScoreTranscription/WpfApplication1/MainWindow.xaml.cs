@@ -53,10 +53,10 @@ namespace WpfApplication1
                 ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
 
                 WPFRendering wpfmr = new WPFRendering();
-                Canvas c = wpfmr.RenderMeasure(sp.part[0].measure[0]);
-                Console.Out.WriteLine(c.Width);
-                Console.Out.WriteLine(c.ActualWidth);
-                this.Content = c;
+                FrameworkElement grid = wpfmr.RenderMeasure(sp.part[0].measure[0]);
+                Console.Out.WriteLine(grid.Width);
+                Console.Out.WriteLine(grid.ActualWidth);
+                this.Content = grid;
             }
             catch (Exception ex)
             {

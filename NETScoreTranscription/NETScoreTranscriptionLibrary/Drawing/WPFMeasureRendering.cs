@@ -34,8 +34,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
             Console.Out.WriteLine("Note");
             String noteChar = Constants.NoteCharacters.WHOLE_NOTE; //todo: decide on default
-            Grid grid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
-            FrameworkElement noteHead = null;
+            Panel grid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
+            
 
             //todo: if it has a rest, then parse as rest, otherwise parse as note
             bool isRest = false;
@@ -48,16 +48,18 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
-                Grid noteGrid = new Grid();
-                noteHead = RenderNote(note);
+                FrameworkElement noteHead = RenderNote(note);
+                //noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + 30, 0, 0); //todo: stem offset
 
-                noteGrid.Children.Add(noteHead);
-                noteGrid.Children.Add(new System.Windows.Shapes.Line()
+                grid.Children.Add(noteHead);
+
+                // add the stem
+                grid.Children.Add(new System.Windows.Shapes.Line()
                     { 
                         X1 = noteHead.ActualWidth,
                         X2 = noteHead.ActualWidth,
                         Y1 = noteHead.ActualHeight / 2,
-                        Y2 = noteHead.ActualHeight / 2 - 30,
+                        Y2 = noteHead.ActualHeight / 2 - 30, //todo: stem offset
                         StrokeThickness = 2, //todo: thickness same as staff
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color))
                     });
@@ -67,15 +69,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 //RotateTransform rt = new RotateTransform();
                 //rt.Angle = 180;
                 //noteGrid.LayoutTransform = rt;
-
-
-                WPFRendering.RecalculateSize(noteGrid);
-                grid.Children.Add(noteGrid);
             }
             else
             {
-                noteHead = RenderRest(note);
-                grid.Children.Add(noteHead);
+                FrameworkElement restElement = RenderRest(note);
+                grid.Children.Add(restElement);
             }
 
             WPFRendering.RecalculateSize(grid);
@@ -229,6 +227,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             }
 
             Label barlineLabel = WPFRendering.GetMusicalLabel(barlineChar);
+            WPFRendering.RecalculateSize(barlineLabel);
             return barlineLabel;
         }
 
@@ -237,21 +236,26 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="measure">The measure to render</param>
         /// <returns>A Framework Element with the measure rendered onto it</returns>
-        public static Grid RenderMeasure(ScorePartwisePartMeasure measure) //todo: not return canvas
+        public static Panel RenderMeasure(ScorePartwisePartMeasure measure) //todo: not return canvas
         {
             //todo: stack/queue for tie
             //todo: stack/queue for slur
             //todo: stack/queue for beam
 
             ICollection<object> itemList = measure.Items;
-            Grid grid = new Grid();
+            Panel grid = new Grid();
 
-            double left = 90; //todo: padding/margin
-            double top = 50; //todo: padding/margin
+            double left = 0; //todo: padding/margin
+            double top = 0; //todo: padding/margin
 
             //todo: render staff
-            grid = RenderStaff(grid);
+            grid = RenderStaff(grid, "#000000");
+            grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
 
+            //todo: render multiple staves for multi-part instruments etc
+            //      This should be as simple as rendering a second staff then putting the note onto that staff as required
+            //      Then joining those two staves via a wrapper container
+            
             //todo: render each item
             for (int i = 0; i < itemList.Count; i++)
             {
@@ -267,7 +271,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 else if (type == typeof(Note))
                 {
                     Note note = (Note)obj;
-                    element = RenderNoteOrRest(note);                    
+                    element = RenderNoteOrRest(note);
                 }
                 else if (type == typeof(Barline))
                 {
@@ -301,12 +305,31 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
-        private static Grid RenderStaff(Grid grid)
+        private static Panel RenderStaff(Panel grid, String colorString)
         {
             //todo: implement
             //get the height of the staff for the font and use that to draw the lines.
+            double height = WPFRendering.GetFontHeight(75, Constants.MusicFonts.MUSICA);//todo: use current font and proper size
+            double lineWidth = 2; //todo: calculate line width properly
 
-
+            //todo: spacing = (height - 5*lineWidth) / 5
+            int numLines = 5; //todo: different numbers of lines
+            height -= numLines * lineWidth;
+            double spacing = height / numLines;
+            for (int i = 0; i < numLines; i++)
+            {
+                System.Windows.Shapes.Line staffLine = new System.Windows.Shapes.Line()
+                {
+                    X1 = 0,
+                    X2 = 200, //todo: proper width
+                    Y1 = (i + 1) * spacing,
+                    Y2 = (i + 1) * spacing,
+                    StrokeThickness = lineWidth,
+                    Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString)) //todo: color properly
+                };
+                WPFRendering.RecalculateSize(staffLine);
+                grid.Children.Add(staffLine);
+            }
             return grid;
         }
 
@@ -317,9 +340,9 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <param name="attributes">The attributes object to render</param>
         /// <param name="c">The canvas to render onto</param>
         /// <returns>A canvas with the attributes of a measure rendered onto it</returns>
-        private static Grid RenderAttributes(Attributes attributes)
+        private static Panel RenderAttributes(Attributes attributes)
         {
-            Grid grid = new Grid();
+            Panel grid = new Grid();
 
             // lef and right for elements within
             double left = 0;

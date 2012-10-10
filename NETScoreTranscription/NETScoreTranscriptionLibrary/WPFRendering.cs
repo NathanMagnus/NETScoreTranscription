@@ -31,7 +31,7 @@ namespace NETScoreTranscriptionLibrary
          * - Have items inherit System.Windows.Shapes.Shape?
          */
         public int CalculateMeasuresPerLine()
-        { 
+        {
             //todo: add up measure widths until line full
             //      if measure in X column on next line is larger, recalc all previous lines
             return 0;
@@ -55,6 +55,17 @@ namespace NETScoreTranscriptionLibrary
         {
             //todo: for each measure, calculate height of all measures then take max
             return 0d;
+        }
+
+        /// <summary>
+        /// Get the height of the font used
+        /// </summary>
+        /// <param name="size">The font size used</param>
+        /// <param name="font">The font used</param>
+        /// <returns>The height of the font that is being used</returns>
+        public static double GetFontHeight(double size, FontFamily font)
+        {
+            return Math.Ceiling(size * font.LineSpacing);
         }
 
         /// <summary>
@@ -105,7 +116,7 @@ namespace NETScoreTranscriptionLibrary
         /// </summary>
         /// <param name="measure">The measure to render</param>
         /// <returns>Measure drawn on a canvas</returns>
-        public Grid RenderMeasure(ScorePartwisePartMeasure measure)
+        public Panel RenderMeasure(ScorePartwisePartMeasure measure)
         {
             return WPFMeasureRendering.RenderMeasure(measure);
         }
