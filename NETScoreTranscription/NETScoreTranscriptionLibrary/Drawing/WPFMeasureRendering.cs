@@ -392,7 +392,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
             grid.Children.Add(beatType);
 
             //todo: interchangable and other type of time signature, see definition of Time to hunt it down
-
             return grid;
         }
 
