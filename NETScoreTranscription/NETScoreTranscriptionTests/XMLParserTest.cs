@@ -162,11 +162,12 @@ namespace NETScoreTranscriptionTests
                         {
                             new Time()
                             {
-                                Items = new object[]
+                                /*Items = new object[]
                                 {
                                     new decimal(4),
                                     new decimal(4)
-                                }
+                                }*/
+                                //todo: beats and beat type
                             }
                         }, 
                         clef = new Clef[]

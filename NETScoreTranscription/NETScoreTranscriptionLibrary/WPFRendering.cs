@@ -75,11 +75,15 @@ namespace NETScoreTranscriptionLibrary
         /// <returns>A new label with the musical symbol/string in it</returns>
         public static Label GetMusicalLabel(string str)
         {
+            return GetMusicalLabel(str, 75);//todo: size properly
+        }
+
+        public static Label GetMusicalLabel(string str, double fontSize)
+        {
             Label stringLabel = new Label();
             stringLabel.Content = str;
             stringLabel.FontFamily = Constants.MusicFonts.MUSICA;
-            stringLabel.FontSize = 75; //todo: use font size that is settable
-            //stringLabel.Background = Brushes.Aqua; //todo: remove
+            stringLabel.FontSize = fontSize; //todo: use font size that is settable
 
 
             RecalculateSize(stringLabel);
@@ -118,7 +122,20 @@ namespace NETScoreTranscriptionLibrary
         /// <returns>Measure drawn on a canvas</returns>
         public Panel RenderMeasure(ScorePartwisePartMeasure measure)
         {
-            return WPFMeasureRendering.RenderMeasure(measure);
+            //todo: render measure with staff
+            return WPFMeasureRendering.RenderMeasure(measure, 0);
+        }
+
+        /// <summary>
+        /// Get a grid that auto sizes to the size of its elements
+        /// </summary>
+        /// <returns>Grid that auto sizes to size of elements</returns>
+        public static Grid CreateAutoSizingGrid()
+        {
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            return grid;
         }
 
         /// <summary>

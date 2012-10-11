@@ -124,8 +124,8 @@
           <mode>major</mode>
         </key>
         <time symbol="cut">
-          <beats>2</beats>
-          <beat-type>2</beat-type>
+		  <beats>2</beats>
+		  <beat-type>2</beat-type>          
         </time>
         <clef>
           <sign>G</sign>

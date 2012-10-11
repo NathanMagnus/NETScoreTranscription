@@ -19473,8 +19473,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
-        [System.Xml.Serialization.XmlElementAttribute("beat-type", typeof(string), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("beat-type", typeof(string))]
+        public string BeatType { get; set; }
+
+        [System.Xml.Serialization.XmlElementAttribute("beats", typeof(string))]
+        public string Beats { get; set; }
+
+        [System.Xml.Serialization.XmlElementAttribute("interchangeable", typeof(Interchangeable))]
+        public Interchangeable Interchangeable { get; set; }
+
+        [System.Xml.Serialization.XmlElementAttribute("senza-misura", typeof(string))]
+        public string SenzaMisura { get; set; }
+
+        /*
         [System.Xml.Serialization.XmlElementAttribute("beats", typeof(string), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("beat-type", typeof(string), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interchangeable", typeof(Interchangeable), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("senza-misura", typeof(string), Order = 0)]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
@@ -19489,8 +19502,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
                 this.itemsField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
+        */
+        
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 2)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType10[] ItemsElementName
         {

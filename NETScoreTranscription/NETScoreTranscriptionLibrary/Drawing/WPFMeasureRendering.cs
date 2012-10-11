@@ -26,7 +26,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">The note to parse and create a label for</param>
         /// <returns>A label with the note in it</returns>
-        public static FrameworkElement RenderNoteOrRest(Note note)
+        public static Panel RenderNoteOrRest(Note note)
         {
             //todo: Render appropriate connectors
             //todo: render barline
@@ -34,7 +34,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
             Console.Out.WriteLine("Note");
             String noteChar = Constants.NoteCharacters.WHOLE_NOTE; //todo: decide on default
-            Panel grid = new Grid(); //todo: put this on a canvas so can put stem and modifiers onto same canvas
+            Panel grid = WPFRendering.CreateAutoSizingGrid();
+            
             
 
             //todo: if it has a rest, then parse as rest, otherwise parse as note
@@ -66,9 +67,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
-                //RotateTransform rt = new RotateTransform();
-                //rt.Angle = 180;
-                //noteGrid.LayoutTransform = rt;
+                /*
+                RotateTransform rt = new RotateTransform();
+                rt.Angle = 180;
+                noteGrid.LayoutTransform = rt;
+                */
             }
             else
             {
@@ -88,7 +91,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         private static FrameworkElement RenderNote(Note note)
         {
             String noteChar = "";
-            FrameworkElement noteHead = new Grid();
+            FrameworkElement noteHead = WPFRendering.CreateAutoSizingGrid();
 
             if (string.IsNullOrEmpty(note.color))
                 note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
@@ -135,11 +138,10 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     break;
             }
 
-            //todo: figure out how to slant note heads just a bit
             // rotate head
-            //RotateTransform rt = new RotateTransform();
-            //rt.Angle = -20;
-            //noteHead.LayoutTransform = rt;
+            RotateTransform rt = new RotateTransform();
+            rt.Angle = -20;
+            noteHead.LayoutTransform = rt;
 
             WPFRendering.RecalculateSize(noteHead);
             //todo: Render modifiers
@@ -235,21 +237,22 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Render a measure onto a canvas
         /// </summary>
         /// <param name="measure">The measure to render</param>
+        /// <param name="staff">The staff being rendered for</param>
         /// <returns>A Framework Element with the measure rendered onto it</returns>
-        public static Panel RenderMeasure(ScorePartwisePartMeasure measure) //todo: not return canvas
+        public static Panel RenderMeasure(ScorePartwisePartMeasure measure, int staff) //todo: not return canvas
         {
             //todo: stack/queue for tie
             //todo: stack/queue for slur
             //todo: stack/queue for beam
 
             ICollection<object> itemList = measure.Items;
-            Panel grid = new Grid();
+            Panel grid = WPFRendering.CreateAutoSizingGrid();
 
             double left = 0; //todo: padding/margin
             double top = 0; //todo: padding/margin
 
             //todo: render staff
-            grid = RenderStaff(grid, "#000000");
+            grid = RenderStaff(grid, Constants.Colors.DEFAULT_NOTE_COLOR);
             grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
 
             //todo: render multiple staves for multi-part instruments etc
@@ -266,7 +269,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 if (type == typeof(Attributes))
                 {
                     Attributes attributes = (Attributes)obj;
-                    element = RenderAttributes(attributes);
+                    element = RenderAttributes(attributes, staff);
                 }
                 else if (type == typeof(Note))
                 {
@@ -339,38 +342,58 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="attributes">The attributes object to render</param>
         /// <param name="c">The canvas to render onto</param>
+        /// <param name="staff">The staff being rendered for</param>
         /// <returns>A canvas with the attributes of a measure rendered onto it</returns>
-        private static Panel RenderAttributes(Attributes attributes)
+        private static Panel RenderAttributes(Attributes attributes, int staff)
         {
-            Panel grid = new Grid();
+            FrameworkElement element;
+            Panel grid = WPFRendering.CreateAutoSizingGrid();
 
             // lef and right for elements within
             double left = 0;
             double top = 0;
 
             //todo: render multiple clefs because of multi-line parts
-            Label clefLabel = ParseClef(attributes.clef[0]);
-            clefLabel.Margin = new Thickness(left, top, 0, 0);
-            grid.Children.Add(clefLabel);
-
-            //todo: render time signature
-
+            element = ParseClef(attributes.clef[0]);
+            element.Margin = new Thickness(left, top, 0, 0);
+            grid.Children.Add(element);
 
             //todo: render key signature
+            element = RenderKeySignature();
+            grid.Children.Add(element);
 
+            //todo: render time signature
+            element = RenderTimeSignature(attributes.time[staff]);
+            grid.Children.Add(element);
 
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
 
-        public static void RenderKeySignature()
+        public static FrameworkElement RenderKeySignature()
         {
-            //todo: draw based on line
+            //todo: render key signature properly
+            return new Label();
         }
 
-        public static void RenderTimeSignature()
+        /// <summary>
+        /// Render the time signature to a Grid
+        /// </summary>
+        /// <param name="time">The time signature to render</param>
+        /// <returns>Time signature on a grid</returns>
+        public static FrameworkElement RenderTimeSignature(Time time)
         {
+            //todo: make proper time signature label
+            Panel grid = WPFRendering.CreateAutoSizingGrid();
+            grid.Children.Add(WPFRendering.GetMusicalLabel(time.Beats, 75/2));//todo: font size
 
+            Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, 75 / 2);//todo: font size
+            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(75/3, Constants.MusicFonts.MUSICA), 0, 0); //todo: font size and type properly
+            grid.Children.Add(beatType);
+
+            //todo: interchangable and other type of time signature, see definition of Time to hunt it down
+
+            return grid;
         }
 
         /// <summary>
