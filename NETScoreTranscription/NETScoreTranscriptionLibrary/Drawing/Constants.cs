@@ -12,11 +12,6 @@ namespace NETScoreTranscription
     /// </summary>
     public static class Constants
     {
-        /// <summary>
-        /// Default font size for the score
-        /// </summary>
-        public static double DEFAULT_FONT_SIZE = 20;
-
         //todo: more font types
         /// <summary>
         /// Definition of Music fonts
@@ -25,6 +20,7 @@ namespace NETScoreTranscription
         {
             public static FontFamily MUSICA = Fonts.GetFontFamilies(new Uri(@"pack://application:,,,/NETScoreTranscriptionLibrary;component/Musica.ttf", UriKind.Absolute)).ElementAt(0);
             public static FontFamily DEFAULT = MUSICA;
+            public static double DEFAULT_SIZE = 20;
         }
 
         public static class Colors

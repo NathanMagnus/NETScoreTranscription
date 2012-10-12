@@ -239,11 +239,13 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <param name="measure">The measure to render</param>
         /// <param name="staff">The staff being rendered for</param>
         /// <returns>A Framework Element with the measure rendered onto it</returns>
-        public static Panel RenderMeasure(ScorePartwisePartMeasure measure, int staff) //todo: not return canvas
+        public static Panel RenderMeasure(ScorePartwisePartMeasure measure, int staff, double fontSize) //todo: not return canvas
         {
             //todo: stack/queue for tie
             //todo: stack/queue for slur
             //todo: stack/queue for beam
+
+            //todo: maybe approach this by doing all staves in render measure?
 
             ICollection<object> itemList = measure.Items;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
@@ -252,7 +254,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             double top = 0; //todo: padding/margin
 
             //todo: render staff
-            grid = RenderStaff(grid, Constants.Colors.DEFAULT_NOTE_COLOR);
+            grid = RenderStaff(grid, Constants.Colors.DEFAULT_NOTE_COLOR, fontSize);
             grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
 
             //todo: render multiple staves for multi-part instruments etc
@@ -269,7 +271,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 if (type == typeof(Attributes))
                 {
                     Attributes attributes = (Attributes)obj;
-                    element = RenderAttributes(attributes, staff);
+                    element = RenderAttributes(attributes, staff, fontSize);
                 }
                 else if (type == typeof(Note))
                 {
@@ -308,11 +310,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
-        private static Panel RenderStaff(Panel grid, String colorString)
+        private static Panel RenderStaff(Panel grid, String colorString, double fontSize)
         {
             //todo: implement
             //get the height of the staff for the font and use that to draw the lines.
-            double height = WPFRendering.GetFontHeight(75, Constants.MusicFonts.MUSICA);//todo: use current font and proper size
+            double height = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.MUSICA);
             double lineWidth = 2; //todo: calculate line width properly
 
             //todo: spacing = (height - 5*lineWidth) / 5
@@ -344,7 +346,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <param name="c">The canvas to render onto</param>
         /// <param name="staff">The staff being rendered for</param>
         /// <returns>A canvas with the attributes of a measure rendered onto it</returns>
-        private static Panel RenderAttributes(Attributes attributes, int staff)
+        private static Panel RenderAttributes(Attributes attributes, int staff, double fontSize)
         {
             FrameworkElement element;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
@@ -363,7 +365,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             grid.Children.Add(element);
 
             //todo: render time signature
-            element = RenderTimeSignature(attributes.time[staff]);
+            element = RenderTimeSignature(attributes.time[staff], fontSize);
             grid.Children.Add(element);
 
             WPFRendering.RecalculateSize(grid);
@@ -381,14 +383,16 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="time">The time signature to render</param>
         /// <returns>Time signature on a grid</returns>
-        public static FrameworkElement RenderTimeSignature(Time time)
+        public static FrameworkElement RenderTimeSignature(Time time, double fontSize)
         {
+            double halfFont = fontSize / 2;
             //todo: make proper time signature label
+            //todo: measure font size stuff properly
             Panel grid = WPFRendering.CreateAutoSizingGrid();
-            grid.Children.Add(WPFRendering.GetMusicalLabel(time.Beats, 75/2));//todo: font size
+            grid.Children.Add(WPFRendering.GetMusicalLabel(time.Beats, halfFont));
 
-            Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, 75 / 2);//todo: font size
-            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(75/3, Constants.MusicFonts.MUSICA), 0, 0); //todo: font size and type properly
+            Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, halfFont);
+            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.MUSICA), 0, 0); //todo: font size and type properly
             grid.Children.Add(beatType);
 
             //todo: interchangable and other type of time signature, see definition of Time to hunt it down

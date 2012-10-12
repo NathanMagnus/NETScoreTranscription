@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using NETScoreTranscriptionLibrary.Drawing.Interfaces;
 using NETScoreTranscriptionLibrary.Drawing;
 
-namespace NETScoreTranscriptionLibrary
+namespace NETScoreTranscriptionLibrary.Drawing
 {
     /// <summary>
     /// Rendering class. This class exists to hold information that cannot be represented
@@ -19,7 +19,16 @@ namespace NETScoreTranscriptionLibrary
     /// </summary>
     public class WPFRendering : Canvas, IRendering
     {
-        public double Scale { get; set; } //todo: invalidate drawing when scale is changed
+        public double FontSize { get; set; }
+
+        /// <summary>
+        /// Constructor for the WPFRendering component
+        /// </summary>
+        /// <param name="fontSize">The size of the font to use</param>
+        public WPFRendering(double fontSize)
+        {
+            FontSize = fontSize;
+        }
 
         /* TODO: Calculate size
          * - Positions determined by defaultx, defaulty, relativex, relativey
@@ -122,8 +131,8 @@ namespace NETScoreTranscriptionLibrary
         /// <returns>Measure drawn on a canvas</returns>
         public Panel RenderMeasure(ScorePartwisePartMeasure measure)
         {
-            //todo: render measure with staff
-            return WPFMeasureRendering.RenderMeasure(measure, 0);
+            //todo: render top staff measure and bottom then combine
+            return WPFMeasureRendering.RenderMeasure(measure, 0, FontSize);
         }
 
         /// <summary>
