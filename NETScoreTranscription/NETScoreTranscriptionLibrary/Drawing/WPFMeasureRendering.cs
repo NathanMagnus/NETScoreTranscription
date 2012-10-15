@@ -55,23 +55,24 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 grid.Children.Add(noteHead);
 
                 // add the stem
-                grid.Children.Add(new System.Windows.Shapes.Line()
-                    { 
+                System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
+                    {
                         X1 = noteHead.ActualWidth,
                         X2 = noteHead.ActualWidth,
                         Y1 = noteHead.ActualHeight / 2,
                         Y2 = noteHead.ActualHeight / 2 - 30, //todo: stem offset
                         StrokeThickness = 2, //todo: thickness same as staff
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color))
-                    });
+                    };
+                grid.Children.Add(noteStem);
                 
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
-                /*
-                RotateTransform rt = new RotateTransform();
-                rt.Angle = 180;
-                noteGrid.LayoutTransform = rt;
-                */
+                
+                RotateTransform rt = new RotateTransform(180);
+                rt.CenterX = noteHead.ActualWidth / 2;
+                rt.CenterY = 10 * 3 / 4; //todo: use note height calculation from render notehead
+                grid.RenderTransform = rt;
             }
             else
             {
@@ -79,6 +80,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 grid.Children.Add(restElement);
             }
 
+            grid.VerticalAlignment = VerticalAlignment.Center;
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
@@ -247,15 +249,19 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             //todo: maybe approach this by doing all staves in render measure?
 
-            ICollection<object> itemList = measure.Items;
-            Panel grid = WPFRendering.CreateAutoSizingGrid();
-
             double left = 0; //todo: padding/margin
             double top = 0; //todo: padding/margin
 
-            //todo: render staff
-            grid = RenderStaff(grid, Constants.Colors.DEFAULT_NOTE_COLOR, fontSize);
+            ICollection<object> itemList = measure.Items;
+            FrameworkElement element = null;
+            Panel grid = WPFRendering.CreateAutoSizingGrid();
             grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
+
+            
+
+            //todo: render staff
+            element = RenderStaff(Constants.Colors.DEFAULT_NOTE_COLOR, fontSize);
+            grid.Children.Add(element);
 
             //todo: render multiple staves for multi-part instruments etc
             //      This should be as simple as rendering a second staff then putting the note onto that staff as required
@@ -266,7 +272,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
                 object obj = itemList.ElementAt(i);
                 Type type = obj.GetType();
-                FrameworkElement element = null;
+                
 
                 if (type == typeof(Attributes))
                 {
@@ -310,14 +316,14 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
-        private static Panel RenderStaff(Panel grid, String colorString, double fontSize)
+        private static Panel RenderStaff(String colorString, double fontSize)
         {
             //todo: implement
+            Grid grid = WPFRendering.CreateAutoSizingGrid();
             //get the height of the staff for the font and use that to draw the lines.
             double height = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.MUSICA);
             double lineWidth = 2; //todo: calculate line width properly
 
-            //todo: spacing = (height - 5*lineWidth) / 5
             int numLines = 5; //todo: different numbers of lines
             height -= numLines * lineWidth;
             double spacing = height / numLines;
@@ -327,14 +333,16 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 {
                     X1 = 0,
                     X2 = 200, //todo: proper width
-                    Y1 = (i + 1) * spacing,
-                    Y2 = (i + 1) * spacing,
+                    Y1 = i * spacing,
+                    Y2 = i * spacing,
                     StrokeThickness = lineWidth,
                     Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString)) //todo: color properly
                 };
                 WPFRendering.RecalculateSize(staffLine);
                 grid.Children.Add(staffLine);
             }
+            grid.VerticalAlignment = VerticalAlignment.Center;
+            WPFRendering.RecalculateSize(grid);
             return grid;
         }
 
@@ -350,23 +358,27 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             FrameworkElement element;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
-
-            // lef and right for elements within
             double left = 0;
-            double top = 0;
 
             //todo: render multiple clefs because of multi-line parts
-            element = ParseClef(attributes.clef[0]);
-            element.Margin = new Thickness(left, top, 0, 0);
+            element = RenderClef(attributes.clef[0]);
+            element.VerticalAlignment = VerticalAlignment.Center;
+            element.Margin = new Thickness(fontSize * 2 / 3, 0, 0, 0);
             grid.Children.Add(element);
+            left += fontSize * 2 / 3;
 
             //todo: render key signature
             element = RenderKeySignature();
+            element.Margin = new Thickness(left, 0, 0, 0);
             grid.Children.Add(element);
+            left += element.ActualWidth;
 
             //todo: render time signature
             element = RenderTimeSignature(attributes.time[staff], fontSize);
+            element.VerticalAlignment = VerticalAlignment.Center;
+            element.Margin = new Thickness(left, 0, 0, 0);
             grid.Children.Add(element);
+            left += element.ActualWidth;
 
             WPFRendering.RecalculateSize(grid);
             return grid;
@@ -404,7 +416,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="clef">The clef to get the label for</param>
         /// <returns>A label of a clef</returns>
-        public static Label ParseClef(Clef clef)
+        public static Label RenderClef(Clef clef)
         {
             string symbol;
             switch (clef.sign)

@@ -84,15 +84,21 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>A new label with the musical symbol/string in it</returns>
         public static Label GetMusicalLabel(string str)
         {
-            return GetMusicalLabel(str, 75);//todo: size properly
+            return GetMusicalLabel(str, Constants.MusicFonts.DEFAULT_SIZE);//todo: size properly
         }
 
+        /// <summary>
+        /// Get a Label with a mysical symbol/string in it
+        /// </summary>
+        /// <param name="str">The string to put in the label</param>
+        /// <param name="fontSize">The current font size</param>
+        /// <returns>A Label that has the string in the appropriate musical font</returns>
         public static Label GetMusicalLabel(string str, double fontSize)
         {
             Label stringLabel = new Label();
             stringLabel.Content = str;
-            stringLabel.FontFamily = Constants.MusicFonts.MUSICA;
-            stringLabel.FontSize = fontSize; //todo: use font size that is settable
+            stringLabel.FontFamily = Constants.MusicFonts.MUSICA; //todo: multiple font options
+            stringLabel.FontSize = fontSize;
 
 
             RecalculateSize(stringLabel);

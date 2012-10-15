@@ -20,7 +20,7 @@ namespace NETScoreTranscription
         {
             public static FontFamily MUSICA = Fonts.GetFontFamilies(new Uri(@"pack://application:,,,/NETScoreTranscriptionLibrary;component/Musica.ttf", UriKind.Absolute)).ElementAt(0);
             public static FontFamily DEFAULT = MUSICA;
-            public static double DEFAULT_SIZE = 20;
+            public static double DEFAULT_SIZE = 75;
         }
 
         public static class Colors
