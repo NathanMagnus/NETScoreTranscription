@@ -64,12 +64,5 @@ namespace WpfApplication1
                 Console.Out.WriteLine(ex.ToString());
             }
         }
-
-        public void ValidationEventHandler(object sender, ValidationEventArgs args)
-        {
-            // todo: handle XML error here
-            throw new Exception(args.Message);
-
-        }
     }
 }

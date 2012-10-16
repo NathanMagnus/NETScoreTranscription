@@ -30,6 +30,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             //todo: Render appropriate connectors
             //todo: render barline
+            //todo: tuplets, triplets, beams
 
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
             Console.Out.WriteLine("Note");
@@ -49,7 +50,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
-                FrameworkElement noteHead = RenderNote(note);
+                FrameworkElement noteHead = RenderNoteHead(note);
                 //noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + 30, 0, 0); //todo: stem offset
 
                 grid.Children.Add(noteHead);
@@ -65,14 +66,18 @@ namespace NETScoreTranscriptionLibrary.Drawing
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color))
                     };
                 grid.Children.Add(noteStem);
+
+                //todo: accidentals
+                //todo: clef change on note
                 
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
-                
+                /*
                 RotateTransform rt = new RotateTransform(180);
                 rt.CenterX = noteHead.ActualWidth / 2;
                 rt.CenterY = 10 * 3 / 4; //todo: use note height calculation from render notehead
                 grid.RenderTransform = rt;
+                */
             }
             else
             {
@@ -90,8 +95,10 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">Information for the note to render</param>
         /// <returns>A note rendered on a Fraemwork Element</returns>
-        private static FrameworkElement RenderNote(Note note)
+        private static FrameworkElement RenderNoteHead(Note note)
         {
+            //todo: chords
+            //todo: different shapes of note heads
             String noteChar = "";
             FrameworkElement noteHead = WPFRendering.CreateAutoSizingGrid();
 
@@ -281,6 +288,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 }
                 else if (type == typeof(Note))
                 {
+                    //todo: may need to use attributes from previous measure to figure out where to render
                     Note note = (Note)obj;
                     element = RenderNoteOrRest(note);
                 }
@@ -346,7 +354,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
-
+        //TODO: Need to use "last attribute" somehow for measures without attributes set
         /// <summary>
         /// Render the attributes of a measure
         /// </summary>
@@ -383,6 +391,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
+
 
         public static FrameworkElement RenderKeySignature()
         {

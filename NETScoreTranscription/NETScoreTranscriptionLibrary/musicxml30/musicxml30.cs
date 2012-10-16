@@ -27,9 +27,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Work workField;
 
-        private string movementnumberField;
+        private string movementNumberField;
 
-        private string movementtitleField;
+        private string movementTitleField;
 
         private Identification identificationField;
 
@@ -37,7 +37,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Credit[] creditField;
 
-        private PartList partlistField;
+        private PartList partListField;
 
         private ScorePartwisePart[] partField;
 
@@ -68,11 +68,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.movementnumberField;
+                return this.movementNumberField;
             }
             set
             {
-                this.movementnumberField = value;
+                this.movementNumberField = value;
             }
         }
 
@@ -81,11 +81,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.movementtitleField;
+                return this.movementTitleField;
             }
             set
             {
-                this.movementtitleField = value;
+                this.movementTitleField = value;
             }
         }
 
@@ -133,11 +133,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.partlistField;
+                return this.partListField;
             }
             set
             {
-                this.partlistField = value;
+                this.partListField = value;
             }
         }
 
@@ -1822,7 +1822,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool printObjectFieldSpecified;
 
-        private decimal endlengthField;
+        private decimal endLengthField;
 
         private bool endLengthFieldSpecified;
 
@@ -1895,16 +1895,16 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.endlengthField;
+                return this.endLengthField;
             }
             set
             {
-                this.endlengthField = value;
+                this.endLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool endlengthSpecified
+        public bool endLengthSpecified
         {
             get
             {
@@ -3526,21 +3526,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -3548,7 +3548,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string colorField;
 
-        private StartNote startnoteField;
+        private StartNote startNoteField;
 
         private bool startNoteFieldSpecified;
 
@@ -3605,106 +3605,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -3752,11 +3752,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.startnoteField;
+                return this.startNoteField;
             }
             set
             {
-                this.startnoteField = value;
+                this.startNoteField = value;
             }
         }
 
@@ -5191,7 +5191,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private SystemLayout systemLayoutField;
 
-        private StaffLayout[] stafflayoutField;
+        private StaffLayout[] staffLayoutField;
 
         private MeasureLayout measureLayoutField;
 
@@ -5250,11 +5250,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.stafflayoutField;
+                return this.staffLayoutField;
             }
             set
             {
-                this.stafflayoutField = value;
+                this.staffLayoutField = value;
             }
         }
 
@@ -5679,7 +5679,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current pagelayout object into an XML document
+        /// Serializes current pageLayout object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -5708,10 +5708,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an pagelayout object
+        /// Deserializes workflow markup into an pageLayout object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output pagelayout object</param>
+        /// <param name="obj">Output pageLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out PageLayout obj, out System.Exception exception)
@@ -5754,7 +5754,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current pagelayout object into file
+        /// Serializes current pageLayout object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -5795,10 +5795,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an pagelayout object
+        /// Deserializes xml markup from file into an pageLayout object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output pagelayout object</param>
+        /// <param name="obj">Output pageLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out PageLayout obj, out System.Exception exception)
@@ -5852,7 +5852,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this pagelayout object
+        /// Create a clone of this pageLayout object
         /// </summary>
         public virtual PageLayout Clone()
         {
@@ -6287,7 +6287,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current systemlayout object into an XML document
+        /// Serializes current systemLayout object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -6316,10 +6316,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an systemlayout object
+        /// Deserializes workflow markup into an systemLayout object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output systemlayout object</param>
+        /// <param name="obj">Output systemLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out SystemLayout obj, out System.Exception exception)
@@ -6362,7 +6362,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current systemlayout object into file
+        /// Serializes current systemLayout object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -6403,10 +6403,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an systemlayout object
+        /// Deserializes xml markup from file into an systemLayout object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output systemlayout object</param>
+        /// <param name="obj">Output systemLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out SystemLayout obj, out System.Exception exception)
@@ -6460,7 +6460,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this systemlayout object
+        /// Create a clone of this systemLayout object
         /// </summary>
         public virtual SystemLayout Clone()
         {
@@ -6995,7 +6995,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current emptyprintobjectstylealign object into an XML document
+        /// Serializes current emptyprintObjectstylealign object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -7024,10 +7024,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an emptyprintobjectstylealign object
+        /// Deserializes workflow markup into an emptyprintObjectstylealign object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output emptyprintobjectstylealign object</param>
+        /// <param name="obj">Output emptyprintObjectstylealign object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out EmptyPrintObjectStyleAlign obj, out System.Exception exception)
@@ -7070,7 +7070,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current emptyprintobjectstylealign object into file
+        /// Serializes current emptyprintObjectstylealign object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -7111,10 +7111,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an emptyprintobjectstylealign object
+        /// Deserializes xml markup from file into an emptyprintObjectstylealign object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output emptyprintobjectstylealign object</param>
+        /// <param name="obj">Output emptyprintObjectstylealign object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out EmptyPrintObjectStyleAlign obj, out System.Exception exception)
@@ -7168,7 +7168,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this emptyprintobjectstylealign object
+        /// Create a clone of this emptyprintObjectstylealign object
         /// </summary>
         public virtual EmptyPrintObjectStyleAlign Clone()
         {
@@ -7246,7 +7246,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current stafflayout object into an XML document
+        /// Serializes current staffLayout object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -7275,10 +7275,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an stafflayout object
+        /// Deserializes workflow markup into an staffLayout object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output stafflayout object</param>
+        /// <param name="obj">Output staffLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out StaffLayout obj, out System.Exception exception)
@@ -7321,7 +7321,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current stafflayout object into file
+        /// Serializes current staffLayout object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -7362,10 +7362,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an stafflayout object
+        /// Deserializes xml markup from file into an staffLayout object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output stafflayout object</param>
+        /// <param name="obj">Output staffLayout object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out StaffLayout obj, out System.Exception exception)
@@ -7419,7 +7419,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this stafflayout object
+        /// Create a clone of this staffLayout object
         /// </summary>
         public virtual StaffLayout Clone()
         {
@@ -7459,7 +7459,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
@@ -7472,7 +7472,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
@@ -8873,7 +8873,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-dot")]
-        public YesNo printdot
+        public YesNo printDot
         {
             get
             {
@@ -10865,21 +10865,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Framenote[] framenoteField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -10956,106 +10956,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -14797,7 +14797,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
         #endregion
     }
-    //todo: left off here, maybe resharper will do this?
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14821,11 +14821,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool typeFieldSpecified;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
-        private YesNo printframeField;
+        private YesNo printFrameField;
 
         private bool printframeFieldSpecified;
 
@@ -14945,46 +14945,46 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-frame")]
-        public YesNo printframe
+        public YesNo printFrame
         {
             get
             {
-                return this.printframeField;
+                return this.printFrameField;
             }
             set
             {
-                this.printframeField = value;
+                this.printFrameField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printframeSpecified
+        public bool printFrameSpecified
         {
             get
             {
@@ -15491,45 +15491,45 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Slash
     {
 
-        private NoteTypeValue slashtypeField;
+        private NoteTypeValue slashTypeField;
 
-        private Empty[] slashdotField;
+        private Empty[] slashDotField;
 
         private StartStop typeField;
 
-        private YesNo usedotsField;
+        private YesNo useDotsField;
 
-        private bool usedotsFieldSpecified;
+        private bool useDotsFieldSpecified;
 
-        private YesNo usestemsField;
+        private YesNo useStemsField;
 
-        private bool usestemsFieldSpecified;
+        private bool useStemsFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("slash-type", Order = 0)]
-        public NoteTypeValue slashtype
+        public NoteTypeValue slashType
         {
             get
             {
-                return this.slashtypeField;
+                return this.slashTypeField;
             }
             set
             {
-                this.slashtypeField = value;
+                this.slashTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("slash-dot", Order = 1)]
-        public Empty[] slashdot
+        public Empty[] slashDot
         {
             get
             {
-                return this.slashdotField;
+                return this.slashDotField;
             }
             set
             {
-                this.slashdotField = value;
+                this.slashDotField = value;
             }
         }
 
@@ -15547,54 +15547,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("use-dots")]
-        public YesNo usedots
+        public YesNo useDots
         {
             get
             {
-                return this.usedotsField;
+                return this.useDotsField;
             }
             set
             {
-                this.usedotsField = value;
+                this.useDotsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool usedotsSpecified
+        public bool useDotsSpecified
         {
             get
             {
-                return this.usedotsFieldSpecified;
+                return this.useDotsFieldSpecified;
             }
             set
             {
-                this.usedotsFieldSpecified = value;
+                this.useDotsFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("use-stems")]
-        public YesNo usestems
+        public YesNo useStems
         {
             get
             {
-                return this.usestemsField;
+                return this.useStemsField;
             }
             set
             {
-                this.usestemsField = value;
+                this.useStemsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool usestemsSpecified
+        public bool useStemsSpecified
         {
             get
             {
-                return this.usestemsFieldSpecified;
+                return this.useStemsFieldSpecified;
             }
             set
             {
-                this.usestemsFieldSpecified = value;
+                this.useStemsFieldSpecified = value;
             }
         }
 
@@ -16063,43 +16063,43 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class BeatRepeat
     {
 
-        private NoteTypeValue slashtypeField;
+        private NoteTypeValue slashTypeField;
 
-        private Empty[] slashdotField;
+        private Empty[] slashDotField;
 
         private StartStop typeField;
 
         private string slashesField;
 
-        private YesNo usedotsField;
+        private YesNo useDotsField;
 
-        private bool usedotsFieldSpecified;
+        private bool useDotsFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("slash-type", Order = 0)]
-        public NoteTypeValue slashtype
+        public NoteTypeValue slashType
         {
             get
             {
-                return this.slashtypeField;
+                return this.slashTypeField;
             }
             set
             {
-                this.slashtypeField = value;
+                this.slashTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("slash-dot", Order = 1)]
-        public Empty[] slashdot
+        public Empty[] slashDot
         {
             get
             {
-                return this.slashdotField;
+                return this.slashDotField;
             }
             set
             {
-                this.slashdotField = value;
+                this.slashDotField = value;
             }
         }
 
@@ -16130,28 +16130,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("use-dots")]
-        public YesNo usedots
+        public YesNo useDots
         {
             get
             {
-                return this.usedotsField;
+                return this.useDotsField;
             }
             set
             {
-                this.usedotsField = value;
+                this.useDotsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool usedotsSpecified
+        public bool useDotsSpecified
         {
             get
             {
-                return this.usedotsFieldSpecified;
+                return this.useDotsFieldSpecified;
             }
             set
             {
-                this.usedotsFieldSpecified = value;
+                this.useDotsFieldSpecified = value;
             }
         }
 
@@ -16610,37 +16610,37 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class MultipleRest
     {
 
-        private YesNo usesymbolsField;
+        private YesNo useSymbolsField;
 
-        private bool usesymbolsFieldSpecified;
+        private bool useSymbolsFieldSpecified;
 
         private string valueField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("use-symbols")]
-        public YesNo usesymbols
+        public YesNo useSymbols
         {
             get
             {
-                return this.usesymbolsField;
+                return this.useSymbolsField;
             }
             set
             {
-                this.usesymbolsField = value;
+                this.useSymbolsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool usesymbolsSpecified
+        public bool useSymbolsSpecified
         {
             get
             {
-                return this.usesymbolsFieldSpecified;
+                return this.useSymbolsFieldSpecified;
             }
             set
             {
-                this.usesymbolsFieldSpecified = value;
+                this.useSymbolsFieldSpecified = value;
             }
         }
 
@@ -16865,17 +16865,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -16911,80 +16911,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -17196,7 +17196,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
         #endregion
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17208,7 +17208,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private decimal chromaticField;
 
-        private string octavechangeField;
+        private string octaveChangeField;
 
         private Empty doubleField;
 
@@ -17243,15 +17243,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("octave-change", DataType = "integer", Order = 2)]
-        public string octavechange
+        public string octaveChange
         {
             get
             {
-                return this.octavechangeField;
+                return this.octaveChangeField;
             }
             set
             {
-                this.octavechangeField = value;
+                this.octaveChangeField = value;
             }
         }
 
@@ -17485,67 +17485,67 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class StaffTuning
     {
 
-        private Step tuningstepField;
+        private Step tuningStepField;
 
-        private decimal tuningalterField;
+        private decimal tuningAlterField;
 
-        private bool tuningalterFieldSpecified;
+        private bool tuningAlterFieldSpecified;
 
-        private string tuningoctaveField;
+        private string tuningOctaveField;
 
         private string lineField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-step", Order = 0)]
-        public Step tuningstep
+        public Step tuningStep
         {
             get
             {
-                return this.tuningstepField;
+                return this.tuningStepField;
             }
             set
             {
-                this.tuningstepField = value;
+                this.tuningStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-alter", Order = 1)]
-        public decimal tuningalter
+        public decimal tuningAlter
         {
             get
             {
-                return this.tuningalterField;
+                return this.tuningAlterField;
             }
             set
             {
-                this.tuningalterField = value;
+                this.tuningAlterField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool tuningalterSpecified
+        public bool tuningAlterSpecified
         {
             get
             {
-                return this.tuningalterFieldSpecified;
+                return this.tuningAlterFieldSpecified;
             }
             set
             {
-                this.tuningalterFieldSpecified = value;
+                this.tuningAlterFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-octave", DataType = "integer", Order = 2)]
-        public string tuningoctave
+        public string tuningOctave
         {
             get
             {
-                return this.tuningoctaveField;
+                return this.tuningOctaveField;
             }
             set
             {
-                this.tuningoctaveField = value;
+                this.tuningOctaveField = value;
             }
         }
 
@@ -17766,46 +17766,46 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class StaffDetails
     {
 
-        private StaffType stafftypeField;
+        private StaffType staffTypeField;
 
-        private bool stafftypeFieldSpecified;
+        private bool staffTypeFieldSpecified;
 
-        private string stafflinesField;
+        private string staffLinesField;
 
-        private StaffTuning[] stafftuningField;
+        private StaffTuning[] staffTuningField;
 
         private string capoField;
 
-        private decimal staffsizeField;
+        private decimal staffSizeField;
 
-        private bool staffsizeFieldSpecified;
+        private bool staffSizeFieldSpecified;
 
         private string numberField;
 
-        private ShowFrets showfretsField;
+        private ShowFrets showFretsField;
 
-        private bool showfretsFieldSpecified;
+        private bool showFretsFieldSpecified;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
-        private YesNo printspacingField;
+        private YesNo printSpacingField;
 
-        private bool printspacingFieldSpecified;
+        private bool printSpacingFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("staff-type", Order = 0)]
-        public StaffType stafftype
+        public StaffType staffType
         {
             get
             {
-                return this.stafftypeField;
+                return this.staffTypeField;
             }
             set
             {
-                this.stafftypeField = value;
+                this.staffTypeField = value;
             }
         }
 
@@ -17814,24 +17814,24 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.stafftypeFieldSpecified;
+                return this.staffTypeFieldSpecified;
             }
             set
             {
-                this.stafftypeFieldSpecified = value;
+                this.staffTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("staff-lines", DataType = "nonNegativeInteger", Order = 1)]
-        public string stafflines
+        public string staffLines
         {
             get
             {
-                return this.stafflinesField;
+                return this.staffLinesField;
             }
             set
             {
-                this.stafflinesField = value;
+                this.staffLinesField = value;
             }
         }
 
@@ -17840,11 +17840,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.stafftuningField;
+                return this.staffTuningField;
             }
             set
             {
-                this.stafftuningField = value;
+                this.staffTuningField = value;
             }
         }
 
@@ -17862,28 +17862,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("staff-size", Order = 4)]
-        public decimal staffsize
+        public decimal staffSize
         {
             get
             {
-                return this.staffsizeField;
+                return this.staffSizeField;
             }
             set
             {
-                this.staffsizeField = value;
+                this.staffSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool staffsizeSpecified
+        public bool staffSizeSpecified
         {
             get
             {
-                return this.staffsizeFieldSpecified;
+                return this.staffSizeFieldSpecified;
             }
             set
             {
-                this.staffsizeFieldSpecified = value;
+                this.staffSizeFieldSpecified = value;
             }
         }
 
@@ -17901,80 +17901,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("show-frets")]
-        public ShowFrets showfrets
+        public ShowFrets showFrets
         {
             get
             {
-                return this.showfretsField;
+                return this.showFretsField;
             }
             set
             {
-                this.showfretsField = value;
+                this.showFretsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool showfretsSpecified
+        public bool showFretsSpecified
         {
             get
             {
-                return this.showfretsFieldSpecified;
+                return this.showFretsFieldSpecified;
             }
             set
             {
-                this.showfretsFieldSpecified = value;
+                this.showFretsFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-spacing")]
-        public YesNo printspacing
+        public YesNo printSpacing
         {
             get
             {
-                return this.printspacingField;
+                return this.printSpacingField;
             }
             set
             {
-                this.printspacingField = value;
+                this.printSpacingField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printspacingSpecified
+        public bool printSpacingSpecified
         {
             get
             {
-                return this.printspacingFieldSpecified;
+                return this.printSpacingFieldSpecified;
             }
             set
             {
-                this.printspacingFieldSpecified = value;
+                this.printSpacingFieldSpecified = value;
             }
         }
 
@@ -18220,7 +18220,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string lineField;
 
-        private string clefoctavechangeField;
+        private string clefOctvaeChangeField;
 
         private string numberField;
 
@@ -18232,13 +18232,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool sizeFieldSpecified;
 
-        private YesNo afterbarlineField;
+        private YesNo afterBarlineField;
 
-        private bool afterbarlineFieldSpecified;
+        private bool afterBarlineFieldSpecified;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -18269,15 +18269,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("clef-octave-change", DataType = "integer", Order = 2)]
-        public string clefoctavechange
+        public string clefOctaveChange
         {
             get
             {
-                return this.clefoctavechangeField;
+                return this.clefOctvaeChangeField;
             }
             set
             {
-                this.clefoctavechangeField = value;
+                this.clefOctvaeChangeField = value;
             }
         }
 
@@ -18347,54 +18347,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("after-barline")]
-        public YesNo afterbarline
+        public YesNo afterBarline
         {
             get
             {
-                return this.afterbarlineField;
+                return this.afterBarlineField;
             }
             set
             {
-                this.afterbarlineField = value;
+                this.afterBarlineField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool afterbarlineSpecified
+        public bool afterBarlineSpecified
         {
             get
             {
-                return this.afterbarlineFieldSpecified;
+                return this.afterBarlineFieldSpecified;
             }
             set
             {
-                this.afterbarlineFieldSpecified = value;
+                this.afterBarlineFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -18630,25 +18630,25 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class PartSymbol
     {
 
-        private string topstaffField;
+        private string topStaffField;
 
-        private string bottomstaffField;
+        private string bottomStaffField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -18657,132 +18657,132 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("top-staff", DataType = "positiveInteger")]
-        public string topstaff
+        public string topStaff
         {
             get
             {
-                return this.topstaffField;
+                return this.topStaffField;
             }
             set
             {
-                this.topstaffField = value;
+                this.topStaffField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bottom-staff", DataType = "positiveInteger")]
-        public string bottomstaff
+        public string bottomStaff
         {
             get
             {
-                return this.bottomstaffField;
+                return this.bottomStaffField;
             }
             set
             {
-                this.bottomstaffField = value;
+                this.bottomStaffField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -19037,9 +19037,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Interchangeable
     {
 
-        private TimeRelation timerelationField;
+        private TimeRelation timeRelationField;
 
-        private bool timerelationFieldSpecified;
+        private bool timeRelationFieldSpecified;
 
         private string[] itemsField;
 
@@ -19056,28 +19056,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("time-relation", Order = 0)]
-        public TimeRelation timerelation
+        public TimeRelation timeRelation
         {
             get
             {
-                return this.timerelationField;
+                return this.timeRelationField;
             }
             set
             {
-                this.timerelationField = value;
+                this.timeRelationField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool timerelationSpecified
+        public bool timeRelationSpecified
         {
             get
             {
-                return this.timerelationFieldSpecified;
+                return this.timeRelationFieldSpecified;
             }
             set
             {
-                this.timerelationFieldSpecified = value;
+                this.timeRelationFieldSpecified = value;
             }
         }
 
@@ -19445,14 +19445,14 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         /// <remarks/>
         adjacent,
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
     public partial class Time
     {
-
+        
         private object[] itemsField;
 
         private ItemsChoiceType10[] itemsElementNameField;
@@ -19467,9 +19467,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool separatorFieldSpecified;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -19584,28 +19584,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -20365,18 +20365,18 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
     public partial class Key
     {
-
+        
         private object[] itemsField;
 
         private ItemsChoiceType8[] itemsElementNameField;
 
-        private KeyOctave[] keyoctaveField;
+        private KeyOctave[] keyOctaveField;
 
         private string numberField;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -20418,11 +20418,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.keyoctaveField;
+                return this.keyOctaveField;
             }
             set
             {
-                this.keyoctaveField = value;
+                this.keyOctaveField = value;
             }
         }
 
@@ -20440,28 +20440,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -21374,13 +21374,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool divisionsFieldSpecified;
 
-        private YesNo forwardrepeatField;
+        private YesNo forwardRepeatField;
 
-        private bool forwardrepeatFieldSpecified;
+        private bool forwardRepeatFieldSpecified;
 
         private string fineField;
 
-        private string timeonlyField;
+        private string timeOnlyField;
 
         private YesNo pizzicatoField;
 
@@ -21394,11 +21394,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool elevationFieldSpecified;
 
-        private string damperpedalField;
+        private string damperPedalField;
 
-        private string softpedalField;
+        private string softPedalField;
 
-        private string sostenutopedalField;
+        private string sostenutoPedalField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -21587,28 +21587,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("forward-repeat")]
-        public YesNo forwardrepeat
+        public YesNo forwardRepeat
         {
             get
             {
-                return this.forwardrepeatField;
+                return this.forwardRepeatField;
             }
             set
             {
-                this.forwardrepeatField = value;
+                this.forwardRepeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool forwardrepeatSpecified
+        public bool forwardRepeatSpecified
         {
             get
             {
-                return this.forwardrepeatFieldSpecified;
+                return this.forwardRepeatFieldSpecified;
             }
             set
             {
-                this.forwardrepeatFieldSpecified = value;
+                this.forwardRepeatFieldSpecified = value;
             }
         }
 
@@ -21626,15 +21626,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("time-only", DataType = "token")]
-        public string timeonly
+        public string timeOnly
         {
             get
             {
-                return this.timeonlyField;
+                return this.timeOnlyField;
             }
             set
             {
-                this.timeonlyField = value;
+                this.timeOnlyField = value;
             }
         }
 
@@ -21717,41 +21717,41 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("damper-pedal")]
-        public string damperpedal
+        public string damperPedal
         {
             get
             {
-                return this.damperpedalField;
+                return this.damperPedalField;
             }
             set
             {
-                this.damperpedalField = value;
+                this.damperPedalField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("soft-pedal")]
-        public string softpedal
+        public string softPedal
         {
             get
             {
-                return this.softpedalField;
+                return this.softPedalField;
             }
             set
             {
-                this.softpedalField = value;
+                this.softPedalField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("sostenuto-pedal")]
-        public string sostenutopedal
+        public string sostenutoPedal
         {
             get
             {
-                return this.sostenutopedalField;
+                return this.sostenutoPedalField;
             }
             set
             {
-                this.sostenutopedalField = value;
+                this.sostenutoPedalField = value;
             }
         }
 
@@ -22210,15 +22210,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class MidiInstrument
     {
 
-        private string midichannelField;
+        private string midiChannelField;
 
-        private string midinameField;
+        private string midiNameField;
 
-        private string midibankField;
+        private string midiBankField;
 
-        private string midiprogramField;
+        private string midiProgramField;
 
-        private string midiunpitchedField;
+        private string midiUnpitchedField;
 
         private decimal volumeField;
 
@@ -22237,67 +22237,67 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("midi-channel", DataType = "positiveInteger", Order = 0)]
-        public string midichannel
+        public string midiChannel
         {
             get
             {
-                return this.midichannelField;
+                return this.midiChannelField;
             }
             set
             {
-                this.midichannelField = value;
+                this.midiChannelField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("midi-name", Order = 1)]
-        public string midiname
+        public string midiName
         {
             get
             {
-                return this.midinameField;
+                return this.midiNameField;
             }
             set
             {
-                this.midinameField = value;
+                this.midiNameField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("midi-bank", DataType = "positiveInteger", Order = 2)]
-        public string midibank
+        public string midiBank
         {
             get
             {
-                return this.midibankField;
+                return this.midiBankField;
             }
             set
             {
-                this.midibankField = value;
+                this.midiBankField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("midi-program", DataType = "positiveInteger", Order = 3)]
-        public string midiprogram
+        public string midiProgram
         {
             get
             {
-                return this.midiprogramField;
+                return this.midiProgramField;
             }
             set
             {
-                this.midiprogramField = value;
+                this.midiProgramField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("midi-unpitched", DataType = "positiveInteger", Order = 4)]
-        public string midiunpitched
+        public string midiUnpitched
         {
             get
             {
-                return this.midiunpitchedField;
+                return this.midiUnpitchedField;
             }
             set
             {
-                this.midiunpitchedField = value;
+                this.midiUnpitchedField = value;
             }
         }
 
@@ -22587,7 +22587,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
         #endregion
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23153,37 +23153,37 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class OtherDirection
     {
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private string valueField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -23403,9 +23403,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Stick
     {
 
-        private StickType sticktypeField;
+        private StickType stickTypeField;
 
-        private StickMaterial stickmaterialField;
+        private StickMaterial stickMaterialField;
 
         private TipDirection tipField;
 
@@ -23414,28 +23414,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("stick-type", Order = 0)]
-        public StickType sticktype
+        public StickType stickType
         {
             get
             {
-                return this.sticktypeField;
+                return this.stickTypeField;
             }
             set
             {
-                this.sticktypeField = value;
+                this.stickTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("stick-material", Order = 1)]
-        public StickMaterial stickmaterial
+        public StickMaterial stickMaterial
         {
             get
             {
-                return this.stickmaterialField;
+                return this.stickMaterialField;
             }
             set
             {
-                this.stickmaterialField = value;
+                this.stickMaterialField = value;
             }
         }
 
@@ -24666,50 +24666,50 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class AccordionRegistration
     {
 
-        private Empty accordionhighField;
+        private Empty accordionHighField;
 
-        private string accordionmiddleField;
+        private string accordionMiddleField;
 
-        private Empty accordionlowField;
+        private Empty accordionLowField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("accordion-high", Order = 0)]
-        public Empty accordionhigh
+        public Empty accordionHigh
         {
             get
             {
-                return this.accordionhighField;
+                return this.accordionHighField;
             }
             set
             {
-                this.accordionhighField = value;
+                this.accordionHighField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("accordion-middle", DataType = "positiveInteger", Order = 1)]
-        public string accordionmiddle
+        public string accordionMiddle
         {
             get
             {
-                return this.accordionmiddleField;
+                return this.accordionMiddleField;
             }
             set
             {
-                this.accordionmiddleField = value;
+                this.accordionMiddleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("accordion-low", Order = 2)]
-        public Empty accordionlow
+        public Empty accordionLow
         {
             get
             {
-                return this.accordionlowField;
+                return this.accordionLowField;
             }
             set
             {
-                this.accordionlowField = value;
+                this.accordionLowField = value;
             }
         }
 
@@ -25406,67 +25406,67 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Accord
     {
 
-        private Step tuningstepField;
+        private Step tuningStepField;
 
-        private decimal tuningalterField;
+        private decimal tuningAlterField;
 
-        private bool tuningalterFieldSpecified;
+        private bool tuningAlterFieldSpecified;
 
-        private string tuningoctaveField;
+        private string tuningOctaveField;
 
         private string stringField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-step", Order = 0)]
-        public Step tuningstep
+        public Step tuningStep
         {
             get
             {
-                return this.tuningstepField;
+                return this.tuningStepField;
             }
             set
             {
-                this.tuningstepField = value;
+                this.tuningStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-alter", Order = 1)]
-        public decimal tuningalter
+        public decimal tuningAlter
         {
             get
             {
-                return this.tuningalterField;
+                return this.tuningAlterField;
             }
             set
             {
-                this.tuningalterField = value;
+                this.tuningAlterField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool tuningalterSpecified
+        public bool tuningAlterSpecified
         {
             get
             {
-                return this.tuningalterFieldSpecified;
+                return this.tuningAlterFieldSpecified;
             }
             set
             {
-                this.tuningalterFieldSpecified = value;
+                this.tuningAlterFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuning-octave", DataType = "integer", Order = 2)]
-        public string tuningoctave
+        public string tuningOctave
         {
             get
             {
-                return this.tuningoctaveField;
+                return this.tuningOctaveField;
             }
             set
             {
-                this.tuningoctaveField = value;
+                this.tuningOctaveField = value;
             }
         }
 
@@ -25921,35 +25921,35 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class PedalTuning
     {
 
-        private Step pedalstepField;
+        private Step pedalStepField;
 
-        private decimal pedalalterField;
+        private decimal pedalAlterField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("pedal-step", Order = 0)]
-        public Step pedalstep
+        public Step pedalStep
         {
             get
             {
-                return this.pedalstepField;
+                return this.pedalStepField;
             }
             set
             {
-                this.pedalstepField = value;
+                this.pedalStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("pedal-alter", Order = 1)]
-        public decimal pedalalter
+        public decimal pedalAlter
         {
             get
             {
-                return this.pedalalterField;
+                return this.pedalAlterField;
             }
             set
             {
-                this.pedalalterField = value;
+                this.pedalAlterField = value;
             }
         }
 
@@ -25967,7 +25967,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current pedaltuning object into an XML document
+        /// Serializes current pedalTuning object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -25996,10 +25996,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an pedaltuning object
+        /// Deserializes workflow markup into an pedalTuning object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output pedaltuning object</param>
+        /// <param name="obj">Output pedalTuning object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out PedalTuning obj, out System.Exception exception)
@@ -26042,7 +26042,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current pedaltuning object into file
+        /// Serializes current pedalTuning object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -26083,10 +26083,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an pedaltuning object
+        /// Deserializes xml markup from file into an pedalTuning object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output pedaltuning object</param>
+        /// <param name="obj">Output pedalTuning object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out PedalTuning obj, out System.Exception exception)
@@ -26140,7 +26140,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this pedaltuning object
+        /// Create a clone of this pedalTuning object
         /// </summary>
         public virtual PedalTuning Clone()
         {
@@ -26157,20 +26157,20 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class HarpPedals
     {
 
-        private PedalTuning[] pedaltuningField;
+        private PedalTuning[] pedalTuningField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("pedal-tuning", Order = 0)]
-        public PedalTuning[] pedaltuning
+        public PedalTuning[] pedalTuning
         {
             get
             {
-                return this.pedaltuningField;
+                return this.pedalTuningField;
             }
             set
             {
-                this.pedaltuningField = value;
+                this.pedalTuningField = value;
             }
         }
 
@@ -26384,13 +26384,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string sizeField;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -26440,54 +26440,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
@@ -26980,39 +26980,39 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class MetronomeNote
     {
 
-        private NoteTypeValue metronometypeField;
+        private NoteTypeValue metronomeTypeField;
 
-        private Empty[] metronomedotField;
+        private Empty[] metronomeDotField;
 
         private MetronomeBeam[] metronomebeamField;
 
-        private MetronomeTuplet metronometupletField;
+        private MetronomeTuplet metronomeTupletField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("metronome-type", Order = 0)]
-        public NoteTypeValue metronometype
+        public NoteTypeValue metronomeType
         {
             get
             {
-                return this.metronometypeField;
+                return this.metronomeTypeField;
             }
             set
             {
-                this.metronometypeField = value;
+                this.metronomeTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("metronome-dot", Order = 1)]
-        public Empty[] metronomedot
+        public Empty[] metronomeDot
         {
             get
             {
-                return this.metronomedotField;
+                return this.metronomeDotField;
             }
             set
             {
-                this.metronomedotField = value;
+                this.metronomeDotField = value;
             }
         }
 
@@ -27030,15 +27030,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("metronome-tuplet", Order = 3)]
-        public MetronomeTuplet metronometuplet
+        public MetronomeTuplet metronomeTuplet
         {
             get
             {
-                return this.metronometupletField;
+                return this.metronomeTupletField;
             }
             set
             {
-                this.metronometupletField = value;
+                this.metronomeTupletField = value;
             }
         }
 
@@ -27252,9 +27252,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool bracketFieldSpecified;
 
-        private ShowTuplet shownumberField;
+        private ShowTuplet showNumberField;
 
-        private bool shownumberFieldSpecified;
+        private bool showNumberFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -27298,28 +27298,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("show-number")]
-        public ShowTuplet shownumber
+        public ShowTuplet showNumber
         {
             get
             {
-                return this.shownumberField;
+                return this.showNumberField;
             }
             set
             {
-                this.shownumberField = value;
+                this.showNumberField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool shownumberSpecified
+        public bool showNumberSpecified
         {
             get
             {
-                return this.shownumberFieldSpecified;
+                return this.showNumberFieldSpecified;
             }
             set
             {
-                this.shownumberFieldSpecified = value;
+                this.showNumberFieldSpecified = value;
             }
         }
 
@@ -27337,7 +27337,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current metronometuplet object into an XML document
+        /// Serializes current metronomeTuplet object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -27366,10 +27366,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an metronometuplet object
+        /// Deserializes workflow markup into an metronomeTuplet object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output metronometuplet object</param>
+        /// <param name="obj">Output metronomeTuplet object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out MetronomeTuplet obj, out System.Exception exception)
@@ -27412,7 +27412,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current metronometuplet object into file
+        /// Serializes current metronomeTuplet object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -27453,10 +27453,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an metronometuplet object
+        /// Deserializes xml markup from file into an metronomeTuplet object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output metronometuplet object</param>
+        /// <param name="obj">Output metronomeTuplet object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out MetronomeTuplet obj, out System.Exception exception)
@@ -27510,7 +27510,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this metronometuplet object
+        /// Create a clone of this metronomeTuplet object
         /// </summary>
         public virtual MetronomeTuplet Clone()
         {
@@ -27544,65 +27544,65 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TimeModification
     {
 
-        private string actualnotesField;
+        private string actualNotesField;
 
-        private string normalnotesField;
+        private string normalNotesField;
 
-        private NoteTypeValue normaltypeField;
+        private NoteTypeValue normalTypeField;
 
-        private Empty[] normaldotField;
+        private Empty[] normalDotField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("actual-notes", DataType = "nonNegativeInteger", Order = 0)]
-        public string actualnotes
+        public string actualNotes
         {
             get
             {
-                return this.actualnotesField;
+                return this.actualNotesField;
             }
             set
             {
-                this.actualnotesField = value;
+                this.actualNotesField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("normal-notes", DataType = "nonNegativeInteger", Order = 1)]
-        public string normalnotes
+        public string normalNotes
         {
             get
             {
-                return this.normalnotesField;
+                return this.normalNotesField;
             }
             set
             {
-                this.normalnotesField = value;
+                this.normalNotesField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("normal-type", Order = 2)]
-        public NoteTypeValue normaltype
+        public NoteTypeValue normalType
         {
             get
             {
-                return this.normaltypeField;
+                return this.normalTypeField;
             }
             set
             {
-                this.normaltypeField = value;
+                this.normalTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("normal-dot", Order = 3)]
-        public Empty[] normaldot
+        public Empty[] normalDot
         {
             get
             {
-                return this.normaldotField;
+                return this.normalDotField;
             }
             set
             {
-                this.normaldotField = value;
+                this.normalDotField = value;
             }
         }
 
@@ -27620,7 +27620,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current timemodification object into an XML document
+        /// Serializes current timeModification object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -27649,10 +27649,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an timemodification object
+        /// Deserializes workflow markup into an timeModification object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output timemodification object</param>
+        /// <param name="obj">Output timeModification object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out TimeModification obj, out System.Exception exception)
@@ -27695,7 +27695,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current timemodification object into file
+        /// Serializes current timeModification object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -27736,10 +27736,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an timemodification object
+        /// Deserializes xml markup from file into an timeModification object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output timemodification object</param>
+        /// <param name="obj">Output timeModification object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out TimeModification obj, out System.Exception exception)
@@ -27793,7 +27793,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this timemodification object
+        /// Create a clone of this timeModification object
         /// </summary>
         public virtual TimeModification Clone()
         {
@@ -27810,97 +27810,97 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class PerMinute
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string valueField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -28707,39 +28707,39 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private LineEnd lineendField;
+        private LineEnd lineEndField;
 
-        private decimal endlengthField;
+        private decimal endLengthField;
 
-        private bool endlengthFieldSpecified;
+        private bool endLengthFieldSpecified;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -28772,223 +28772,223 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-end")]
-        public LineEnd lineend
+        public LineEnd lineEnd
         {
             get
             {
-                return this.lineendField;
+                return this.lineEndField;
             }
             set
             {
-                this.lineendField = value;
+                this.lineEndField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("end-length")]
-        public decimal endlength
+        public decimal endLength
         {
             get
             {
-                return this.endlengthField;
+                return this.endLengthField;
             }
             set
             {
-                this.endlengthField = value;
+                this.endLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool endlengthSpecified
+        public bool endLengthSpecified
         {
             get
             {
-                return this.endlengthFieldSpecified;
+                return this.endLengthFieldSpecified;
             }
             set
             {
-                this.endlengthFieldSpecified = value;
+                this.endLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -29253,29 +29253,29 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -29308,158 +29308,158 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -29691,33 +29691,33 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool nienteFieldSpecified;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -29802,184 +29802,184 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -30489,7 +30489,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string overlineField;
 
-        private string linethroughField;
+        private string lineThroughField;
 
         private EnclosureShape enclosureField;
 
@@ -30601,15 +30601,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-through", DataType = "nonNegativeInteger")]
-        public string linethrough
+        public string lineThrough
         {
             get
             {
-                return this.linethroughField;
+                return this.lineThroughField;
             }
             set
             {
-                this.linethroughField = value;
+                this.lineThroughField = value;
             }
         }
 
@@ -32138,17 +32138,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TextFontColor
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -32156,13 +32156,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string overlineField;
 
-        private string linethroughField;
+        private string lineThroughField;
 
         private decimal rotationField;
 
         private bool rotationFieldSpecified;
 
-        private string letterspacingField;
+        private string letterSpacingField;
 
         private string langField;
 
@@ -32175,80 +32175,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -32292,15 +32292,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-through", DataType = "nonNegativeInteger")]
-        public string linethrough
+        public string lineThrough
         {
             get
             {
-                return this.linethroughField;
+                return this.lineThroughField;
             }
             set
             {
-                this.linethroughField = value;
+                this.lineThroughField = value;
             }
         }
 
@@ -32331,15 +32331,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("letter-spacing")]
-        public string letterspacing
+        public string letterSpacing
         {
             get
             {
-                return this.letterspacingField;
+                return this.letterSpacingField;
             }
             set
             {
-                this.letterspacingField = value;
+                this.letterSpacingField = value;
             }
         }
 
@@ -32618,17 +32618,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TextElementData
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -32636,13 +32636,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string overlineField;
 
-        private string linethroughField;
+        private string lineThroughField;
 
         private decimal rotationField;
 
         private bool rotationFieldSpecified;
 
-        private string letterspacingField;
+        private string letterSpacingField;
 
         private string langField;
 
@@ -32655,80 +32655,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -32772,15 +32772,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-through", DataType = "nonNegativeInteger")]
-        public string linethrough
+        public string lineThrough
         {
             get
             {
-                return this.linethroughField;
+                return this.lineThroughField;
             }
             set
             {
-                this.linethroughField = value;
+                this.lineThroughField = value;
             }
         }
 
@@ -32811,15 +32811,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("letter-spacing")]
-        public string letterspacing
+        public string letterSpacing
         {
             get
             {
-                return this.letterspacingField;
+                return this.letterSpacingField;
             }
             set
             {
-                this.letterspacingField = value;
+                this.letterSpacingField = value;
             }
         }
 
@@ -33082,9 +33082,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private ItemsChoiceType6[] itemsElementNameField;
 
-        private Empty endlineField;
+        private Empty endLineField;
 
-        private Empty endparagraphField;
+        private Empty endParagraphField;
 
         private FormattedText footnoteField;
 
@@ -33098,21 +33098,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool justifyFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -33120,9 +33120,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string colorField;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -33160,28 +33160,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("end-line", Order = 2)]
-        public Empty endline
+        public Empty endLine
         {
             get
             {
-                return this.endlineField;
+                return this.endLineField;
             }
             set
             {
-                this.endlineField = value;
+                this.endLineField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("end-paragraph", Order = 3)]
-        public Empty endparagraph
+        public Empty endParagraph
         {
             get
             {
-                return this.endparagraphField;
+                return this.endParagraphField;
             }
             set
             {
-                this.endparagraphField = value;
+                this.endParagraphField = value;
             }
         }
 
@@ -33264,106 +33264,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -33407,28 +33407,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -33683,9 +33683,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -33728,28 +33728,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -34000,21 +34000,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -34051,106 +34051,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -34415,21 +34415,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool directionFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -34479,106 +34479,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -36059,21 +36059,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class EmptyLine
     {
 
-        private LineShape lineshapeField;
+        private LineShape lineShapeField;
 
-        private bool lineshapeFieldSpecified;
+        private bool lineShapeFieldSpecified;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -36082,106 +36082,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-shape")]
-        public LineShape lineshape
+        public LineShape lineShape
         {
             get
             {
-                return this.lineshapeField;
+                return this.lineShapeField;
             }
             set
             {
-                this.lineshapeField = value;
+                this.lineShapeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lineshapeSpecified
+        public bool lineShapeSpecified
         {
             get
             {
-                return this.lineshapeFieldSpecified;
+                return this.lineShapeFieldSpecified;
             }
             set
             {
-                this.lineshapeFieldSpecified = value;
+                this.lineShapeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
@@ -36729,7 +36729,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         /// <remarks/>
         unstress,
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37340,13 +37340,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Bend
     {
 
-        private decimal bendalterField;
+        private decimal bendAlterField;
 
         private Empty itemField;
 
         private ItemChoiceType1 itemElementNameField;
 
-        private PlacementText withbarField;
+        private PlacementText withBarField;
 
         private YesNo accelerateField;
 
@@ -37356,26 +37356,26 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool beatsFieldSpecified;
 
-        private decimal firstbeatField;
+        private decimal firstBeatField;
 
-        private bool firstbeatFieldSpecified;
+        private bool firstBeatFieldSpecified;
 
-        private decimal lastbeatField;
+        private decimal lastBeatField;
 
-        private bool lastbeatFieldSpecified;
+        private bool lastBeatFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("bend-alter", Order = 0)]
-        public decimal bendalter
+        public decimal bendAlter
         {
             get
             {
-                return this.bendalterField;
+                return this.bendAlterField;
             }
             set
             {
-                this.bendalterField = value;
+                this.bendAlterField = value;
             }
         }
 
@@ -37409,15 +37409,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("with-bar", Order = 3)]
-        public PlacementText withbar
+        public PlacementText withBar
         {
             get
             {
-                return this.withbarField;
+                return this.withBarField;
             }
             set
             {
-                this.withbarField = value;
+                this.withBarField = value;
             }
         }
 
@@ -37474,54 +37474,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("first-beat")]
-        public decimal firstbeat
+        public decimal firstBeat
         {
             get
             {
-                return this.firstbeatField;
+                return this.firstBeatField;
             }
             set
             {
-                this.firstbeatField = value;
+                this.firstBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool firstbeatSpecified
+        public bool firstBeatSpecified
         {
             get
             {
-                return this.firstbeatFieldSpecified;
+                return this.firstBeatFieldSpecified;
             }
             set
             {
-                this.firstbeatFieldSpecified = value;
+                this.firstBeatFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("last-beat")]
-        public decimal lastbeat
+        public decimal lastBeat
         {
             get
             {
-                return this.lastbeatField;
+                return this.lastBeatField;
             }
             set
             {
-                this.lastbeatField = value;
+                this.lastBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lastbeatSpecified
+        public bool lastBeatSpecified
         {
             get
             {
-                return this.lastbeatFieldSpecified;
+                return this.lastBeatFieldSpecified;
             }
             set
             {
-                this.lastbeatFieldSpecified = value;
+                this.lastBeatFieldSpecified = value;
             }
         }
 
@@ -38333,9 +38333,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Item1ChoiceType item1ElementNameField;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -38403,28 +38403,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -38689,11 +38689,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Hole
     {
 
-        private string holetypeField;
+        private string holeTypeeField;
 
-        private HoleClosed holeclosedField;
+        private HoleClosed holeClosedField;
 
-        private string holeshapeField;
+        private string holeShapeField;
 
         private AboveBelow placementField;
 
@@ -38702,41 +38702,41 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("hole-type", Order = 0)]
-        public string holetype
+        public string holeTypee
         {
             get
             {
-                return this.holetypeField;
+                return this.holeTypeeField;
             }
             set
             {
-                this.holetypeField = value;
+                this.holeTypeeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("hole-closed", Order = 1)]
-        public HoleClosed holeclosed
+        public HoleClosed holeClosed
         {
             get
             {
-                return this.holeclosedField;
+                return this.holeClosedField;
             }
             set
             {
-                this.holeclosedField = value;
+                this.holeClosedField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("hole-shape", Order = 2)]
-        public string holeshape
+        public string holeShape
         {
             get
             {
-                return this.holeshapeField;
+                return this.holeShapeField;
             }
             set
             {
-                this.holeshapeField = value;
+                this.holeShapeField = value;
             }
         }
 
@@ -39031,7 +39031,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current holeclosed object into an XML document
+        /// Serializes current holeClosed object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -39060,10 +39060,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an holeclosed object
+        /// Deserializes workflow markup into an holeClosed object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output holeclosed object</param>
+        /// <param name="obj">Output holeClosed object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out HoleClosed obj, out System.Exception exception)
@@ -39106,7 +39106,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current holeclosed object into file
+        /// Serializes current holeClosed object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -39147,10 +39147,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an holeclosed object
+        /// Deserializes xml markup from file into an holeClosed object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output holeclosed object</param>
+        /// <param name="obj">Output holeClosed object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out HoleClosed obj, out System.Exception exception)
@@ -39204,7 +39204,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this holeclosed object
+        /// Create a clone of this holeClosed object
         /// </summary>
         public virtual HoleClosed Clone()
         {
@@ -39871,17 +39871,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool placementFieldSpecified;
 
-        private StartNote startnoteField;
+        private StartNote startNoteField;
 
-        private bool startnoteFieldSpecified;
+        private bool startNoteFieldSpecified;
 
-        private TrillStep trillstepField;
+        private TrillStep trillStepField;
 
-        private bool trillstepFieldSpecified;
+        private bool trillStepFieldSpecified;
 
-        private TwoNoteTurn twonoteturnField;
+        private TwoNoteTurn twoNoteTurnField;
 
-        private bool twonoteturnFieldSpecified;
+        private bool twoNoteTurnFieldSpecified;
 
         private YesNo accelerateField;
 
@@ -39891,13 +39891,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool beatsFieldSpecified;
 
-        private decimal secondbeatField;
+        private decimal secondBeatField;
 
-        private bool secondbeatFieldSpecified;
+        private bool secondBeatFieldSpecified;
 
-        private decimal lastbeatField;
+        private decimal lastBeatField;
 
-        private bool lastbeatFieldSpecified;
+        private bool lastBeatFieldSpecified;
 
         private YesNo slashField;
 
@@ -39932,80 +39932,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("start-note")]
-        public StartNote startnote
+        public StartNote startNote
         {
             get
             {
-                return this.startnoteField;
+                return this.startNoteField;
             }
             set
             {
-                this.startnoteField = value;
+                this.startNoteField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool startnoteSpecified
+        public bool startNoteSpecified
         {
             get
             {
-                return this.startnoteFieldSpecified;
+                return this.startNoteFieldSpecified;
             }
             set
             {
-                this.startnoteFieldSpecified = value;
+                this.startNoteFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("trill-step")]
-        public TrillStep trillstep
+        public TrillStep trillStep
         {
             get
             {
-                return this.trillstepField;
+                return this.trillStepField;
             }
             set
             {
-                this.trillstepField = value;
+                this.trillStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool trillstepSpecified
+        public bool trillStepSpecified
         {
             get
             {
-                return this.trillstepFieldSpecified;
+                return this.trillStepFieldSpecified;
             }
             set
             {
-                this.trillstepFieldSpecified = value;
+                this.trillStepFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("two-note-turn")]
-        public TwoNoteTurn twonoteturn
+        public TwoNoteTurn twoNoteTurn
         {
             get
             {
-                return this.twonoteturnField;
+                return this.twoNoteTurnField;
             }
             set
             {
-                this.twonoteturnField = value;
+                this.twoNoteTurnField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool twonoteturnSpecified
+        public bool twoNoteTurnSpecified
         {
             get
             {
-                return this.twonoteturnFieldSpecified;
+                return this.twoNoteTurnFieldSpecified;
             }
             set
             {
-                this.twonoteturnFieldSpecified = value;
+                this.twoNoteTurnFieldSpecified = value;
             }
         }
 
@@ -40062,54 +40062,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("second-beat")]
-        public decimal secondbeat
+        public decimal secondBeat
         {
             get
             {
-                return this.secondbeatField;
+                return this.secondBeatField;
             }
             set
             {
-                this.secondbeatField = value;
+                this.secondBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool secondbeatSpecified
+        public bool secondBeatSpecified
         {
             get
             {
-                return this.secondbeatFieldSpecified;
+                return this.secondBeatFieldSpecified;
             }
             set
             {
-                this.secondbeatFieldSpecified = value;
+                this.secondBeatFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("last-beat")]
-        public decimal lastbeat
+        public decimal lastBeat
         {
             get
             {
-                return this.lastbeatField;
+                return this.lastBeatField;
             }
             set
             {
-                this.lastbeatField = value;
+                this.lastBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lastbeatSpecified
+        public bool lastBeatSpecified
         {
             get
             {
-                return this.lastbeatFieldSpecified;
+                return this.lastBeatFieldSpecified;
             }
             set
             {
-                this.lastbeatFieldSpecified = value;
+                this.lastBeatFieldSpecified = value;
             }
         }
 
@@ -40348,17 +40348,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool placementFieldSpecified;
 
-        private StartNote startnoteField;
+        private StartNote startNoteField;
 
-        private bool startnoteFieldSpecified;
+        private bool startNoteFieldSpecified;
 
-        private TrillStep trillstepField;
+        private TrillStep trillStepField;
 
-        private bool trillstepFieldSpecified;
+        private bool trillStepFieldSpecified;
 
-        private TwoNoteTurn twonoteturnField;
+        private TwoNoteTurn twoNoteTurnField;
 
-        private bool twonoteturnFieldSpecified;
+        private bool twoNoteTurnFieldSpecified;
 
         private YesNo accelerateField;
 
@@ -40368,13 +40368,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool beatsFieldSpecified;
 
-        private decimal secondbeatField;
+        private decimal secondBeatField;
 
-        private bool secondbeatFieldSpecified;
+        private bool secondBeatFieldSpecified;
 
-        private decimal lastbeatField;
+        private decimal lastBeatField;
 
-        private bool lastbeatFieldSpecified;
+        private bool lastBeatFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -40405,80 +40405,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("start-note")]
-        public StartNote startnote
+        public StartNote startNote
         {
             get
             {
-                return this.startnoteField;
+                return this.startNoteField;
             }
             set
             {
-                this.startnoteField = value;
+                this.startNoteField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool startnoteSpecified
+        public bool startNoteSpecified
         {
             get
             {
-                return this.startnoteFieldSpecified;
+                return this.startNoteFieldSpecified;
             }
             set
             {
-                this.startnoteFieldSpecified = value;
+                this.startNoteFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("trill-step")]
-        public TrillStep trillstep
+        public TrillStep trillStep
         {
             get
             {
-                return this.trillstepField;
+                return this.trillStepField;
             }
             set
             {
-                this.trillstepField = value;
+                this.trillStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool trillstepSpecified
+        public bool trillStepSpecified
         {
             get
             {
-                return this.trillstepFieldSpecified;
+                return this.trillStepFieldSpecified;
             }
             set
             {
-                this.trillstepFieldSpecified = value;
+                this.trillStepFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("two-note-turn")]
-        public TwoNoteTurn twonoteturn
+        public TwoNoteTurn twoNoteTurn
         {
             get
             {
-                return this.twonoteturnField;
+                return this.twoNoteTurnField;
             }
             set
             {
-                this.twonoteturnField = value;
+                this.twoNoteTurnField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool twonoteturnSpecified
+        public bool twoNoteTurnSpecified
         {
             get
             {
-                return this.twonoteturnFieldSpecified;
+                return this.twoNoteTurnFieldSpecified;
             }
             set
             {
-                this.twonoteturnFieldSpecified = value;
+                this.twoNoteTurnFieldSpecified = value;
             }
         }
 
@@ -40535,54 +40535,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("second-beat")]
-        public decimal secondbeat
+        public decimal secondBeat
         {
             get
             {
-                return this.secondbeatField;
+                return this.secondBeatField;
             }
             set
             {
-                this.secondbeatField = value;
+                this.secondBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool secondbeatSpecified
+        public bool secondBeatSpecified
         {
             get
             {
-                return this.secondbeatFieldSpecified;
+                return this.secondBeatFieldSpecified;
             }
             set
             {
-                this.secondbeatFieldSpecified = value;
+                this.secondBeatFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("last-beat")]
-        public decimal lastbeat
+        public decimal lastBeat
         {
             get
             {
-                return this.lastbeatField;
+                return this.lastBeatField;
             }
             set
             {
-                this.lastbeatField = value;
+                this.lastBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lastbeatSpecified
+        public bool lastBeatSpecified
         {
             get
             {
-                return this.lastbeatFieldSpecified;
+                return this.lastBeatFieldSpecified;
             }
             set
             {
-                this.lastbeatFieldSpecified = value;
+                this.lastBeatFieldSpecified = value;
             }
         }
 
@@ -41396,17 +41396,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
         private YesNo accelerateField;
 
@@ -41416,13 +41416,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool beatsFieldSpecified;
 
-        private decimal firstbeatField;
+        private decimal firstBeatField;
 
-        private bool firstbeatFieldSpecified;
+        private bool firstBeatFieldSpecified;
 
-        private decimal lastbeatField;
+        private decimal lastBeatField;
 
-        private bool lastbeatFieldSpecified;
+        private bool lastBeatFieldSpecified;
 
         private string valueField;
 
@@ -41461,80 +41461,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
@@ -41591,54 +41591,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("first-beat")]
-        public decimal firstbeat
+        public decimal firstBeat
         {
             get
             {
-                return this.firstbeatField;
+                return this.firstBeatField;
             }
             set
             {
-                this.firstbeatField = value;
+                this.firstBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool firstbeatSpecified
+        public bool firstBeatSpecified
         {
             get
             {
-                return this.firstbeatFieldSpecified;
+                return this.firstBeatFieldSpecified;
             }
             set
             {
-                this.firstbeatFieldSpecified = value;
+                this.firstBeatFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("last-beat")]
-        public decimal lastbeat
+        public decimal lastBeat
         {
             get
             {
-                return this.lastbeatField;
+                return this.lastBeatField;
             }
             set
             {
-                this.lastbeatField = value;
+                this.lastBeatField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lastbeatSpecified
+        public bool lastBeatSpecified
         {
             get
             {
-                return this.lastbeatFieldSpecified;
+                return this.lastBeatFieldSpecified;
             }
             set
             {
-                this.lastbeatFieldSpecified = value;
+                this.lastBeatFieldSpecified = value;
             }
         }
 
@@ -41862,17 +41862,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
         private string valueField;
 
@@ -41911,80 +41911,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
@@ -42205,97 +42205,97 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TupletDot
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -42326,7 +42326,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current tupletdot object into an XML document
+        /// Serializes current tupletDot object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -42355,10 +42355,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an tupletdot object
+        /// Deserializes workflow markup into an tupletDot object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output tupletdot object</param>
+        /// <param name="obj">Output tupletDot object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out TupletDot obj, out System.Exception exception)
@@ -42401,7 +42401,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current tupletdot object into file
+        /// Serializes current tupletDot object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -42442,10 +42442,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an tupletdot object
+        /// Deserializes xml markup from file into an tupletDot object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output tupletdot object</param>
+        /// <param name="obj">Output tupletDot object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out TupletDot obj, out System.Exception exception)
@@ -42499,7 +42499,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this tupletdot object
+        /// Create a clone of this tupletDot object
         /// </summary>
         public virtual TupletDot Clone()
         {
@@ -42516,17 +42516,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TupletType
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -42535,80 +42535,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -42652,7 +42652,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current tuplettype object into an XML document
+        /// Serializes current tupletType object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -42681,10 +42681,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an tuplettype object
+        /// Deserializes workflow markup into an tupletType object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output tuplettype object</param>
+        /// <param name="obj">Output tupletType object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out TupletType obj, out System.Exception exception)
@@ -42727,7 +42727,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current tuplettype object into file
+        /// Serializes current tupletType object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -42768,10 +42768,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an tuplettype object
+        /// Deserializes xml markup from file into an tupletType object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output tuplettype object</param>
+        /// <param name="obj">Output tupletType object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out TupletType obj, out System.Exception exception)
@@ -42825,7 +42825,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this tuplettype object
+        /// Create a clone of this tupletType object
         /// </summary>
         public virtual TupletType Clone()
         {
@@ -42839,20 +42839,20 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName = "tuplet-number")]
     [System.Xml.Serialization.XmlRootAttribute("tuplet-number", Namespace = "", IsNullable = true)]
-    public partial class tupletnumber
+    public partial class tupletNumber
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -42861,80 +42861,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -42970,7 +42970,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(tupletnumber));
+                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(tupletNumber));
                 }
                 return serializer;
             }
@@ -42978,7 +42978,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current tupletnumber object into an XML document
+        /// Serializes current tupletNumber object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -43007,16 +43007,16 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an tupletnumber object
+        /// Deserializes workflow markup into an tupletNumber object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output tupletnumber object</param>
+        /// <param name="obj">Output tupletNumber object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out tupletnumber obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out tupletNumber obj, out System.Exception exception)
         {
             exception = null;
-            obj = default(tupletnumber);
+            obj = default(tupletNumber);
             try
             {
                 obj = Deserialize(xml);
@@ -43029,19 +43029,19 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
             }
         }
 
-        public static bool Deserialize(string xml, out tupletnumber obj)
+        public static bool Deserialize(string xml, out tupletNumber obj)
         {
             System.Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
-        public static tupletnumber Deserialize(string xml)
+        public static tupletNumber Deserialize(string xml)
         {
             System.IO.StringReader stringReader = null;
             try
             {
                 stringReader = new System.IO.StringReader(xml);
-                return ((tupletnumber)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Parse }))));
+                return ((tupletNumber)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Parse }))));
             }
             finally
             {
@@ -43053,7 +43053,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current tupletnumber object into file
+        /// Serializes current tupletNumber object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -43094,16 +43094,16 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an tupletnumber object
+        /// Deserializes xml markup from file into an tupletNumber object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output tupletnumber object</param>
+        /// <param name="obj">Output tupletNumber object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out tupletnumber obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out tupletNumber obj, out System.Exception exception)
         {
             exception = null;
-            obj = default(tupletnumber);
+            obj = default(tupletNumber);
             try
             {
                 obj = LoadFromFile(fileName);
@@ -43116,13 +43116,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
             }
         }
 
-        public static bool LoadFromFile(string fileName, out tupletnumber obj)
+        public static bool LoadFromFile(string fileName, out tupletNumber obj)
         {
             System.Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
-        public static tupletnumber LoadFromFile(string fileName)
+        public static tupletNumber LoadFromFile(string fileName)
         {
             System.IO.FileStream file = null;
             System.IO.StreamReader sr = null;
@@ -43151,11 +43151,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this tupletnumber object
+        /// Create a clone of this tupletNumber object
         /// </summary>
-        public virtual tupletnumber Clone()
+        public virtual tupletNumber Clone()
         {
-            return ((tupletnumber)(this.MemberwiseClone()));
+            return ((tupletNumber)(this.MemberwiseClone()));
         }
         #endregion
     }
@@ -43168,50 +43168,50 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class TupletPortion
     {
 
-        private tupletnumber tupletnumberField;
+        private tupletNumber tupletNumberField;
 
-        private TupletType tuplettypeField;
+        private TupletType tupletTypeField;
 
-        private TupletDot[] tupletdotField;
+        private TupletDot[] tupletDotField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("tuplet-number", Order = 0)]
-        public tupletnumber tupletnumber
+        public tupletNumber tupletNumber
         {
             get
             {
-                return this.tupletnumberField;
+                return this.tupletNumberField;
             }
             set
             {
-                this.tupletnumberField = value;
+                this.tupletNumberField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuplet-type", Order = 1)]
-        public TupletType tuplettype
+        public TupletType tupletType
         {
             get
             {
-                return this.tuplettypeField;
+                return this.tupletTypeField;
             }
             set
             {
-                this.tuplettypeField = value;
+                this.tupletTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuplet-dot", Order = 2)]
-        public TupletDot[] tupletdot
+        public TupletDot[] tupletDot
         {
             get
             {
-                return this.tupletdotField;
+                return this.tupletDotField;
             }
             set
             {
-                this.tupletdotField = value;
+                this.tupletDotField = value;
             }
         }
 
@@ -43418,9 +43418,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Tuplet
     {
 
-        private TupletPortion tupletactualField;
+        private TupletPortion tupletActualField;
 
-        private TupletPortion tupletnormalField;
+        private TupletPortion tupletNormalField;
 
         private StartStop typeField;
 
@@ -43430,33 +43430,33 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool bracketFieldSpecified;
 
-        private ShowTuplet shownumberField;
+        private ShowTuplet showNumberField;
 
-        private bool shownumberFieldSpecified;
+        private bool showNumberFieldSpecified;
 
         private ShowTuplet showtypeField;
 
         private bool showtypeFieldSpecified;
 
-        private LineShape lineshapeField;
+        private LineShape lineShapeField;
 
-        private bool lineshapeFieldSpecified;
+        private bool lineShapeFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -43465,28 +43465,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("tuplet-actual", Order = 0)]
-        public TupletPortion tupletactual
+        public TupletPortion tupletActual
         {
             get
             {
-                return this.tupletactualField;
+                return this.tupletActualField;
             }
             set
             {
-                this.tupletactualField = value;
+                this.tupletActualField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("tuplet-normal", Order = 1)]
-        public TupletPortion tupletnormal
+        public TupletPortion tupletNormal
         {
             get
             {
-                return this.tupletnormalField;
+                return this.tupletNormalField;
             }
             set
             {
-                this.tupletnormalField = value;
+                this.tupletNormalField = value;
             }
         }
 
@@ -43543,28 +43543,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("show-number")]
-        public ShowTuplet shownumber
+        public ShowTuplet showNumber
         {
             get
             {
-                return this.shownumberField;
+                return this.showNumberField;
             }
             set
             {
-                this.shownumberField = value;
+                this.showNumberField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool shownumberSpecified
+        public bool showNumberSpecified
         {
             get
             {
-                return this.shownumberFieldSpecified;
+                return this.showNumberFieldSpecified;
             }
             set
             {
-                this.shownumberFieldSpecified = value;
+                this.showNumberFieldSpecified = value;
             }
         }
 
@@ -43595,132 +43595,132 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-shape")]
-        public LineShape lineshape
+        public LineShape lineShape
         {
             get
             {
-                return this.lineshapeField;
+                return this.lineShapeField;
             }
             set
             {
-                this.lineshapeField = value;
+                this.lineShapeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lineshapeSpecified
+        public bool lineShapeSpecified
         {
             get
             {
-                return this.lineshapeFieldSpecified;
+                return this.lineShapeFieldSpecified;
             }
             set
             {
-                this.lineshapeFieldSpecified = value;
+                this.lineShapeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -43957,33 +43957,33 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -43993,29 +43993,29 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool orientationFieldSpecified;
 
-        private decimal bezieroffsetField;
+        private decimal bezierOffsetField;
 
-        private bool bezieroffsetFieldSpecified;
+        private bool bezierOffsetFieldSpecified;
 
-        private decimal bezieroffset2Field;
+        private decimal bezierOffset2Field;
 
-        private bool bezieroffset2FieldSpecified;
+        private bool bezierOffset2FieldSpecified;
 
-        private decimal bezierxField;
+        private decimal bezierXField;
 
-        private bool bezierxFieldSpecified;
+        private bool bezierXFieldSpecified;
 
-        private decimal bezieryField;
+        private decimal bezierYField;
 
-        private bool bezieryFieldSpecified;
+        private bool bezierYFieldSpecified;
 
-        private decimal bezierx2Field;
+        private decimal bezierX2Field;
 
-        private bool bezierx2FieldSpecified;
+        private bool bezierX2FieldSpecified;
 
-        private decimal beziery2Field;
+        private decimal bezierY2Field;
 
-        private bool beziery2FieldSpecified;
+        private bool bezierY2FieldSpecified;
 
         private string colorField;
 
@@ -44054,184 +44054,184 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -44288,158 +44288,158 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-offset")]
-        public decimal bezieroffset
+        public decimal bezierOffset
         {
             get
             {
-                return this.bezieroffsetField;
+                return this.bezierOffsetField;
             }
             set
             {
-                this.bezieroffsetField = value;
+                this.bezierOffsetField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezieroffsetSpecified
+        public bool bezierOffsetSpecified
         {
             get
             {
-                return this.bezieroffsetFieldSpecified;
+                return this.bezierOffsetFieldSpecified;
             }
             set
             {
-                this.bezieroffsetFieldSpecified = value;
+                this.bezierOffsetFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-offset2")]
-        public decimal bezieroffset2
+        public decimal bezierOffset2
         {
             get
             {
-                return this.bezieroffset2Field;
+                return this.bezierOffset2Field;
             }
             set
             {
-                this.bezieroffset2Field = value;
+                this.bezierOffset2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezieroffset2Specified
+        public bool bezierOffset2Specified
         {
             get
             {
-                return this.bezieroffset2FieldSpecified;
+                return this.bezierOffset2FieldSpecified;
             }
             set
             {
-                this.bezieroffset2FieldSpecified = value;
+                this.bezierOffset2FieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-x")]
-        public decimal bezierx
+        public decimal bezierX
         {
             get
             {
-                return this.bezierxField;
+                return this.bezierXField;
             }
             set
             {
-                this.bezierxField = value;
+                this.bezierXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierxSpecified
+        public bool bezierXSpecified
         {
             get
             {
-                return this.bezierxFieldSpecified;
+                return this.bezierXFieldSpecified;
             }
             set
             {
-                this.bezierxFieldSpecified = value;
+                this.bezierXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-y")]
-        public decimal beziery
+        public decimal bezierY
         {
             get
             {
-                return this.bezieryField;
+                return this.bezierYField;
             }
             set
             {
-                this.bezieryField = value;
+                this.bezierYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierySpecified
+        public bool bezierYSpecified
         {
             get
             {
-                return this.bezieryFieldSpecified;
+                return this.bezierYFieldSpecified;
             }
             set
             {
-                this.bezieryFieldSpecified = value;
+                this.bezierYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-x2")]
-        public decimal bezierx2
+        public decimal bezierX2
         {
             get
             {
-                return this.bezierx2Field;
+                return this.bezierX2Field;
             }
             set
             {
-                this.bezierx2Field = value;
+                this.bezierX2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierx2Specified
+        public bool bezierX2Specified
         {
             get
             {
-                return this.bezierx2FieldSpecified;
+                return this.bezierX2FieldSpecified;
             }
             set
             {
-                this.bezierx2FieldSpecified = value;
+                this.bezierX2FieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-y2")]
-        public decimal beziery2
+        public decimal bezierY2
         {
             get
             {
-                return this.beziery2Field;
+                return this.bezierY2Field;
             }
             set
             {
-                this.beziery2Field = value;
+                this.bezierY2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool beziery2Specified
+        public bool bezierY2Specified
         {
             get
             {
-                return this.beziery2FieldSpecified;
+                return this.bezierY2FieldSpecified;
             }
             set
             {
-                this.beziery2FieldSpecified = value;
+                this.bezierY2FieldSpecified = value;
             }
         }
 
@@ -44676,33 +44676,33 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string numberField;
 
-        private LineType linetypeField;
+        private LineType lineTypeField;
 
-        private bool linetypeFieldSpecified;
+        private bool lineTypeFieldSpecified;
 
-        private decimal dashlengthField;
+        private decimal dashLengthField;
 
-        private bool dashlengthFieldSpecified;
+        private bool dashLengthFieldSpecified;
 
-        private decimal spacelengthField;
+        private decimal spaceLengthField;
 
-        private bool spacelengthFieldSpecified;
+        private bool spaceLengthFieldSpecified;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private AboveBelow placementField;
 
@@ -44712,29 +44712,29 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool orientationFieldSpecified;
 
-        private decimal bezieroffsetField;
+        private decimal bezierOffsetField;
 
-        private bool bezieroffsetFieldSpecified;
+        private bool bezierOffsetFieldSpecified;
 
-        private decimal bezieroffset2Field;
+        private decimal bezierOffset2Field;
 
-        private bool bezieroffset2FieldSpecified;
+        private bool bezierOffset2FieldSpecified;
 
-        private decimal bezierxField;
+        private decimal bezierXField;
 
-        private bool bezierxFieldSpecified;
+        private bool bezierXFieldSpecified;
 
-        private decimal bezieryField;
+        private decimal bezierYField;
 
-        private bool bezieryFieldSpecified;
+        private bool bezierYFieldSpecified;
 
-        private decimal bezierx2Field;
+        private decimal bezierX2Field;
 
-        private bool bezierx2FieldSpecified;
+        private bool bezierX2FieldSpecified;
 
-        private decimal beziery2Field;
+        private decimal bezierY2Field;
 
-        private bool beziery2FieldSpecified;
+        private bool bezierY2FieldSpecified;
 
         private string colorField;
 
@@ -44767,184 +44767,184 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("line-type")]
-        public LineType linetype
+        public LineType lineType
         {
             get
             {
-                return this.linetypeField;
+                return this.lineTypeField;
             }
             set
             {
-                this.linetypeField = value;
+                this.lineTypeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool linetypeSpecified
+        public bool lineTypeSpecified
         {
             get
             {
-                return this.linetypeFieldSpecified;
+                return this.lineTypeFieldSpecified;
             }
             set
             {
-                this.linetypeFieldSpecified = value;
+                this.lineTypeFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("dash-length")]
-        public decimal dashlength
+        public decimal dashLength
         {
             get
             {
-                return this.dashlengthField;
+                return this.dashLengthField;
             }
             set
             {
-                this.dashlengthField = value;
+                this.dashLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dashlengthSpecified
+        public bool dashLengthSpecified
         {
             get
             {
-                return this.dashlengthFieldSpecified;
+                return this.dashLengthFieldSpecified;
             }
             set
             {
-                this.dashlengthFieldSpecified = value;
+                this.dashLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("space-length")]
-        public decimal spacelength
+        public decimal spaceLength
         {
             get
             {
-                return this.spacelengthField;
+                return this.spaceLengthField;
             }
             set
             {
-                this.spacelengthField = value;
+                this.spaceLengthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool spacelengthSpecified
+        public bool spaceLengthSpecified
         {
             get
             {
-                return this.spacelengthFieldSpecified;
+                return this.spaceLengthFieldSpecified;
             }
             set
             {
-                this.spacelengthFieldSpecified = value;
+                this.spaceLengthFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -45001,158 +45001,158 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-offset")]
-        public decimal bezieroffset
+        public decimal bezierOffset
         {
             get
             {
-                return this.bezieroffsetField;
+                return this.bezierOffsetField;
             }
             set
             {
-                this.bezieroffsetField = value;
+                this.bezierOffsetField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezieroffsetSpecified
+        public bool bezierOffsetSpecified
         {
             get
             {
-                return this.bezieroffsetFieldSpecified;
+                return this.bezierOffsetFieldSpecified;
             }
             set
             {
-                this.bezieroffsetFieldSpecified = value;
+                this.bezierOffsetFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-offset2")]
-        public decimal bezieroffset2
+        public decimal bezierOffset2
         {
             get
             {
-                return this.bezieroffset2Field;
+                return this.bezierOffset2Field;
             }
             set
             {
-                this.bezieroffset2Field = value;
+                this.bezierOffset2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezieroffset2Specified
+        public bool bezierOffset2Specified
         {
             get
             {
-                return this.bezieroffset2FieldSpecified;
+                return this.bezierOffset2FieldSpecified;
             }
             set
             {
-                this.bezieroffset2FieldSpecified = value;
+                this.bezierOffset2FieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-x")]
-        public decimal bezierx
+        public decimal bezierX
         {
             get
             {
-                return this.bezierxField;
+                return this.bezierXField;
             }
             set
             {
-                this.bezierxField = value;
+                this.bezierXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierxSpecified
+        public bool bezierXSpecified
         {
             get
             {
-                return this.bezierxFieldSpecified;
+                return this.bezierXFieldSpecified;
             }
             set
             {
-                this.bezierxFieldSpecified = value;
+                this.bezierXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-y")]
-        public decimal beziery
+        public decimal bezierY
         {
             get
             {
-                return this.bezieryField;
+                return this.bezierYField;
             }
             set
             {
-                this.bezieryField = value;
+                this.bezierYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierySpecified
+        public bool bezierYSpecified
         {
             get
             {
-                return this.bezieryFieldSpecified;
+                return this.bezierYFieldSpecified;
             }
             set
             {
-                this.bezieryFieldSpecified = value;
+                this.bezierYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-x2")]
-        public decimal bezierx2
+        public decimal bezierX2
         {
             get
             {
-                return this.bezierx2Field;
+                return this.bezierX2Field;
             }
             set
             {
-                this.bezierx2Field = value;
+                this.bezierX2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bezierx2Specified
+        public bool bezierX2Specified
         {
             get
             {
-                return this.bezierx2FieldSpecified;
+                return this.bezierX2FieldSpecified;
             }
             set
             {
-                this.bezierx2FieldSpecified = value;
+                this.bezierX2FieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("bezier-y2")]
-        public decimal beziery2
+        public decimal bezierY2
         {
             get
             {
-                return this.beziery2Field;
+                return this.bezierY2Field;
             }
             set
             {
-                this.beziery2Field = value;
+                this.bezierY2Field = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool beziery2Specified
+        public bool bezierY2Specified
         {
             get
             {
-                return this.beziery2FieldSpecified;
+                return this.bezierY2FieldSpecified;
             }
             set
             {
-                this.beziery2FieldSpecified = value;
+                this.bezierY2FieldSpecified = value;
             }
         }
 
@@ -45378,9 +45378,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private object[] itemsField;
 
-        private YesNo printobjectField;
+        private YesNo printObjectField;
 
-        private bool printobjectFieldSpecified;
+        private bool printObjectFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -45437,28 +45437,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
-        public YesNo printobject
+        public YesNo printObject
         {
             get
             {
-                return this.printobjectField;
+                return this.printObjectField;
             }
             set
             {
-                this.printobjectField = value;
+                this.printObjectField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printobjectSpecified
+        public bool printObjectSpecified
         {
             get
             {
-                return this.printobjectFieldSpecified;
+                return this.printObjectFieldSpecified;
             }
             set
             {
-                this.printobjectFieldSpecified = value;
+                this.printObjectFieldSpecified = value;
             }
         }
 
@@ -45992,8 +45992,8 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "notehead-text")]
-    [System.Xml.Serialization.XmlRootAttribute("notehead-text", Namespace = "", IsNullable = true)]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "noteHead-text")]
+    [System.Xml.Serialization.XmlRootAttribute("noteHead-text", Namespace = "", IsNullable = true)]
     public partial class NoteHeadText
     {
 
@@ -46029,7 +46029,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current noteheadtext object into an XML document
+        /// Serializes current noteHeadtext object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -46058,10 +46058,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an noteheadtext object
+        /// Deserializes workflow markup into an noteHeadtext object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output noteheadtext object</param>
+        /// <param name="obj">Output noteHeadtext object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out NoteHeadText obj, out System.Exception exception)
@@ -46104,7 +46104,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current noteheadtext object into file
+        /// Serializes current noteHeadtext object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -46145,10 +46145,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an noteheadtext object
+        /// Deserializes xml markup from file into an noteHeadtext object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output noteheadtext object</param>
+        /// <param name="obj">Output noteHeadtext object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out NoteHeadText obj, out System.Exception exception)
@@ -46202,7 +46202,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this noteheadtext object
+        /// Create a clone of this noteHeadtext object
         /// </summary>
         public virtual NoteHeadText Clone()
         {
@@ -46226,17 +46226,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool parenthesesFieldSpecified;
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
@@ -46297,80 +46297,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -46414,7 +46414,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current notehead object into an XML document
+        /// Serializes current noteHead object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -46443,10 +46443,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an notehead object
+        /// Deserializes workflow markup into an noteHead object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output notehead object</param>
+        /// <param name="obj">Output noteHead object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out NoteHead obj, out System.Exception exception)
@@ -46489,7 +46489,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current notehead object into file
+        /// Serializes current noteHead object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -46530,10 +46530,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an notehead object
+        /// Deserializes xml markup from file into an noteHead object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output notehead object</param>
+        /// <param name="obj">Output noteHead object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out NoteHead obj, out System.Exception exception)
@@ -46587,7 +46587,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this notehead object
+        /// Create a clone of this noteHead object
         /// </summary>
         public virtual NoteHead Clone()
         {
@@ -46598,7 +46598,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "notehead-value")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "noteHead-value")]
     public enum NoteHeadValue
     {
 
@@ -46696,21 +46696,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Stem
     {
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -46719,106 +46719,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -47913,7 +47913,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private StartStop typeField;
 
-        private string timeonlyField;
+        private string timeOnlyField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -47931,15 +47931,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("time-only", DataType = "token")]
-        public string timeonly
+        public string timeOnly
         {
             get
             {
-                return this.timeonlyField;
+                return this.timeOnlyField;
             }
             set
             {
-                this.timeonlyField = value;
+                this.timeOnlyField = value;
             }
         }
 
@@ -48146,9 +48146,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Rest
     {
 
-        private Step displaystepField;
+        private Step displayStepField;
 
-        private string displayoctaveField;
+        private string displayOctaveField;
 
         private YesNo measureField;
 
@@ -48157,28 +48157,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("display-step", Order = 0)]
-        public Step displaystep
+        public Step displayStep
         {
             get
             {
-                return this.displaystepField;
+                return this.displayStepField;
             }
             set
             {
-                this.displaystepField = value;
+                this.displayStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("display-octave", DataType = "integer", Order = 1)]
-        public string displayoctave
+        public string displayOctave
         {
             get
             {
-                return this.displayoctaveField;
+                return this.displayOctaveField;
             }
             set
             {
-                this.displayoctaveField = value;
+                this.displayOctaveField = value;
             }
         }
 
@@ -48411,35 +48411,35 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Unpitched
     {
 
-        private Step displaystepField;
+        private Step displayStepField;
 
-        private string displayoctaveField;
+        private string displayOctaveField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("display-step", Order = 0)]
-        public Step displaystep
+        public Step displayStep
         {
             get
             {
-                return this.displaystepField;
+                return this.displayStepField;
             }
             set
             {
-                this.displaystepField = value;
+                this.displayStepField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("display-octave", DataType = "integer", Order = 1)]
-        public string displayoctave
+        public string displayOctave
         {
             get
             {
-                return this.displayoctaveField;
+                return this.displayOctaveField;
             }
             set
             {
-                this.displayoctaveField = value;
+                this.displayOctaveField = value;
             }
         }
 
@@ -48911,17 +48911,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Grace
     {
 
-        private decimal stealtimepreviousField;
+        private decimal stealTimePreviousField;
 
-        private bool stealtimepreviousFieldSpecified;
+        private bool stealTimePreviousFieldSpecified;
 
-        private decimal stealtimefollowingField;
+        private decimal stealTimeFollowingField;
 
-        private bool stealtimefollowingFieldSpecified;
+        private bool stealTimeFollowingFieldSpecified;
 
-        private decimal maketimeField;
+        private decimal makeTimeField;
 
-        private bool maketimeFieldSpecified;
+        private bool makeTimeFieldSpecified;
 
         private YesNo slashField;
 
@@ -48930,80 +48930,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("steal-time-previous")]
-        public decimal stealtimeprevious
+        public decimal stealTimePrevious
         {
             get
             {
-                return this.stealtimepreviousField;
+                return this.stealTimePreviousField;
             }
             set
             {
-                this.stealtimepreviousField = value;
+                this.stealTimePreviousField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool stealtimepreviousSpecified
+        public bool stealTimePreviousSpecified
         {
             get
             {
-                return this.stealtimepreviousFieldSpecified;
+                return this.stealTimePreviousFieldSpecified;
             }
             set
             {
-                this.stealtimepreviousFieldSpecified = value;
+                this.stealTimePreviousFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("steal-time-following")]
-        public decimal stealtimefollowing
+        public decimal stealTimeFollowing
         {
             get
             {
-                return this.stealtimefollowingField;
+                return this.stealTimeFollowingField;
             }
             set
             {
-                this.stealtimefollowingField = value;
+                this.stealTimeFollowingField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool stealtimefollowingSpecified
+        public bool stealTimeFollowingSpecified
         {
             get
             {
-                return this.stealtimefollowingFieldSpecified;
+                return this.stealTimeFollowingFieldSpecified;
             }
             set
             {
-                this.stealtimefollowingFieldSpecified = value;
+                this.stealTimeFollowingFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("make-time")]
-        public decimal maketime
+        public decimal makeTime
         {
             get
             {
-                return this.maketimeField;
+                return this.makeTimeField;
             }
             set
             {
-                this.maketimeField = value;
+                this.makeTimeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool maketimeSpecified
+        public bool makeTimeSpecified
         {
             get
             {
-                return this.maketimeFieldSpecified;
+                return this.makeTimeFieldSpecified;
             }
             set
             {
-                this.maketimeFieldSpecified = value;
+                this.makeTimeFieldSpecified = value;
             }
         }
 
@@ -49254,13 +49254,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Accidental accidentalField;
 
-        private TimeModification timemodificationField;
+        private TimeModification timeModificationField;
 
         private Stem stemField;
 
-        private NoteHead noteheadField;
+        private NoteHead noteHeadField;
 
-        private NoteHeadText noteheadtextField;
+        private NoteHeadText noteHeadtextField;
 
         private string staffField;
 
@@ -49272,51 +49272,51 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Play playField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private string colorField;
 
-        private YesNo printdotField;
+        private YesNo printDotField;
 
-        private bool printdotFieldSpecified;
+        private bool printDotFieldSpecified;
 
-        private YesNo printlyricField;
+        private YesNo printLyricField;
 
-        private bool printlyricFieldSpecified;
+        private bool printLyricFieldSpecified;
 
         private decimal dynamicsField;
 
         private bool dynamicsFieldSpecified;
 
-        private decimal enddynamicsField;
+        private decimal endDymaicsField;
 
-        private bool enddynamicsFieldSpecified;
+        private bool endDymaicsFieldSpecified;
 
         private decimal attackField;
 
@@ -49326,7 +49326,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private bool releaseFieldSpecified;
 
-        private string timeonlyField;
+        private string timeOnlyField;
 
         private YesNo pizzicatoField;
 
@@ -49461,15 +49461,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("time-modification", Order = 9)]
-        public TimeModification timemodification
+        public TimeModification timeModification
         {
             get
             {
-                return this.timemodificationField;
+                return this.timeModificationField;
             }
             set
             {
-                this.timemodificationField = value;
+                this.timeModificationField = value;
             }
         }
 
@@ -49487,28 +49487,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
-        public NoteHead notehead
+        public NoteHead noteHead
         {
             get
             {
-                return this.noteheadField;
+                return this.noteHeadField;
             }
             set
             {
-                this.noteheadField = value;
+                this.noteHeadField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("notehead-text", Order = 12)]
-        public NoteHeadText noteheadtext
+        [System.Xml.Serialization.XmlElementAttribute("noteHead-text", Order = 12)]
+        public NoteHeadText noteHeadtext
         {
             get
             {
-                return this.noteheadtextField;
+                return this.noteHeadtextField;
             }
             set
             {
-                this.noteheadtextField = value;
+                this.noteHeadtextField = value;
             }
         }
 
@@ -49578,184 +49578,184 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -49773,54 +49773,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-dot")]
-        public YesNo printdot
+        public YesNo printDot
         {
             get
             {
-                return this.printdotField;
+                return this.printDotField;
             }
             set
             {
-                this.printdotField = value;
+                this.printDotField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printdotSpecified
+        public bool printDotSpecified
         {
             get
             {
-                return this.printdotFieldSpecified;
+                return this.printDotFieldSpecified;
             }
             set
             {
-                this.printdotFieldSpecified = value;
+                this.printDotFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("print-lyric")]
-        public YesNo printlyric
+        public YesNo printLyric
         {
             get
             {
-                return this.printlyricField;
+                return this.printLyricField;
             }
             set
             {
-                this.printlyricField = value;
+                this.printLyricField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool printlyricSpecified
+        public bool printLyricSpecified
         {
             get
             {
-                return this.printlyricFieldSpecified;
+                return this.printLyricFieldSpecified;
             }
             set
             {
-                this.printlyricFieldSpecified = value;
+                this.printLyricFieldSpecified = value;
             }
         }
 
@@ -49851,28 +49851,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("end-dynamics")]
-        public decimal enddynamics
+        public decimal endDymaics
         {
             get
             {
-                return this.enddynamicsField;
+                return this.endDymaicsField;
             }
             set
             {
-                this.enddynamicsField = value;
+                this.endDymaicsField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool enddynamicsSpecified
+        public bool endDymaicsSpecified
         {
             get
             {
-                return this.enddynamicsFieldSpecified;
+                return this.endDymaicsFieldSpecified;
             }
             set
             {
-                this.enddynamicsFieldSpecified = value;
+                this.endDymaicsFieldSpecified = value;
             }
         }
 
@@ -49929,15 +49929,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("time-only", DataType = "token")]
-        public string timeonly
+        public string timeOnly
         {
             get
             {
-                return this.timeonlyField;
+                return this.timeOnlyField;
             }
             set
             {
-                this.timeonlyField = value;
+                this.timeOnlyField = value;
             }
         }
 
@@ -50202,35 +50202,35 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class VirtualInstrument
     {
 
-        private string virtuallibraryField;
+        private string virtualLibraryField;
 
-        private string virtualnameField;
+        private string virtualNameField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("virtual-library", Order = 0)]
-        public string virtuallibrary
+        public string virtualLibrary
         {
             get
             {
-                return this.virtuallibraryField;
+                return this.virtualLibraryField;
             }
             set
             {
-                this.virtuallibraryField = value;
+                this.virtualLibraryField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("virtual-name", Order = 1)]
-        public string virtualname
+        public string virtualName
         {
             get
             {
-                return this.virtualnameField;
+                return this.virtualNameField;
             }
             set
             {
-                this.virtualnameField = value;
+                this.virtualNameField = value;
             }
         }
 
@@ -50438,11 +50438,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class ScoreInstrument
     {
 
-        private string instrumentnameField;
+        private string instrumentNameField;
 
-        private string instrumentabbreviationField;
+        private string instrumentAbbreviationField;
 
-        private string instrumentsoundField;
+        private string instrumentSoundField;
 
         private object itemField;
 
@@ -50453,41 +50453,41 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("instrument-name", Order = 0)]
-        public string instrumentname
+        public string instrumentName
         {
             get
             {
-                return this.instrumentnameField;
+                return this.instrumentNameField;
             }
             set
             {
-                this.instrumentnameField = value;
+                this.instrumentNameField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("instrument-abbreviation", Order = 1)]
-        public string instrumentabbreviation
+        public string instrumentAbbreviation
         {
             get
             {
-                return this.instrumentabbreviationField;
+                return this.instrumentAbbreviationField;
             }
             set
             {
-                this.instrumentabbreviationField = value;
+                this.instrumentAbbreviationField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("instrument-sound", Order = 2)]
-        public string instrumentsound
+        public string instrumentSound
         {
             get
             {
-                return this.instrumentsoundField;
+                return this.instrumentSoundField;
             }
             set
             {
-                this.instrumentsoundField = value;
+                this.instrumentSoundField = value;
             }
         }
 
@@ -50766,7 +50766,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current partname object into an XML document
+        /// Serializes current partName object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -50795,10 +50795,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an partname object
+        /// Deserializes workflow markup into an partName object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output partname object</param>
+        /// <param name="obj">Output partName object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out PartName obj, out System.Exception exception)
@@ -50841,7 +50841,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current partname object into file
+        /// Serializes current partName object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -50882,10 +50882,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an partname object
+        /// Deserializes xml markup from file into an partName object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output partname object</param>
+        /// <param name="obj">Output partName object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out PartName obj, out System.Exception exception)
@@ -50939,7 +50939,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this partname object
+        /// Create a clone of this partName object
         /// </summary>
         public virtual PartName Clone()
         {
@@ -50958,13 +50958,13 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Identification identificationField;
 
-        private PartName partnameField;
+        private PartName partNameField;
 
-        private NameDisplay partnamedisplayField;
+        private NameDisplay partNamedisplayField;
 
-        private PartName partabbreviationField;
+        private PartName partAbbreviationField;
 
-        private NameDisplay partabbreviationdisplayField;
+        private NameDisplay partAbbreviationdisplayField;
 
         private string[] groupField;
 
@@ -50990,54 +50990,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("part-name", Order = 1)]
-        public PartName partname
+        public PartName partName
         {
             get
             {
-                return this.partnameField;
+                return this.partNameField;
             }
             set
             {
-                this.partnameField = value;
+                this.partNameField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("part-name-display", Order = 2)]
-        public NameDisplay partnamedisplay
+        public NameDisplay partNamedisplay
         {
             get
             {
-                return this.partnamedisplayField;
+                return this.partNamedisplayField;
             }
             set
             {
-                this.partnamedisplayField = value;
+                this.partNamedisplayField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("part-abbreviation", Order = 3)]
-        public PartName partabbreviation
+        public PartName partAbbreviation
         {
             get
             {
-                return this.partabbreviationField;
+                return this.partAbbreviationField;
             }
             set
             {
-                this.partabbreviationField = value;
+                this.partAbbreviationField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("part-abbreviation-display", Order = 4)]
-        public NameDisplay partabbreviationdisplay
+        public NameDisplay partAbbreviationdisplay
         {
             get
             {
-                return this.partabbreviationdisplayField;
+                return this.partAbbreviationdisplayField;
             }
             set
             {
-                this.partabbreviationdisplayField = value;
+                this.partAbbreviationdisplayField = value;
             }
         }
 
@@ -52654,7 +52654,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current groupbarline object into an XML document
+        /// Serializes current groupBarline object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -52683,10 +52683,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an groupbarline object
+        /// Deserializes workflow markup into an groupBarline object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output groupbarline object</param>
+        /// <param name="obj">Output groupBarline object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out GroupBarline obj, out System.Exception exception)
@@ -52729,7 +52729,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current groupbarline object into file
+        /// Serializes current groupBarline object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -52770,10 +52770,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an groupbarline object
+        /// Deserializes xml markup from file into an groupBarline object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output groupbarline object</param>
+        /// <param name="obj">Output groupBarline object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out GroupBarline obj, out System.Exception exception)
@@ -52827,7 +52827,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this groupbarline object
+        /// Create a clone of this groupBarline object
         /// </summary>
         public virtual GroupBarline Clone()
         {
@@ -52860,21 +52860,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class GroupSymbol
     {
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private string colorField;
 
@@ -52883,106 +52883,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -53026,7 +53026,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current groupsymbol object into an XML document
+        /// Serializes current groupSymbol object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -53055,10 +53055,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an groupsymbol object
+        /// Deserializes workflow markup into an groupSymbol object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output groupsymbol object</param>
+        /// <param name="obj">Output groupSymbol object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out GroupSymbol obj, out System.Exception exception)
@@ -53101,7 +53101,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current groupsymbol object into file
+        /// Serializes current groupSymbol object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -53142,10 +53142,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an groupsymbol object
+        /// Deserializes xml markup from file into an groupSymbol object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output groupsymbol object</param>
+        /// <param name="obj">Output groupSymbol object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out GroupSymbol obj, out System.Exception exception)
@@ -53199,7 +53199,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this groupsymbol object
+        /// Create a clone of this groupSymbol object
         /// </summary>
         public virtual GroupSymbol Clone()
         {
@@ -53247,7 +53247,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current groupname object into an XML document
+        /// Serializes current groupName object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -53276,10 +53276,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an groupname object
+        /// Deserializes workflow markup into an groupName object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output groupname object</param>
+        /// <param name="obj">Output groupName object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out GroupName obj, out System.Exception exception)
@@ -53322,7 +53322,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current groupname object into file
+        /// Serializes current groupName object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -53363,10 +53363,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an groupname object
+        /// Deserializes xml markup from file into an groupName object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output groupname object</param>
+        /// <param name="obj">Output groupName object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out GroupName obj, out System.Exception exception)
@@ -53420,7 +53420,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this groupname object
+        /// Create a clone of this groupName object
         /// </summary>
         public virtual GroupName Clone()
         {
@@ -53437,19 +53437,19 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class PartGroup
     {
 
-        private GroupName groupnameField;
+        private GroupName groupNameField;
 
-        private NameDisplay groupnamedisplayField;
+        private NameDisplay groupNamedisplayField;
 
-        private GroupName groupabbreviationField;
+        private GroupName groupAbbreviationField;
 
-        private NameDisplay groupabbreviationdisplayField;
+        private NameDisplay groupAbbreviationdisplayField;
 
-        private GroupSymbol groupsymbolField;
+        private GroupSymbol groupSymbolField;
 
-        private GroupBarline groupbarlineField;
+        private GroupBarline groupBarlineField;
 
-        private Empty grouptimeField;
+        private Empty groupTimeField;
 
         private FormattedText footnoteField;
 
@@ -53467,93 +53467,93 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-name", Order = 0)]
-        public GroupName groupname
+        public GroupName groupName
         {
             get
             {
-                return this.groupnameField;
+                return this.groupNameField;
             }
             set
             {
-                this.groupnameField = value;
+                this.groupNameField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-name-display", Order = 1)]
-        public NameDisplay groupnamedisplay
+        public NameDisplay groupNamedisplay
         {
             get
             {
-                return this.groupnamedisplayField;
+                return this.groupNamedisplayField;
             }
             set
             {
-                this.groupnamedisplayField = value;
+                this.groupNamedisplayField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-abbreviation", Order = 2)]
-        public GroupName groupabbreviation
+        public GroupName groupAbbreviation
         {
             get
             {
-                return this.groupabbreviationField;
+                return this.groupAbbreviationField;
             }
             set
             {
-                this.groupabbreviationField = value;
+                this.groupAbbreviationField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-abbreviation-display", Order = 3)]
-        public NameDisplay groupabbreviationdisplay
+        public NameDisplay groupAbbreviationdisplay
         {
             get
             {
-                return this.groupabbreviationdisplayField;
+                return this.groupAbbreviationdisplayField;
             }
             set
             {
-                this.groupabbreviationdisplayField = value;
+                this.groupAbbreviationdisplayField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-symbol", Order = 4)]
-        public GroupSymbol groupsymbol
+        public GroupSymbol groupSymbol
         {
             get
             {
-                return this.groupsymbolField;
+                return this.groupSymbolField;
             }
             set
             {
-                this.groupsymbolField = value;
+                this.groupSymbolField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-barline", Order = 5)]
-        public GroupBarline groupbarline
+        public GroupBarline groupBarline
         {
             get
             {
-                return this.groupbarlineField;
+                return this.groupBarlineField;
             }
             set
             {
-                this.groupbarlineField = value;
+                this.groupBarlineField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("group-time", Order = 6)]
-        public Empty grouptime
+        public Empty groupTime
         {
             get
             {
-                return this.grouptimeField;
+                return this.groupTimeField;
             }
             set
             {
-                this.grouptimeField = value;
+                this.groupTimeField = value;
             }
         }
 
@@ -53816,7 +53816,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private PartGroup[] partgroupField;
 
-        private ScorePart scorepartField;
+        private ScorePart scorePartField;
 
         private object[] itemsField;
 
@@ -53840,11 +53840,11 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         {
             get
             {
-                return this.scorepartField;
+                return this.scorePartField;
             }
             set
             {
-                this.scorepartField = value;
+                this.scorePartField = value;
             }
         }
 
@@ -53876,7 +53876,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current partlist object into an XML document
+        /// Serializes current partList object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -53905,10 +53905,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an partlist object
+        /// Deserializes workflow markup into an partList object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output partlist object</param>
+        /// <param name="obj">Output partList object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out PartList obj, out System.Exception exception)
@@ -53951,7 +53951,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current partlist object into file
+        /// Serializes current partList object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -53992,10 +53992,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an partlist object
+        /// Deserializes xml markup from file into an partList object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output partlist object</param>
+        /// <param name="obj">Output partList object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out PartList obj, out System.Exception exception)
@@ -54049,7 +54049,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this partlist object
+        /// Create a clone of this partList object
         /// </summary>
         public virtual PartList Clone()
         {
@@ -54350,21 +54350,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string positionField;
 
-        private decimal defaultxField;
+        private decimal defaultXField;
 
-        private bool defaultxFieldSpecified;
+        private bool defaultXFieldSpecified;
 
-        private decimal defaultyField;
+        private decimal defaultYField;
 
-        private bool defaultyFieldSpecified;
+        private bool defaultYFieldSpecified;
 
-        private decimal relativexField;
+        private decimal relativeXField;
 
-        private bool relativexFieldSpecified;
+        private bool relativeXFieldSpecified;
 
-        private decimal relativeyField;
+        private decimal relativeYField;
 
-        private bool relativeyFieldSpecified;
+        private bool relativeYFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -54508,106 +54508,106 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
-        public decimal defaultx
+        public decimal defaultX
         {
             get
             {
-                return this.defaultxField;
+                return this.defaultXField;
             }
             set
             {
-                this.defaultxField = value;
+                this.defaultXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultxSpecified
+        public bool defaultXSpecified
         {
             get
             {
-                return this.defaultxFieldSpecified;
+                return this.defaultXFieldSpecified;
             }
             set
             {
-                this.defaultxFieldSpecified = value;
+                this.defaultXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
-        public decimal defaulty
+        public decimal defaultY
         {
             get
             {
-                return this.defaultyField;
+                return this.defaultYField;
             }
             set
             {
-                this.defaultyField = value;
+                this.defaultYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool defaultySpecified
+        public bool defaultYSpecified
         {
             get
             {
-                return this.defaultyFieldSpecified;
+                return this.defaultYFieldSpecified;
             }
             set
             {
-                this.defaultyFieldSpecified = value;
+                this.defaultYFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
-        public decimal relativex
+        public decimal relativeX
         {
             get
             {
-                return this.relativexField;
+                return this.relativeXField;
             }
             set
             {
-                this.relativexField = value;
+                this.relativeXField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativexSpecified
+        public bool relativeXSpecified
         {
             get
             {
-                return this.relativexFieldSpecified;
+                return this.relativeXFieldSpecified;
             }
             set
             {
-                this.relativexFieldSpecified = value;
+                this.relativeXFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
-        public decimal relativey
+        public decimal relativeY
         {
             get
             {
-                return this.relativeyField;
+                return this.relativeYField;
             }
             set
             {
-                this.relativeyField = value;
+                this.relativeYField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool relativeySpecified
+        public bool relativeYSpecified
         {
             get
             {
-                return this.relativeyFieldSpecified;
+                return this.relativeYFieldSpecified;
             }
             set
             {
-                this.relativeyFieldSpecified = value;
+                this.relativeYFieldSpecified = value;
             }
         }
 
@@ -55159,7 +55159,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current lyriclanguage object into an XML document
+        /// Serializes current lyricLanguage object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -55188,10 +55188,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an lyriclanguage object
+        /// Deserializes workflow markup into an lyricLanguage object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output lyriclanguage object</param>
+        /// <param name="obj">Output lyricLanguage object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out LyricLanguage obj, out System.Exception exception)
@@ -55234,7 +55234,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current lyriclanguage object into file
+        /// Serializes current lyricLanguage object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -55275,10 +55275,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an lyriclanguage object
+        /// Deserializes xml markup from file into an lyricLanguage object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output lyriclanguage object</param>
+        /// <param name="obj">Output lyricLanguage object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out LyricLanguage obj, out System.Exception exception)
@@ -55332,7 +55332,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this lyriclanguage object
+        /// Create a clone of this lyricLanguage object
         /// </summary>
         public virtual LyricLanguage Clone()
         {
@@ -55353,17 +55353,17 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private string nameField;
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -55394,80 +55394,80 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -55485,7 +55485,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current lyricfont object into an XML document
+        /// Serializes current lyricFont object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -55514,10 +55514,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an lyricfont object
+        /// Deserializes workflow markup into an lyricFont object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output lyricfont object</param>
+        /// <param name="obj">Output lyricFont object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out LyricFont obj, out System.Exception exception)
@@ -55560,7 +55560,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current lyricfont object into file
+        /// Serializes current lyricFont object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -55601,10 +55601,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an lyricfont object
+        /// Deserializes xml markup from file into an lyricFont object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output lyricfont object</param>
+        /// <param name="obj">Output lyricFont object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out LyricFont obj, out System.Exception exception)
@@ -55658,7 +55658,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this lyricfont object
+        /// Create a clone of this lyricFont object
         /// </summary>
         public virtual LyricFont Clone()
         {
@@ -55675,95 +55675,95 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class EmptyFont
     {
 
-        private string fontfamilyField;
+        private string fontFamilyField;
 
-        private FontStyle fontstyleField;
+        private FontStyle fontStyleField;
 
-        private bool fontstyleFieldSpecified;
+        private bool fontStyleFieldSpecified;
 
-        private string fontsizeField;
+        private string fontSizeField;
 
-        private FontWeight fontweightField;
+        private FontWeight fontWeightField;
 
-        private bool fontweightFieldSpecified;
+        private bool fontWeightFieldSpecified;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
-        public string fontfamily
+        public string fontFamily
         {
             get
             {
-                return this.fontfamilyField;
+                return this.fontFamilyField;
             }
             set
             {
-                this.fontfamilyField = value;
+                this.fontFamilyField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
-        public FontStyle fontstyle
+        public FontStyle fontStyle
         {
             get
             {
-                return this.fontstyleField;
+                return this.fontStyleField;
             }
             set
             {
-                this.fontstyleField = value;
+                this.fontStyleField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontstyleSpecified
+        public bool fontStyleSpecified
         {
             get
             {
-                return this.fontstyleFieldSpecified;
+                return this.fontStyleFieldSpecified;
             }
             set
             {
-                this.fontstyleFieldSpecified = value;
+                this.fontStyleFieldSpecified = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
-        public string fontsize
+        public string fontSize
         {
             get
             {
-                return this.fontsizeField;
+                return this.fontSizeField;
             }
             set
             {
-                this.fontsizeField = value;
+                this.fontSizeField = value;
             }
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
-        public FontWeight fontweight
+        public FontWeight fontWeight
         {
             get
             {
-                return this.fontweightField;
+                return this.fontWeightField;
             }
             set
             {
-                this.fontweightField = value;
+                this.fontWeightField = value;
             }
         }
 
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fontweightSpecified
+        public bool fontWeightSpecified
         {
             get
             {
-                return this.fontweightFieldSpecified;
+                return this.fontWeightFieldSpecified;
             }
             set
             {
-                this.fontweightFieldSpecified = value;
+                this.fontWeightFieldSpecified = value;
             }
         }
 
@@ -56017,7 +56017,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current otherappearance object into an XML document
+        /// Serializes current otherAppearance object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -56046,10 +56046,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an otherappearance object
+        /// Deserializes workflow markup into an otherAppearance object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output otherappearance object</param>
+        /// <param name="obj">Output otherAppearance object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out OtherAppearance obj, out System.Exception exception)
@@ -56092,7 +56092,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current otherappearance object into file
+        /// Serializes current otherAppearance object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -56133,10 +56133,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an otherappearance object
+        /// Deserializes xml markup from file into an otherAppearance object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output otherappearance object</param>
+        /// <param name="obj">Output otherAppearance object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out OtherAppearance obj, out System.Exception exception)
@@ -56190,7 +56190,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this otherappearance object
+        /// Create a clone of this otherAppearance object
         /// </summary>
         public virtual OtherAppearance Clone()
         {
@@ -56488,7 +56488,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current notesize object into an XML document
+        /// Serializes current noteSize object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -56517,10 +56517,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an notesize object
+        /// Deserializes workflow markup into an noteSize object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output notesize object</param>
+        /// <param name="obj">Output noteSize object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out NoteSize obj, out System.Exception exception)
@@ -56563,7 +56563,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current notesize object into file
+        /// Serializes current noteSize object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -56604,10 +56604,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an notesize object
+        /// Deserializes xml markup from file into an noteSize object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output notesize object</param>
+        /// <param name="obj">Output noteSize object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out NoteSize obj, out System.Exception exception)
@@ -56661,7 +56661,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this notesize object
+        /// Create a clone of this noteSize object
         /// </summary>
         public virtual NoteSize Clone()
         {
@@ -56740,7 +56740,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Serialize/Deserialize
         /// <summary>
-        /// Serializes current linewidth object into an XML document
+        /// Serializes current lineWidth object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
@@ -56769,10 +56769,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an linewidth object
+        /// Deserializes workflow markup into an lineWidth object
         /// </summary>
         /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output linewidth object</param>
+        /// <param name="obj">Output lineWidth object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool Deserialize(string xml, out LineWidth obj, out System.Exception exception)
@@ -56815,7 +56815,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Serializes current linewidth object into file
+        /// Serializes current lineWidth object into file
         /// </summary>
         /// <param name="fileName">full path of outupt xml file</param>
         /// <param name="exception">output Exception value if failed</param>
@@ -56856,10 +56856,10 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an linewidth object
+        /// Deserializes xml markup from file into an lineWidth object
         /// </summary>
         /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output linewidth object</param>
+        /// <param name="obj">Output lineWidth object</param>
         /// <param name="exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
         public static bool LoadFromFile(string fileName, out LineWidth obj, out System.Exception exception)
@@ -56913,7 +56913,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         #region Clone method
         /// <summary>
-        /// Create a clone of this linewidth object
+        /// Create a clone of this lineWidth object
         /// </summary>
         public virtual LineWidth Clone()
         {
@@ -56929,39 +56929,39 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Appearance
     {
 
-        private LineWidth[] linewidthField;
+        private LineWidth[] lineWidthField;
 
-        private NoteSize[] notesizeField;
+        private NoteSize[] noteSizeField;
 
         private Distance[] distanceField;
 
-        private OtherAppearance[] otherappearanceField;
+        private OtherAppearance[] otherAppearanceField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("line-width", Order = 0)]
-        public LineWidth[] linewidth
+        public LineWidth[] lineWidth
         {
             get
             {
-                return this.linewidthField;
+                return this.lineWidthField;
             }
             set
             {
-                this.linewidthField = value;
+                this.lineWidthField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("note-size", Order = 1)]
-        public NoteSize[] notesize
+        public NoteSize[] noteSize
         {
             get
             {
-                return this.notesizeField;
+                return this.noteSizeField;
             }
             set
             {
-                this.notesizeField = value;
+                this.noteSizeField = value;
             }
         }
 
@@ -56979,15 +56979,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("other-appearance", Order = 3)]
-        public OtherAppearance[] otherappearance
+        public OtherAppearance[] otherAppearance
         {
             get
             {
-                return this.otherappearanceField;
+                return this.otherAppearanceField;
             }
             set
             {
-                this.otherappearanceField = value;
+                this.otherAppearanceField = value;
             }
         }
 
@@ -57431,21 +57431,21 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Scaling scalingField;
 
-        private PageLayout pagelayoutField;
+        private PageLayout pageLayoutField;
 
-        private SystemLayout systemlayoutField;
+        private SystemLayout systemLayoutField;
 
-        private StaffLayout[] stafflayoutField;
+        private StaffLayout[] staffLayoutField;
 
         private Appearance appearanceField;
 
-        private EmptyFont musicfontField;
+        private EmptyFont musicFontField;
 
-        private EmptyFont wordfontField;
+        private EmptyFont wordFontField;
 
-        private LyricFont[] lyricfontField;
+        private LyricFont[] lyricFontField;
 
-        private LyricLanguage[] lyriclanguageField;
+        private LyricLanguage[] lyricLanguageField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
@@ -57463,41 +57463,41 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("page-layout", Order = 1)]
-        public PageLayout pagelayout
+        public PageLayout pageLayout
         {
             get
             {
-                return this.pagelayoutField;
+                return this.pageLayoutField;
             }
             set
             {
-                this.pagelayoutField = value;
+                this.pageLayoutField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("system-layout", Order = 2)]
-        public SystemLayout systemlayout
+        public SystemLayout systemLayout
         {
             get
             {
-                return this.systemlayoutField;
+                return this.systemLayoutField;
             }
             set
             {
-                this.systemlayoutField = value;
+                this.systemLayoutField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("staff-layout", Order = 3)]
-        public StaffLayout[] stafflayout
+        public StaffLayout[] staffLayout
         {
             get
             {
-                return this.stafflayoutField;
+                return this.staffLayoutField;
             }
             set
             {
-                this.stafflayoutField = value;
+                this.staffLayoutField = value;
             }
         }
 
@@ -57515,54 +57515,54 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("music-font", Order = 5)]
-        public EmptyFont musicfont
+        public EmptyFont musicFont
         {
             get
             {
-                return this.musicfontField;
+                return this.musicFontField;
             }
             set
             {
-                this.musicfontField = value;
+                this.musicFontField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("word-font", Order = 6)]
-        public EmptyFont wordfont
+        public EmptyFont wordFont
         {
             get
             {
-                return this.wordfontField;
+                return this.wordFontField;
             }
             set
             {
-                this.wordfontField = value;
+                this.wordFontField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("lyric-font", Order = 7)]
-        public LyricFont[] lyricfont
+        public LyricFont[] lyricFont
         {
             get
             {
-                return this.lyricfontField;
+                return this.lyricFontField;
             }
             set
             {
-                this.lyricfontField = value;
+                this.lyricFontField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("lyric-language", Order = 8)]
-        public LyricLanguage[] lyriclanguage
+        public LyricLanguage[] lyricLanguage
         {
             get
             {
-                return this.lyriclanguageField;
+                return this.lyricLanguageField;
             }
             set
             {
-                this.lyriclanguageField = value;
+                this.lyricLanguageField = value;
             }
         }
 
@@ -58344,9 +58344,9 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Work workField;
 
-        private string movementnumberField;
+        private string movementNumberField;
 
-        private string movementtitleField;
+        private string movementTitleField;
 
         private Identification identificationField;
 
@@ -58354,7 +58354,7 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
 
         private Credit[] creditField;
 
-        private PartList partlistField;
+        private PartList partListField;
 
         private ScoreTimewiseMeasure[] measureField;
 
@@ -58381,28 +58381,28 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("movement-number", Order = 1)]
-        public string movementnumber
+        public string movementNumber
         {
             get
             {
-                return this.movementnumberField;
+                return this.movementNumberField;
             }
             set
             {
-                this.movementnumberField = value;
+                this.movementNumberField = value;
             }
         }
 
         [System.Xml.Serialization.XmlElementAttribute("movement-title", Order = 2)]
-        public string movementtitle
+        public string movementTitle
         {
             get
             {
-                return this.movementtitleField;
+                return this.movementTitleField;
             }
             set
             {
-                this.movementtitleField = value;
+                this.movementTitleField = value;
             }
         }
 
@@ -58446,15 +58446,15 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
         }
 
         [System.Xml.Serialization.XmlElementAttribute("part-list", Order = 6)]
-        public PartList partlist
+        public PartList partList
         {
             get
             {
-                return this.partlistField;
+                return this.partListField;
             }
             set
             {
-                this.partlistField = value;
+                this.partListField = value;
             }
         }
 
@@ -59466,20 +59466,20 @@ namespace NETScoreTranscriptionLibrary.MusicXML30
     public partial class Miscellaneous
     {
 
-        private MiscellaneousField[] miscellaneousfieldField;
+        private MiscellaneousField[] miscellaneousFieldField;
 
         private static System.Xml.Serialization.XmlSerializer serializer;
 
         [System.Xml.Serialization.XmlElementAttribute("miscellaneous-field", Order = 0)]
-        public MiscellaneousField[] miscellaneousfield
+        public MiscellaneousField[] miscellaneousField
         {
             get
             {
-                return this.miscellaneousfieldField;
+                return this.miscellaneousFieldField;
             }
             set
             {
-                this.miscellaneousfieldField = value;
+                this.miscellaneousFieldField = value;
             }
         }
 
