@@ -33,8 +33,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: tuplets, triplets, beams
 
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
-            Console.Out.WriteLine("Note");
-            String noteChar = Constants.NoteCharacters.WHOLE_NOTE; //todo: decide on default
+            String noteChar = Constants.NoteCharacters.WHOLE_NOTE;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             
             
@@ -55,20 +54,25 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
                 grid.Children.Add(noteHead);
 
+                //todo: stems when beamed... This will likely require stems to be drawn after the note heads of the beaming
+                //      however, beaming is not supposed to go over measures so this will save some of the problems that this could have
+
+                //todo: use stemvalue to do up or down
                 // add the stem
                 System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
                     {
-                        X1 = noteHead.ActualWidth,
-                        X2 = noteHead.ActualWidth,
+                        X1 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
+                        X2 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
                         Y1 = noteHead.ActualHeight / 2,
                         Y2 = noteHead.ActualHeight / 2 - 30, //todo: stem offset
                         StrokeThickness = 2, //todo: thickness same as staff
-                        Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color))
+                        Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
                     };
                 grid.Children.Add(noteStem);
 
                 //todo: accidentals
                 //todo: clef change on note
+                //todo: other notes?
                 
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
@@ -100,62 +104,102 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: chords
             //todo: different shapes of note heads
             String noteChar = "";
-            FrameworkElement noteHead = WPFRendering.CreateAutoSizingGrid();
+            Panel noteHeadGrid = WPFRendering.CreateAutoSizingGrid();
+            FrameworkElement noteHead = new Label();
+            FrameworkElement noteHeadInside = new Label();
 
             if (string.IsNullOrEmpty(note.color))
                 note.color = Constants.Colors.DEFAULT_NOTE_COLOR;
-            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
+            Brush noteBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.color));
+
+            RotateTransform hollowRT = new RotateTransform();
+
+            bool rotateHead = false;
+            bool hollow = false;
 
             switch (note.type.Value)
             {
                 //todo: size note heads using width expected for font
                 case NoteTypeValue.whole:
                     noteChar = Constants.NoteCharacters.WHOLE_NOTE;
+                    // make outside
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    hollow = true;
+                    // make hole
+                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = 6, Width = 5 * 3 / 2 };
+                    hollowRT.Angle = Constants.NoteHeadRotations.WHOLE_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.half:
                     noteChar = Constants.NoteCharacters.HALF_NOTE;
+                    // make outside
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    rotateHead = true;
+                    hollow = true;
+                    // make hole
+                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = 7, Width = 8 * 3 / 2 };
+                    hollowRT.Angle = Constants.NoteHeadRotations.HALF_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.quarter:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
                     noteChar = Constants.NoteCharacters.QUARTER_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.eighth:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
                     noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.Item16th:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
                     noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.Item32nd:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
                     noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.Item64th:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
                     noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.Item128th:
-                    noteHead = new Ellipse() { Fill = brush, Height = 10, Width = 10 * 3 / 2 };
                     noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    rotateHead = true;
                     break;
                 case NoteTypeValue.Item256th:
+                    rotateHead = true;
                     noteChar = "!";
                     break;
                 case NoteTypeValue.Item512th:
+                    rotateHead = true;
                     noteChar = "!";
                     break;
             }
 
-            // rotate head
-            RotateTransform rt = new RotateTransform();
-            rt.Angle = -20;
-            noteHead.LayoutTransform = rt;
+            if (rotateHead)
+            {
+                // rotate head
+                RotateTransform rt = new RotateTransform();
+                rt.Angle = Constants.NoteHeadRotations.SOLID_NOTE;
+                noteHead.LayoutTransform = rt;
+            }
+
+            noteHeadGrid.Children.Add(noteHead);
+
+            if (hollow)
+            {
+                noteHeadInside.LayoutTransform = hollowRT;
+                noteHeadGrid.Children.Add(noteHeadInside);
+            }
 
             WPFRendering.RecalculateSize(noteHead);
+            WPFRendering.RecalculateSize(noteHeadGrid);
             //todo: Render modifiers
 
-            return noteHead;
+            return noteHeadGrid;
         }
 
         /// <summary>
@@ -264,12 +308,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
 
-            
-
-            //todo: render staff
-            element = RenderStaff(Constants.Colors.DEFAULT_NOTE_COLOR, fontSize);
-            grid.Children.Add(element);
-
             //todo: render multiple staves for multi-part instruments etc
             //      This should be as simple as rendering a second staff then putting the note onto that staff as required
             //      Then joining those two staves via a wrapper container
@@ -320,11 +358,15 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 }
             }
 
+            //todo: render staff
+            element = RenderStaff(Constants.Colors.DEFAULT_NOTE_COLOR, left, fontSize);
+            grid.Children.Add(element);
+
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
 
-        private static Panel RenderStaff(String colorString, double fontSize)
+        private static Panel RenderStaff(String colorString, double left, double fontSize)
         {
             //todo: implement
             Grid grid = WPFRendering.CreateAutoSizingGrid();
@@ -340,11 +382,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 System.Windows.Shapes.Line staffLine = new System.Windows.Shapes.Line()
                 {
                     X1 = 0,
-                    X2 = 200, //todo: proper width
+                    X2 = left + 10, //todo: proper padding after line
                     Y1 = i * spacing,
                     Y2 = i * spacing,
                     StrokeThickness = lineWidth,
-                    Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString)) //todo: color properly
+                    Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorString))
                 };
                 WPFRendering.RecalculateSize(staffLine);
                 grid.Children.Add(staffLine);

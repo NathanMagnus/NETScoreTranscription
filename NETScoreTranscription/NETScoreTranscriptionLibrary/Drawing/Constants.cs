@@ -82,5 +82,20 @@ namespace NETScoreTranscription
             public static string DASHED = char.ConvertFromUtf32(0x1D104);
             //todo: rest of barlines
         }
+
+        /// <summary>
+        /// The rotation of the note heads for rendering
+        /// </summary>
+        public static class NoteHeadRotations
+        {
+            public static double SOLID_NOTE = -20;
+            public static double WHOLE_NOTE_HOLLOW = 75;
+            public static double HALF_NOTE_HOLLOW = -25;
+        }
+
+        public static class DefaultNotePositions
+        {
+            
+        }
     }
 }
