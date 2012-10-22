@@ -52,7 +52,7 @@ namespace WpfApplication1
                 //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
                 ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
 
-                double fontSize = 75;
+                double fontSize = 100;
                 WPFRendering wpfmr = new WPFRendering(fontSize);
                 FrameworkElement grid = wpfmr.RenderMeasure(sp.part[0].measure[0]);
                 Console.Out.WriteLine(grid.Width);

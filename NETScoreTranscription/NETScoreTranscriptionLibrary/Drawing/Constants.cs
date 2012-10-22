@@ -23,9 +23,21 @@ namespace NETScoreTranscription
             public static double DEFAULT_SIZE = 75;
         }
 
+        /// <summary>
+        /// Constants relating to the staff
+        /// </summary>
+        public static class Staff
+        {
+            public static double LINE_WIDTH = 2;
+        }
+
+        /// <summary>
+        /// Constants relating to colors
+        /// </summary>
         public static class Colors
         {
             public static String DEFAULT_NOTE_COLOR = "#000000";
+            //TODO: different color values?
         }
 
         /// <summary>
@@ -93,9 +105,12 @@ namespace NETScoreTranscription
             public static double HALF_NOTE_HOLLOW = -25;
         }
 
+        /// <summary>
+        /// Information about default note positions for each clef.
+        /// </summary>
         public static class DefaultNotePositions
         {
-            
+            //todo: maybe use the "octave" class for this?
         }
     }
 }

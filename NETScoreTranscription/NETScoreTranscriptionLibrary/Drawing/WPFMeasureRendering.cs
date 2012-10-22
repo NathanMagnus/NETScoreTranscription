@@ -26,7 +26,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">The note to parse and create a label for</param>
         /// <returns>A label with the note in it</returns>
-        public static Panel RenderNoteOrRest(Note note)
+        public static Panel RenderNoteOrRest(Note note, double fontSize)
         {
             //todo: Render appropriate connectors
             //todo: render barline
@@ -49,13 +49,18 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
-                FrameworkElement noteHead = RenderNoteHead(note);
-                //noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + 30, 0, 0); //todo: stem offset
+                FrameworkElement noteHead = RenderNoteHead(note, fontSize);
+                //todo: move to right place on staff
 
                 grid.Children.Add(noteHead);
 
                 //todo: stems when beamed... This will likely require stems to be drawn after the note heads of the beaming
                 //      however, beaming is not supposed to go over measures so this will save some of the problems that this could have
+
+                if (String.IsNullOrEmpty(note.stem.color))
+                    note.stem.color = Constants.Colors.DEFAULT_NOTE_COLOR;
+
+                double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2 / 5;
 
                 //todo: use stemvalue to do up or down
                 // add the stem
@@ -64,8 +69,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
                         X1 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
                         X2 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
                         Y1 = noteHead.ActualHeight / 2,
-                        Y2 = noteHead.ActualHeight / 2 - 30, //todo: stem offset
-                        StrokeThickness = 2, //todo: thickness same as staff
+                        Y2 = noteHead.ActualHeight / 2 - stemHeight,
+                        StrokeThickness = CalculateLineWidth(fontSize),
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
                     };
                 grid.Children.Add(noteStem);
@@ -85,7 +90,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             }
             else
             {
-                FrameworkElement restElement = RenderRest(note);
+                //todo: move to right position on staff
+                FrameworkElement restElement = RenderRest(note, fontSize);
                 grid.Children.Add(restElement);
             }
 
@@ -99,7 +105,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">Information for the note to render</param>
         /// <returns>A note rendered on a Fraemwork Element</returns>
-        private static FrameworkElement RenderNoteHead(Note note)
+        private static FrameworkElement RenderNoteHead(Note note, double fontSize)
         {
             //todo: chords
             //todo: different shapes of note heads
@@ -116,6 +122,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             bool rotateHead = false;
             bool hollow = false;
+            double noteHeadHeight = 10 * fontSize / Constants.MusicFonts.DEFAULT_SIZE;
+            double noteHeadWidth = noteHeadHeight * 1.5;
 
             switch (note.type.Value)
             {
@@ -123,50 +131,50 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 case NoteTypeValue.whole:
                     noteChar = Constants.NoteCharacters.WHOLE_NOTE;
                     // make outside
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     hollow = true;
                     // make hole
-                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = 6, Width = 5 * 3 / 2 };
+                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = noteHeadHeight * 0.6, Width = noteHeadWidth / 2 };
                     hollowRT.Angle = Constants.NoteHeadRotations.WHOLE_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.half:
                     noteChar = Constants.NoteCharacters.HALF_NOTE;
                     // make outside
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     hollow = true;
                     // make hole
-                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = 7, Width = 8 * 3 / 2 };
+                    noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = noteHeadHeight * 0.7, Width = noteHeadWidth * .8 };
                     hollowRT.Angle = Constants.NoteHeadRotations.HALF_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.quarter:
                     noteChar = Constants.NoteCharacters.QUARTER_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.eighth:
                     noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 }; //todo: vars for vals
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item16th:
                     noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item32nd:
                     noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item64th:
                     noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item128th:
                     noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
-                    noteHead = new Ellipse() { Fill = noteBrush, Height = 10, Width = 10 * 3 / 2 };
+                    noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item256th:
@@ -207,7 +215,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="note">Representation of the rest to render</param>
         /// <returns>The rest rendered on a Framework Element</returns>
-        private static FrameworkElement RenderRest(Note note)
+        private static FrameworkElement RenderRest(Note note, double fontSize)
         {
             string restChar = "";
             switch (note.type.Value)
@@ -244,7 +252,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     break;
             }
             //todo: it is a rest
-            FrameworkElement restLabel = WPFRendering.GetMusicalLabel(restChar);
+            FrameworkElement restLabel = WPFRendering.GetMusicalLabel(restChar, fontSize);
 
             WPFRendering.RecalculateSize(restLabel);
             return restLabel;
@@ -307,10 +315,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
             FrameworkElement element = null;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             grid.Margin = new Thickness(50, 50, 0, 0); //todo: proper margin
-
-            //todo: render multiple staves for multi-part instruments etc
-            //      This should be as simple as rendering a second staff then putting the note onto that staff as required
-            //      Then joining those two staves via a wrapper container
             
             //todo: render each item
             for (int i = 0; i < itemList.Count; i++)
@@ -328,7 +332,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 {
                     //todo: may need to use attributes from previous measure to figure out where to render
                     Note note = (Note)obj;
-                    element = RenderNoteOrRest(note);
+                    element = RenderNoteOrRest(note, fontSize);
                 }
                 else if (type == typeof(Barline))
                 {
@@ -358,7 +362,10 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 }
             }
 
-            //todo: render staff
+            //todo: render multiple staves for multi-part instruments etc
+            //      This should be as simple as rendering a second staff then putting the note onto that staff as required
+            //      Then joining those two staves via a wrapper container
+
             element = RenderStaff(Constants.Colors.DEFAULT_NOTE_COLOR, left, fontSize);
             grid.Children.Add(element);
 
@@ -366,13 +373,18 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
+        private static double CalculateLineWidth(double fontSize)
+        {
+            return Math.Round(Constants.Staff.LINE_WIDTH * fontSize / Constants.MusicFonts.DEFAULT_SIZE, 1); //todo: calculate line width properly
+        }
+
         private static Panel RenderStaff(String colorString, double left, double fontSize)
         {
             //todo: implement
             Grid grid = WPFRendering.CreateAutoSizingGrid();
             //get the height of the staff for the font and use that to draw the lines.
-            double height = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.MUSICA);
-            double lineWidth = 2; //todo: calculate line width properly
+            double height = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT);
+            double lineWidth = CalculateLineWidth(fontSize);
 
             int numLines = 5; //todo: different numbers of lines
             height -= numLines * lineWidth;
@@ -411,7 +423,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             double left = 0;
 
             //todo: render multiple clefs because of multi-line parts
-            element = RenderClef(attributes.clef[0]);
+            element = RenderClef(attributes.clef[0], fontSize);
             element.VerticalAlignment = VerticalAlignment.Center;
             element.Margin = new Thickness(fontSize * 2 / 3, 0, 0, 0);
             grid.Children.Add(element);
@@ -455,7 +467,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             grid.Children.Add(WPFRendering.GetMusicalLabel(time.Beats, halfFont));
 
             Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, halfFont);
-            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.MUSICA), 0, 0); //todo: font size and type properly
+            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.DEFAULT), 0, 0); //todo: font size and type properly
             grid.Children.Add(beatType);
 
             //todo: interchangable and other type of time signature, see definition of Time to hunt it down
@@ -467,7 +479,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         /// <param name="clef">The clef to get the label for</param>
         /// <returns>A label of a clef</returns>
-        public static Label RenderClef(Clef clef)
+        public static Label RenderClef(Clef clef, double fontSize)
         {
             string symbol;
             switch (clef.sign)
@@ -484,7 +496,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     break;
             }
 
-            Label clefLabel = WPFRendering.GetMusicalLabel(symbol); //todo: get the clef from getmusic label
+            Label clefLabel = WPFRendering.GetMusicalLabel(symbol, fontSize); //todo: get the clef from getmusic label
             return clefLabel;
         }
 

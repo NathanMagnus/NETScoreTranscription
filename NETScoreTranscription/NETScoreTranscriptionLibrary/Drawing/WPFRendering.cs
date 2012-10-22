@@ -97,7 +97,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             Label stringLabel = new Label();
             stringLabel.Content = str;
-            stringLabel.FontFamily = Constants.MusicFonts.MUSICA; //todo: multiple font options
+            stringLabel.FontFamily = Constants.MusicFonts.DEFAULT; //todo: multiple font options
             stringLabel.FontSize = fontSize;
 
 
