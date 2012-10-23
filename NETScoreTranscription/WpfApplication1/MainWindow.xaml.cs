@@ -52,12 +52,22 @@ namespace WpfApplication1
                 //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
                 ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
 
-                double fontSize = 100;
-                WPFRendering wpfmr = new WPFRendering(fontSize);
-                FrameworkElement grid = wpfmr.RenderMeasure(sp.part[0].measure[0]);
-                Console.Out.WriteLine(grid.Width);
-                Console.Out.WriteLine(grid.ActualWidth);
-                this.Content = grid;
+                WPFRendering wpfmrBase = new WPFRendering(Constants.MusicFonts.DEFAULT_SIZE);
+                FrameworkElement baseGrid = wpfmrBase.RenderMeasure(sp.part[0].measure[0]);
+
+                WPFRendering wpfmrSmall = new WPFRendering(50);
+                FrameworkElement smallGrid = wpfmrSmall.RenderMeasure(sp.part[0].measure[0]);
+                smallGrid.Margin = new Thickness(smallGrid.Margin.Left, 175, 0, 0);
+
+                WPFRendering wpfmrSmallest = new WPFRendering(25);
+                FrameworkElement smallestGrid = wpfmrSmallest.RenderMeasure(sp.part[0].measure[0]);
+                smallestGrid.Margin = new Thickness(wpfmrSmallest.Margin.Left, 250, 0, 0);
+
+                Grid contentGrid = new Grid();
+                contentGrid.Children.Add(baseGrid);
+                contentGrid.Children.Add(smallGrid);
+                contentGrid.Children.Add(smallestGrid);
+                this.Content = contentGrid;
             }
             catch (Exception ex)
             {

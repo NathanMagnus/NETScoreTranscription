@@ -78,7 +78,7 @@
     <Content Include="OtherDocs\Features.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Musica.ttf">
+    <Resource Include="Fonts\Musica.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <None Include="musicxml30\container.dtd" />

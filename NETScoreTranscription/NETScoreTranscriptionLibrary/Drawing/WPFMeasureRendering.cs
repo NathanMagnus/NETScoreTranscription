@@ -36,7 +36,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
             String noteChar = Constants.NoteCharacters.WHOLE_NOTE;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             
-            
 
             //todo: if it has a rest, then parse as rest, otherwise parse as note
             bool isRest = false;
@@ -49,27 +48,28 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
+                double yOffset = GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
                 FrameworkElement noteHead = RenderNoteHead(note, fontSize);
-                //todo: move to right place on staff
-
+                //todo: move to right position on staff
+                noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + yOffset, noteHead.Margin.Right, noteHead.Margin.Bottom);
                 grid.Children.Add(noteHead);
-
+                
                 //todo: stems when beamed... This will likely require stems to be drawn after the note heads of the beaming
                 //      however, beaming is not supposed to go over measures so this will save some of the problems that this could have
 
                 if (String.IsNullOrEmpty(note.stem.color))
                     note.stem.color = Constants.Colors.DEFAULT_NOTE_COLOR;
-
-                double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2 / 5;
+                
+                double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2.5 / 5;
 
                 //todo: use stemvalue to do up or down
                 // add the stem
                 System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
                     {
-                        X1 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
-                        X2 = noteHead.ActualWidth - 2, //todo: need to adjust according to size of note
-                        Y1 = noteHead.ActualHeight / 2,
-                        Y2 = noteHead.ActualHeight / 2 - stemHeight,
+                        X1 = noteHead.ActualWidth - GetFontFraction(3, fontSize), //todo: need to adjust according to size of note
+                        X2 = noteHead.ActualWidth - GetFontFraction(3, fontSize), //todo: need to adjust according to size of note
+                        Y1 = yOffset + noteHead.ActualHeight / 2,
+                        Y2 = yOffset + noteHead.ActualHeight / 2 - stemHeight,
                         StrokeThickness = CalculateLineWidth(fontSize),
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
                     };
@@ -90,14 +90,24 @@ namespace NETScoreTranscriptionLibrary.Drawing
             }
             else
             {
-                //todo: move to right position on staff
                 FrameworkElement restElement = RenderRest(note, fontSize);
+                restElement.Margin = new Thickness(0, -WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) / 4, 0, 0);
                 grid.Children.Add(restElement);
             }
 
-            grid.VerticalAlignment = VerticalAlignment.Center;
+            grid.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(grid);
             return grid;
+        }
+
+        private static double GetFontFraction(double value, double fontSize)
+        {
+            return value * fontSize / Constants.MusicFonts.DEFAULT_SIZE;
+        }
+
+        private static double GetFontFraction(double fontSize)
+        {
+            return GetFontFraction(1, fontSize);
         }
 
         /// <summary>
@@ -122,7 +132,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             bool rotateHead = false;
             bool hollow = false;
-            double noteHeadHeight = 10 * fontSize / Constants.MusicFonts.DEFAULT_SIZE;
+            double noteHeadHeight = GetFontFraction(12, fontSize);
             double noteHeadWidth = noteHeadHeight * 1.5;
 
             switch (note.type.Value)
@@ -373,14 +383,18 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
+        /// <summary>
+        /// Calculate the width of a line using information about the font
+        /// </summary>
+        /// <param name="fontSize">The font size that is being used</param>
+        /// <returns>The width of the line based on the font size being used</returns>
         private static double CalculateLineWidth(double fontSize)
         {
-            return Math.Round(Constants.Staff.LINE_WIDTH * fontSize / Constants.MusicFonts.DEFAULT_SIZE, 1); //todo: calculate line width properly
+            return Math.Round(GetFontFraction(Constants.Staff.LINE_WIDTH, fontSize), 1); //todo: calculate line width properly
         }
 
         private static Panel RenderStaff(String colorString, double left, double fontSize)
         {
-            //todo: implement
             Grid grid = WPFRendering.CreateAutoSizingGrid();
             //get the height of the staff for the font and use that to draw the lines.
             double height = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT);
@@ -389,7 +403,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             int numLines = 5; //todo: different numbers of lines
             height -= numLines * lineWidth;
             double spacing = height / numLines;
-            for (int i = 0; i < numLines; i++)
+            for (int i = 1; i <= numLines; i++)
             {
                 System.Windows.Shapes.Line staffLine = new System.Windows.Shapes.Line()
                 {
@@ -403,7 +417,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 WPFRendering.RecalculateSize(staffLine);
                 grid.Children.Add(staffLine);
             }
-            grid.VerticalAlignment = VerticalAlignment.Center;
+            grid.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
@@ -424,7 +438,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             //todo: render multiple clefs because of multi-line parts
             element = RenderClef(attributes.clef[0], fontSize);
-            element.VerticalAlignment = VerticalAlignment.Center;
             element.Margin = new Thickness(fontSize * 2 / 3, 0, 0, 0);
             grid.Children.Add(element);
             left += fontSize * 2 / 3;
@@ -437,11 +450,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             //todo: render time signature
             element = RenderTimeSignature(attributes.time[staff], fontSize);
-            element.VerticalAlignment = VerticalAlignment.Center;
-            element.Margin = new Thickness(left, 0, 0, 0);
+            element.Margin = new Thickness(left, GetFontFraction(9, fontSize), 0, 0);
             grid.Children.Add(element);
             left += element.ActualWidth;
 
+            grid.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
@@ -464,13 +477,16 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: make proper time signature label
             //todo: measure font size stuff properly
             Panel grid = WPFRendering.CreateAutoSizingGrid();
-            grid.Children.Add(WPFRendering.GetMusicalLabel(time.Beats, halfFont));
+            Label beatsLabel = WPFRendering.GetMusicalLabel(time.Beats, halfFont);
+            grid.Children.Add(beatsLabel);
 
             Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, halfFont);
             beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.DEFAULT), 0, 0); //todo: font size and type properly
             grid.Children.Add(beatType);
 
             //todo: interchangable and other type of time signature, see definition of Time to hunt it down
+            grid.VerticalAlignment = VerticalAlignment.Top;
+            WPFRendering.RecalculateSize(grid);
             return grid;
         }
 
@@ -497,6 +513,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             }
 
             Label clefLabel = WPFRendering.GetMusicalLabel(symbol, fontSize); //todo: get the clef from getmusic label
+            clefLabel.VerticalAlignment = VerticalAlignment.Top;
+            WPFRendering.RecalculateSize(clefLabel);
             return clefLabel;
         }
 

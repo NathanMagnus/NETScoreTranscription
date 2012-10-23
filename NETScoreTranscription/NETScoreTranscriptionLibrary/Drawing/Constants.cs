@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NETScoreTranscriptionLibrary.Drawing;
 using System.Windows.Media;
+using NETScoreTranscriptionLibrary.MusicXML30;
 
 namespace NETScoreTranscription
 {
@@ -12,7 +13,6 @@ namespace NETScoreTranscription
     /// </summary>
     public static class Constants
     {
-        //todo: more font types
         /// <summary>
         /// Definition of Music fonts
         /// </summary>
@@ -21,6 +21,7 @@ namespace NETScoreTranscription
             public static FontFamily MUSICA = Fonts.GetFontFamilies(new Uri(@"pack://application:,,,/NETScoreTranscriptionLibrary;component/Musica.ttf", UriKind.Absolute)).ElementAt(0);
             public static FontFamily DEFAULT = MUSICA;
             public static double DEFAULT_SIZE = 75;
+            //todo: more font types
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace NETScoreTranscription
         public static class NoteHeadRotations
         {
             public static double SOLID_NOTE = -20;
-            public static double WHOLE_NOTE_HOLLOW = 75;
+            public static double WHOLE_NOTE_HOLLOW = 7;
             public static double HALF_NOTE_HOLLOW = -25;
         }
 
@@ -110,6 +111,7 @@ namespace NETScoreTranscription
         /// </summary>
         public static class DefaultNotePositions
         {
+            public static Pitch TREBLE = new Pitch() { octave = "5", step = Step.G };
             //todo: maybe use the "octave" class for this?
         }
     }

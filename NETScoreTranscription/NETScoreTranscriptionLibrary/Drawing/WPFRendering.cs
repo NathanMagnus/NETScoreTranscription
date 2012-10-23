@@ -100,7 +100,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             stringLabel.FontFamily = Constants.MusicFonts.DEFAULT; //todo: multiple font options
             stringLabel.FontSize = fontSize;
 
-
+            stringLabel.Padding = new Thickness(0, 0, 0, 0);
+            stringLabel.Margin = new Thickness(0, 0, 0, 0);
             RecalculateSize(stringLabel);
             return stringLabel;
         }
