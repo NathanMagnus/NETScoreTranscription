@@ -176,5 +176,27 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             return grid;
         }
+
+
+        /// <summary>
+        /// Scale a number according to the font size and default font size.
+        /// </summary>
+        /// <param name="value">The number to scale based on current font size and default font size</param>
+        /// <param name="fontSize">The current font size</param>
+        /// <returns></returns>
+        public static double GetFontFraction(double value, double fontSize)
+        {
+            return value * fontSize / Constants.MusicFonts.DEFAULT_SIZE;
+        }
+
+        /// <summary>
+        /// Get the size ratio between the current font size and default font size
+        /// </summary>
+        /// <param name="fontSize">Current font size</param>
+        /// <returns>Value to divide current font size to get default font size</returns>
+        public static double GetFontFraction(double fontSize)
+        {
+            return GetFontFraction(1, fontSize);
+        }
     }
 }

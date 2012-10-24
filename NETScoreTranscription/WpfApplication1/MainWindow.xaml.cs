@@ -52,22 +52,39 @@ namespace WpfApplication1
                 //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
                 ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
 
+                WPFRendering wpfmrLarge = new WPFRendering(100);
+                FrameworkElement largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);
+
                 WPFRendering wpfmrBase = new WPFRendering(Constants.MusicFonts.DEFAULT_SIZE);
                 FrameworkElement baseGrid = wpfmrBase.RenderMeasure(sp.part[0].measure[0]);
 
                 WPFRendering wpfmrSmall = new WPFRendering(50);
                 FrameworkElement smallGrid = wpfmrSmall.RenderMeasure(sp.part[0].measure[0]);
-                smallGrid.Margin = new Thickness(smallGrid.Margin.Left, 175, 0, 0);
 
                 WPFRendering wpfmrSmallest = new WPFRendering(25);
                 FrameworkElement smallestGrid = wpfmrSmallest.RenderMeasure(sp.part[0].measure[0]);
-                smallestGrid.Margin = new Thickness(wpfmrSmallest.Margin.Left, 250, 0, 0);
 
+                // put content on screen and into a grid
                 Grid contentGrid = new Grid();
+                contentGrid.RowDefinitions.Add(new RowDefinition());
+                contentGrid.RowDefinitions.Add(new RowDefinition());
+                contentGrid.RowDefinitions.Add(new RowDefinition());
+                contentGrid.RowDefinitions.Add(new RowDefinition());
+
+                Grid.SetRow(largeGrid, 0);
+                Grid.SetRow(baseGrid, 1);
+                Grid.SetRow(smallGrid, 2);
+                Grid.SetRow(smallestGrid, 3);
+                contentGrid.Children.Add(largeGrid);
                 contentGrid.Children.Add(baseGrid);
                 contentGrid.Children.Add(smallGrid);
                 contentGrid.Children.Add(smallestGrid);
+
+                //set window stuff
                 this.Content = contentGrid;
+                this.Height = 900;
+                this.Left = 0;
+                this.Top = 0;
             }
             catch (Exception ex)
             {

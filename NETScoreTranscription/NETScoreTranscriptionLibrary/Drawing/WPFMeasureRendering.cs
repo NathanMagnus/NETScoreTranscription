@@ -33,7 +33,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: tuplets, triplets, beams
 
             //todo: likely remove this whole function because will need to draw own notes due to stem when beaming
-            String noteChar = Constants.NoteCharacters.WHOLE_NOTE;
+            String noteChar = Constants.Note.Characters.WHOLE_NOTE;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             
 
@@ -48,7 +48,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             if (!isRest)
             {
-                double yOffset = GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
+                double yOffset = WPFRendering.GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
                 FrameworkElement noteHead = RenderNoteHead(note, fontSize);
                 //todo: move to right position on staff
                 noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + yOffset, noteHead.Margin.Right, noteHead.Margin.Bottom);
@@ -66,14 +66,20 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 // add the stem
                 System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
                     {
-                        X1 = noteHead.ActualWidth - GetFontFraction(3, fontSize), //todo: need to adjust according to size of note
-                        X2 = noteHead.ActualWidth - GetFontFraction(3, fontSize), //todo: need to adjust according to size of note
+                        X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
+                        X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
                         Y1 = yOffset + noteHead.ActualHeight / 2,
                         Y2 = yOffset + noteHead.ActualHeight / 2 - stemHeight,
                         StrokeThickness = CalculateLineWidth(fontSize),
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
                     };
+                //todo: get the pitch object from the item list, use character value to calc steps, move steps up and down one step at a time
+                //todo: use the octave shift function: moves up by a 8 steps
+
+
                 grid.Children.Add(noteStem);
+
+                
 
                 //todo: accidentals
                 //todo: clef change on note
@@ -99,17 +105,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
-
-        private static double GetFontFraction(double value, double fontSize)
-        {
-            return value * fontSize / Constants.MusicFonts.DEFAULT_SIZE;
-        }
-
-        private static double GetFontFraction(double fontSize)
-        {
-            return GetFontFraction(1, fontSize);
-        }
-
+        
         /// <summary>
         /// Render a note.
         /// </summary>
@@ -132,58 +128,58 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             bool rotateHead = false;
             bool hollow = false;
-            double noteHeadHeight = GetFontFraction(12, fontSize);
+            double noteHeadHeight = WPFRendering.GetFontFraction(12, fontSize);
             double noteHeadWidth = noteHeadHeight * 1.5;
 
             switch (note.type.Value)
             {
                 //todo: size note heads using width expected for font
                 case NoteTypeValue.whole:
-                    noteChar = Constants.NoteCharacters.WHOLE_NOTE;
+                    noteChar = Constants.Note.Characters.WHOLE_NOTE;
                     // make outside
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     hollow = true;
                     // make hole
                     noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = noteHeadHeight * 0.6, Width = noteHeadWidth / 2 };
-                    hollowRT.Angle = Constants.NoteHeadRotations.WHOLE_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
+                    hollowRT.Angle = Constants.Note.HeadRotations.WHOLE_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.half:
-                    noteChar = Constants.NoteCharacters.HALF_NOTE;
+                    noteChar = Constants.Note.Characters.HALF_NOTE;
                     // make outside
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     hollow = true;
                     // make hole
                     noteHeadInside = new Ellipse() { Fill = new SolidColorBrush(Colors.White), Height = noteHeadHeight * 0.7, Width = noteHeadWidth * .8 };
-                    hollowRT.Angle = Constants.NoteHeadRotations.HALF_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
+                    hollowRT.Angle = Constants.Note.HeadRotations.HALF_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.quarter:
-                    noteChar = Constants.NoteCharacters.QUARTER_NOTE;
+                    noteChar = Constants.Note.Characters.QUARTER_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.eighth:
-                    noteChar = Constants.NoteCharacters.EIGHTH_NOTE;
+                    noteChar = Constants.Note.Characters.EIGHTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item16th:
-                    noteChar = Constants.NoteCharacters.SIXTEETH_NOTE;
+                    noteChar = Constants.Note.Characters.SIXTEETH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item32nd:
-                    noteChar = Constants.NoteCharacters.THIRTYSECOND_NOTE;
+                    noteChar = Constants.Note.Characters.THIRTYSECOND_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item64th:
-                    noteChar = Constants.NoteCharacters.SIXTYFOURTH_NOTE;
+                    noteChar = Constants.Note.Characters.SIXTYFOURTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item128th:
-                    noteChar = Constants.NoteCharacters.ONETWENTYEIGHTH_NOTE;
+                    noteChar = Constants.Note.Characters.ONETWENTYEIGHTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
@@ -201,7 +197,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
                 // rotate head
                 RotateTransform rt = new RotateTransform();
-                rt.Angle = Constants.NoteHeadRotations.SOLID_NOTE;
+                rt.Angle = Constants.Note.HeadRotations.SOLID_NOTE;
                 noteHead.LayoutTransform = rt;
             }
 
@@ -212,7 +208,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 noteHeadInside.LayoutTransform = hollowRT;
                 noteHeadGrid.Children.Add(noteHeadInside);
             }
-
+            
             WPFRendering.RecalculateSize(noteHead);
             WPFRendering.RecalculateSize(noteHeadGrid);
             //todo: Render modifiers
@@ -390,7 +386,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>The width of the line based on the font size being used</returns>
         private static double CalculateLineWidth(double fontSize)
         {
-            return Math.Round(GetFontFraction(Constants.Staff.LINE_WIDTH, fontSize), 1); //todo: calculate line width properly
+            return Math.Round(WPFRendering.GetFontFraction(Constants.Staff.LINE_WIDTH, fontSize), 1); //todo: calculate line width properly
         }
 
         private static Panel RenderStaff(String colorString, double left, double fontSize)
@@ -450,7 +446,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
             //todo: render time signature
             element = RenderTimeSignature(attributes.time[staff], fontSize);
-            element.Margin = new Thickness(left, GetFontFraction(9, fontSize), 0, 0);
+            element.Margin = new Thickness(left, WPFRendering.GetFontFraction(9, fontSize), 0, 0);
             grid.Children.Add(element);
             left += element.ActualWidth;
 

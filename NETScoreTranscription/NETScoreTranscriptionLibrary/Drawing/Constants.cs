@@ -51,21 +51,55 @@ namespace NETScoreTranscription
             //todo: rest of cleffs
         }
 
+        
         /// <summary>
-        /// Defintion of the Unicode characters for different notes
+        /// Constants for anything relating to a note
         /// </summary>
-        public static class NoteCharacters
+        public static class Note
         {
-            public static string WHOLE_NOTE = char.ConvertFromUtf32(0x1D15D);
-            public static string HALF_NOTE = char.ConvertFromUtf32(0x1D15E);
-            public static string QUARTER_NOTE = char.ConvertFromUtf32(0x1D15F);
-            public static string EIGHTH_NOTE = char.ConvertFromUtf32(0x1D160);
-            public static string SIXTEETH_NOTE = char.ConvertFromUtf32(0x1D161);
-            public static string THIRTYSECOND_NOTE = char.ConvertFromUtf32(0x1D162);
-            public static string SIXTYFOURTH_NOTE = char.ConvertFromUtf32(0x1D163);
-            public static string ONETWENTYEIGHTH_NOTE = char.ConvertFromUtf32(0x1D164);
-            //todo: smaller notes
+            /// <summary>
+            /// Defintion of the Unicode characters for different notes
+            /// </summary>
+            public static class Characters
+            {
+                public static string WHOLE_NOTE = char.ConvertFromUtf32(0x1D15D);
+                public static string HALF_NOTE = char.ConvertFromUtf32(0x1D15E);
+                public static string QUARTER_NOTE = char.ConvertFromUtf32(0x1D15F);
+                public static string EIGHTH_NOTE = char.ConvertFromUtf32(0x1D160);
+                public static string SIXTEETH_NOTE = char.ConvertFromUtf32(0x1D161);
+                public static string THIRTYSECOND_NOTE = char.ConvertFromUtf32(0x1D162);
+                public static string SIXTYFOURTH_NOTE = char.ConvertFromUtf32(0x1D163);
+                public static string ONETWENTYEIGHTH_NOTE = char.ConvertFromUtf32(0x1D164);
+                //todo: smaller notes
+            }
+
+            /// <summary>
+            /// The rotation of the note heads for rendering
+            /// </summary>
+            public static class HeadRotations
+            {
+                public static double SOLID_NOTE = -20;
+                public static double WHOLE_NOTE_HOLLOW = 7;
+                public static double HALF_NOTE_HOLLOW = -25;
+            }
+
+            /// <summary>
+            /// Defaults for trebel clef notes
+            /// </summary>
+            public static class TrebelDefaults
+            {
+                public static Pitch PITCH = new Pitch() { octave = "5", step = Step.G };
+                public static UpDown STEM_DIRECTION = UpDown.up;
+            }
+
+            //todo: bass and other clefs
+            public static class BassDefaults
+            {
+
+            }
         }
+
+        
 
         /// <summary>
         /// Definition of the Unicode characters for different rests
@@ -94,25 +128,6 @@ namespace NETScoreTranscription
             public static string HEAVY_LIGHT = char.ConvertFromUtf32(0x1D103);
             public static string DASHED = char.ConvertFromUtf32(0x1D104);
             //todo: rest of barlines
-        }
-
-        /// <summary>
-        /// The rotation of the note heads for rendering
-        /// </summary>
-        public static class NoteHeadRotations
-        {
-            public static double SOLID_NOTE = -20;
-            public static double WHOLE_NOTE_HOLLOW = 7;
-            public static double HALF_NOTE_HOLLOW = -25;
-        }
-
-        /// <summary>
-        /// Information about default note positions for each clef.
-        /// </summary>
-        public static class DefaultNotePositions
-        {
-            public static Pitch TREBLE = new Pitch() { octave = "5", step = Step.G };
-            //todo: maybe use the "octave" class for this?
         }
     }
 }
