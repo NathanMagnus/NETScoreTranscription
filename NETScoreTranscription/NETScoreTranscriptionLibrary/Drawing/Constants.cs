@@ -30,6 +30,7 @@ namespace NETScoreTranscription
         public static class Staff
         {
             public static double LINE_WIDTH = 2;
+            public static double STAFF_PADDING = 10;
         }
 
         /// <summary>

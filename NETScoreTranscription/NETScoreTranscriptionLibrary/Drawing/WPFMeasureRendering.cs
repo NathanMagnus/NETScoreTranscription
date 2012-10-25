@@ -389,7 +389,14 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return Math.Round(WPFRendering.GetFontFraction(Constants.Staff.LINE_WIDTH, fontSize), 1); //todo: calculate line width properly
         }
 
-        private static Panel RenderStaff(String colorString, double left, double fontSize)
+        /// <summary>
+        /// Render the staff for music
+        /// </summary>
+        /// <param name="colorString">The color the staff should be</param>
+        /// <param name="width">Width of the staff to render</param>
+        /// <param name="fontSize">The size of font currently being used</param>
+        /// <returns></returns>
+        private static Panel RenderStaff(String colorString, double width, double fontSize)
         {
             Grid grid = WPFRendering.CreateAutoSizingGrid();
             //get the height of the staff for the font and use that to draw the lines.
@@ -404,7 +411,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 System.Windows.Shapes.Line staffLine = new System.Windows.Shapes.Line()
                 {
                     X1 = 0,
-                    X2 = left + 10, //todo: proper padding after line
+                    X2 = width + WPFRendering.GetFontFraction(Constants.Staff.STAFF_PADDING, fontSize), //todo: proper padding after line
                     Y1 = i * spacing,
                     Y2 = i * spacing,
                     StrokeThickness = lineWidth,
@@ -439,7 +446,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             left += fontSize * 2 / 3;
 
             //todo: render key signature
-            element = RenderKeySignature();
+            element = RenderKeySignature(fontSize);
             element.Margin = new Thickness(left, 0, 0, 0);
             grid.Children.Add(element);
             left += element.ActualWidth;
@@ -455,8 +462,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
-
-        public static FrameworkElement RenderKeySignature()
+        public static FrameworkElement RenderKeySignature(double fontSize)
         {
             //todo: render key signature properly
             return new Label();

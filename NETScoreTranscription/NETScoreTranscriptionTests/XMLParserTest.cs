@@ -71,21 +71,28 @@ namespace NETScoreTranscriptionTests
         //todo: if file doesn't match scorepartwise, then xsl transform it and try again then fail if fail again.
         public static void CompareProperties(Type myType, Object o1, Object o2)
         {
+            if (myType.IsPrimitive || myType == typeof(String) || myType == typeof(Decimal))
+                return;
+
             // Get the public properties.
             PropertyInfo[] myPropertyInfo = myType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
             Assert.AreEqual(o1.GetType(), o2.GetType());
 
-            if (o1 == null || o2 == null) Assert.AreEqual(o1, o2);
+            if (o1 == null || o2 == null)
+            {
+                Assert.AreEqual(o1, o2);
+                return;
+            }
 
             // Display the public properties.
             for (int i = 0; i < myPropertyInfo.Length; i++)
             {
-
                 PropertyInfo myPropInfo = (PropertyInfo)myPropertyInfo[i];
                 Object obj1 = myPropInfo.GetValue(o1, null);
                 Object obj2 = myPropInfo.GetValue(o2, null);
 
-                if (obj1 == null || obj2 == null) Assert.AreEqual(obj1, obj2);
+                if ((obj1 != null) && (obj2 == null)) Assert.AreEqual(obj1, obj2, obj1.GetType() + " != null");
+                if ((obj1 == null) && (obj2 != null)) Assert.AreEqual(obj1, obj2, "null != " + obj2.GetType());
 
 
                 if (obj1 != null && obj2 != null)
@@ -108,7 +115,8 @@ namespace NETScoreTranscriptionTests
                     }
                     else
                     {
-                        Assert.AreEqual(obj1, obj2);
+                        Assert.AreEqual(obj1.GetType(), obj2.GetType());
+                        CompareProperties(obj1.GetType(), obj1, obj2);
                     }
                 }
 
@@ -160,15 +168,7 @@ namespace NETScoreTranscriptionTests
                         }, 
                         time = new Time[]
                         {
-                            new Time()
-                            {
-                                /*Items = new object[]
-                                {
-                                    new decimal(4),
-                                    new decimal(4)
-                                }*/
-                                //todo: beats and beat type
-                            }
+                            new Time() { Beats = "4", BeatType = "4"}
                         }, 
                         clef = new Clef[]
                         {
@@ -183,7 +183,16 @@ namespace NETScoreTranscriptionTests
                 }
             };
             
-            ScorePartwise expected = new ScorePartwise() { version = "3.0" };
+            // set expected
+            ScorePartwise expected = new ScorePartwise() { version = "3.0", part = new ScorePartwisePart[1] };
+
+            // measure part and information
+            expected.part[0] = new ScorePartwisePart() { measure = new ScorePartwisePartMeasure[1] };
+            expected.part[0].measure[0] = m;
+
+            // part list
+            expected.partList = new PartList() { scorepart = new ScorePart() { id = "P1", partName = new PartName() { Value = "Music" } } };
+            
 
             ScorePartwise actual = ScorePartwise.Deserialize(testString1);
             CompareProperties(actual.GetType(), actual, expected);
@@ -199,7 +208,8 @@ namespace NETScoreTranscriptionTests
         public void ParseFileTest()
         {
             string fileName = string.Empty; // TODO: Initialize to an appropriate value
-            //ScoreObject expected = null; // TODO: Initialize to an appropriate value
+            ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
+
             Assert.Inconclusive("Verify the correctness of this test method.");
         }
     }
