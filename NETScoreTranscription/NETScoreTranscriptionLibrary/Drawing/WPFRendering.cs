@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Controls;
 using NETScoreTranscriptionLibrary.MusicXML30;
 using System.Windows.Media;
 using NETScoreTranscription;
 using System.Windows;
-using System.Windows.Media.Animation;
 using NETScoreTranscriptionLibrary.Drawing.Interfaces;
-using NETScoreTranscriptionLibrary.Drawing;
+using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace NETScoreTranscriptionLibrary.Drawing
 {
@@ -139,7 +136,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         public Panel RenderMeasure(ScorePartwisePartMeasure measure)
         {
             //todo: render top staff measure and bottom then combine
-            return WPFMeasureRendering.RenderMeasure(measure, 0, FontSize);
+            return WpfMeasureRendering.RenderMeasure(measure, 0, FontSize);
         }
 
         /// <summary>

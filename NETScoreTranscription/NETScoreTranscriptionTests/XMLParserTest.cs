@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Collections;
 using NETScoreTranscriptionLibrary.MusicXML30;
+using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace NETScoreTranscriptionTests
 {

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Controls;
 using NETScoreTranscriptionLibrary.MusicXML30;
 using NETScoreTranscription;
 using System.Windows;
 using System.Windows.Media;
-using NETScoreTranscriptionLibrary.Drawing.Interfaces;
 using NETScoreTranscriptionLibrary.Exceptions.Drawing;
 using System.Windows.Shapes;
+using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace NETScoreTranscriptionLibrary.Drawing
 {
@@ -18,7 +17,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
     /// <summary>
     /// WPF Rendering functions for a measure.
     /// </summary>
-    public static class WPFMeasureRendering
+    public static class WpfMeasureRendering
     {
         //todo: put note rendering into its own class
         /// <summary>

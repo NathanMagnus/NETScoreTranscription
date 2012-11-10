@@ -19,6 +19,7 @@ using NETScoreTranscriptionLibrary;
 using System.Xml;
 using NETScoreTranscriptionLibrary.MusicXML30;
 using NETScoreTranscriptionLibrary.Drawing;
+using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace WpfApplication1
 {

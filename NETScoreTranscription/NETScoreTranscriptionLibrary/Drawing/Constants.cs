@@ -5,6 +5,7 @@ using System.Text;
 using NETScoreTranscriptionLibrary.Drawing;
 using System.Windows.Media;
 using NETScoreTranscriptionLibrary.MusicXML30;
+using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace NETScoreTranscription
 {
