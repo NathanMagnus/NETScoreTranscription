@@ -1,15 +1,18 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "upright-inverted")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "upright-inverted")]
     public enum UprightInverted
     {
-
-        /// <remarks/>
+        /// <remarks />
         upright,
 
-        /// <remarks/>
+        /// <remarks />
         inverted,
     }
 }

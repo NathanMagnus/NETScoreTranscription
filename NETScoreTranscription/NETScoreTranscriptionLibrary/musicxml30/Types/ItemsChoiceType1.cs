@@ -1,33 +1,36 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType1
     {
-
-        /// <remarks/>
+        /// <remarks />
         chord,
 
-        /// <remarks/>
+        /// <remarks />
         cue,
 
-        /// <remarks/>
+        /// <remarks />
         duration,
 
-        /// <remarks/>
+        /// <remarks />
         grace,
 
-        /// <remarks/>
+        /// <remarks />
         pitch,
 
-        /// <remarks/>
+        /// <remarks />
         rest,
 
-        /// <remarks/>
+        /// <remarks />
         tie,
 
-        /// <remarks/>
+        /// <remarks />
         unpitched,
     }
 }

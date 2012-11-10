@@ -1,27 +1,30 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType6
     {
-
-        /// <remarks/>
+        /// <remarks />
         elision,
 
-        /// <remarks/>
+        /// <remarks />
         extend,
 
-        /// <remarks/>
+        /// <remarks />
         humming,
 
-        /// <remarks/>
+        /// <remarks />
         laughing,
 
-        /// <remarks/>
+        /// <remarks />
         syllabic,
 
-        /// <remarks/>
+        /// <remarks />
         text,
     }
 }

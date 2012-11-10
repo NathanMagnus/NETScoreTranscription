@@ -1,30 +1,33 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "clef-sign")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "clef-sign")]
     public enum ClefSign
     {
-
-        /// <remarks/>
+        /// <remarks />
         G,
 
-        /// <remarks/>
+        /// <remarks />
         F,
 
-        /// <remarks/>
+        /// <remarks />
         C,
 
-        /// <remarks/>
+        /// <remarks />
         percussion,
 
-        /// <remarks/>
+        /// <remarks />
         TAB,
 
-        /// <remarks/>
+        /// <remarks />
         jianpu,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

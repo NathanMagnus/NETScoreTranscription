@@ -1,25 +1,26 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Winged
     {
-
-        /// <remarks/>
+        /// <remarks />
         none,
 
-        /// <remarks/>
+        /// <remarks />
         straight,
 
-        /// <remarks/>
+        /// <remarks />
         curved,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double-straight")]
-        doublestraight,
+        /// <remarks />
+        [XmlEnum("double-straight")] doublestraight,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double-curved")]
-        doublecurved,
+        /// <remarks />
+        [XmlEnum("double-curved")] doublecurved,
     }
 }

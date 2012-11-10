@@ -1,48 +1,45 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "handbell-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "handbell-value")]
     public enum handbellvalue
     {
-
-        /// <remarks/>
+        /// <remarks />
         damp,
 
-        /// <remarks/>
+        /// <remarks />
         echo,
 
-        /// <remarks/>
+        /// <remarks />
         gyro,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("hand martellato")]
-        handmartellato,
+        /// <remarks />
+        [XmlEnum("hand martellato")] handmartellato,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("mallet lift")]
-        malletlift,
+        /// <remarks />
+        [XmlEnum("mallet lift")] malletlift,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("mallet table")]
-        mallettable,
+        /// <remarks />
+        [XmlEnum("mallet table")] mallettable,
 
-        /// <remarks/>
+        /// <remarks />
         martellato,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("martellato lift")]
-        martellatolift,
+        /// <remarks />
+        [XmlEnum("martellato lift")] martellatolift,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("muted martellato")]
-        mutedmartellato,
+        /// <remarks />
+        [XmlEnum("muted martellato")] mutedmartellato,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("pluck lift")]
-        plucklift,
+        /// <remarks />
+        [XmlEnum("pluck lift")] plucklift,
 
-        /// <remarks/>
+        /// <remarks />
         swing,
     }
 }

@@ -1,217 +1,149 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "part-group")]
-    [System.Xml.Serialization.XmlRootAttribute("part-group", Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(TypeName = "part-group")]
+    [XmlRoot("part-group", Namespace = "", IsNullable = true)]
     public class PartGroup
     {
-
-        private GroupName groupNameField;
-
-        private NameDisplay groupNamedisplayField;
-
+        private static XmlSerializer serializer;
+        private FormattedText footnoteField;
         private GroupName groupAbbreviationField;
 
         private NameDisplay groupAbbreviationdisplayField;
 
-        private GroupSymbol groupSymbolField;
-
         private GroupBarline groupBarlineField;
+        private GroupName groupNameField;
+
+        private NameDisplay groupNamedisplayField;
+        private GroupSymbol groupSymbolField;
 
         private Empty groupTimeField;
 
-        private FormattedText footnoteField;
-
         private Level levelField;
 
-        private StartStop typeField;
-
         private string numberField;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private StartStop typeField;
 
         public PartGroup()
         {
             numberField = "1";
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-name", Order = 0)]
+        [XmlElement("group-name", Order = 0)]
         public GroupName groupName
         {
-            get
-            {
-                return groupNameField;
-            }
-            set
-            {
-                groupNameField = value;
-            }
+            get { return groupNameField; }
+            set { groupNameField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-name-display", Order = 1)]
+        [XmlElement("group-name-display", Order = 1)]
         public NameDisplay groupNamedisplay
         {
-            get
-            {
-                return groupNamedisplayField;
-            }
-            set
-            {
-                groupNamedisplayField = value;
-            }
+            get { return groupNamedisplayField; }
+            set { groupNamedisplayField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-abbreviation", Order = 2)]
+        [XmlElement("group-abbreviation", Order = 2)]
         public GroupName groupAbbreviation
         {
-            get
-            {
-                return groupAbbreviationField;
-            }
-            set
-            {
-                groupAbbreviationField = value;
-            }
+            get { return groupAbbreviationField; }
+            set { groupAbbreviationField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-abbreviation-display", Order = 3)]
+        [XmlElement("group-abbreviation-display", Order = 3)]
         public NameDisplay groupAbbreviationdisplay
         {
-            get
-            {
-                return groupAbbreviationdisplayField;
-            }
-            set
-            {
-                groupAbbreviationdisplayField = value;
-            }
+            get { return groupAbbreviationdisplayField; }
+            set { groupAbbreviationdisplayField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-symbol", Order = 4)]
+        [XmlElement("group-symbol", Order = 4)]
         public GroupSymbol groupSymbol
         {
-            get
-            {
-                return groupSymbolField;
-            }
-            set
-            {
-                groupSymbolField = value;
-            }
+            get { return groupSymbolField; }
+            set { groupSymbolField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-barline", Order = 5)]
+        [XmlElement("group-barline", Order = 5)]
         public GroupBarline groupBarline
         {
-            get
-            {
-                return groupBarlineField;
-            }
-            set
-            {
-                groupBarlineField = value;
-            }
+            get { return groupBarlineField; }
+            set { groupBarlineField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("group-time", Order = 6)]
+        [XmlElement("group-time", Order = 6)]
         public Empty groupTime
         {
-            get
-            {
-                return groupTimeField;
-            }
-            set
-            {
-                groupTimeField = value;
-            }
+            get { return groupTimeField; }
+            set { groupTimeField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
+        [XmlElement(Order = 7)]
         public FormattedText footnote
         {
-            get
-            {
-                return footnoteField;
-            }
-            set
-            {
-                footnoteField = value;
-            }
+            get { return footnoteField; }
+            set { footnoteField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
+        [XmlElement(Order = 8)]
         public Level level
         {
-            get
-            {
-                return levelField;
-            }
-            set
-            {
-                levelField = value;
-            }
+            get { return levelField; }
+            set { levelField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public StartStop type
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            get { return typeField; }
+            set { typeField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
-        [System.ComponentModel.DefaultValueAttribute("1")]
+        [XmlAttribute(DataType = "token")]
+        [DefaultValue("1")]
         public string number
         {
-            get
-            {
-                return numberField;
-            }
-            set
-            {
-                numberField = value;
-            }
+            get { return numberField; }
+            set { numberField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(PartGroup));
+                    serializer = new XmlSerializer(typeof (PartGroup));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current partgroup object into an XML document
+        ///   Serializes current partgroup object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -228,13 +160,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an partgroup object
+        ///   Deserializes workflow markup into an partgroup object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output partgroup object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output partgroup object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out PartGroup obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out PartGroup obj, out Exception exception)
         {
             exception = null;
             obj = default(PartGroup);
@@ -243,7 +175,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -252,17 +184,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out PartGroup obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static PartGroup Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((PartGroup)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((PartGroup)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -274,12 +210,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current partgroup object into file
+        ///   Serializes current partgroup object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -287,7 +223,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -296,11 +232,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -315,13 +251,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an partgroup object
+        ///   Deserializes xml markup from file into an partgroup object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output partgroup object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output partgroup object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out PartGroup obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out PartGroup obj, out Exception exception)
         {
             exception = null;
             obj = default(PartGroup);
@@ -330,7 +266,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -339,18 +275,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out PartGroup obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static PartGroup LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -368,16 +304,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this partgroup object
+        ///   Create a clone of this partgroup object
         /// </summary>
         public virtual PartGroup Clone()
         {
-            return ((PartGroup)(MemberwiseClone()));
+            return ((PartGroup) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

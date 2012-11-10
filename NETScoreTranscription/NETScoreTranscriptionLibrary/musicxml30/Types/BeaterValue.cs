@@ -1,70 +1,64 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "beater-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "beater-value")]
     public enum BeaterValue
     {
+        /// <remarks />
+        Bow,
 
-        /// <remarks/>
-        bow,
+        /// <remarks />
+        [XmlEnum("chime hammer")] ChimeHammer,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("chime hammer")]
-        chimehammer,
+        /// <remarks />
+        Coin,
 
-        /// <remarks/>
-        coin,
+        /// <remarks />
+        Finger,
 
-        /// <remarks/>
-        finger,
+        /// <remarks />
+        Fingernail,
 
-        /// <remarks/>
-        fingernail,
+        /// <remarks />
+        Fist,
 
-        /// <remarks/>
-        fist,
+        /// <remarks />
+        [XmlEnum("guiro scraper")] GuiroScraper,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("guiro scraper")]
-        guiroscraper,
+        /// <remarks />
+        Hammer,
 
-        /// <remarks/>
-        hammer,
+        /// <remarks />
+        Hand,
 
-        /// <remarks/>
-        hand,
+        /// <remarks />
+        [XmlEnum("jazz stick")] JazzStick,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("jazz stick")]
-        jazzstick,
+        /// <remarks />
+        [XmlEnum("knitting needle")] Knitt
+            ingNeedle,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("knitting needle")]
-        knittingneedle,
+        /// <remarks />
+        [XmlEnum("metal hammer")] MetalHammer,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("metal hammer")]
-        metalhammer,
+        /// <remarks />
+        [XmlEnum("snare stick")] SnareStick,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("snare stick")]
-        snarestick,
+        /// <remarks />
+        [XmlEnum("spoon mallet")] SpoonMallet,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("spoon mallet")]
-        spoonmallet,
+        /// <remarks />
+        [XmlEnum("triangle beater")] TriangleBeater,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("triangle beater")]
-        trianglebeater,
+        /// <remarks />
+        [XmlEnum("triangle beater plain")] TriangleBeaterPlain,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("triangle beater plain")]
-        trianglebeaterplain,
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("wire brush")]
-        wirebrush,
+        /// <remarks />
+        [XmlEnum("wire brush")] WireBrush,
     }
 }

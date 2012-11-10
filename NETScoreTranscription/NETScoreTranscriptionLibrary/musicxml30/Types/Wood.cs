@@ -1,56 +1,53 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Wood
     {
+        /// <remarks />
+        [XmlEnum("board clapper")] boardclapper,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("board clapper")]
-        boardclapper,
-
-        /// <remarks/>
+        /// <remarks />
         cabasa,
 
-        /// <remarks/>
+        /// <remarks />
         castanets,
 
-        /// <remarks/>
+        /// <remarks />
         claves,
 
-        /// <remarks/>
+        /// <remarks />
         guiro,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("log drum")]
-        logdrum,
+        /// <remarks />
+        [XmlEnum("log drum")] logdrum,
 
-        /// <remarks/>
+        /// <remarks />
         maraca,
 
-        /// <remarks/>
+        /// <remarks />
         maracas,
 
-        /// <remarks/>
+        /// <remarks />
         ratchet,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sandpaper blocks")]
-        sandpaperblocks,
+        /// <remarks />
+        [XmlEnum("sandpaper blocks")] sandpaperblocks,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("slit drum")]
-        slitdrum,
+        /// <remarks />
+        [XmlEnum("slit drum")] slitdrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("temple block")]
-        templeblock,
+        /// <remarks />
+        [XmlEnum("temple block")] templeblock,
 
-        /// <remarks/>
+        /// <remarks />
         vibraslap,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("wood block")]
-        woodblock,
+        /// <remarks />
+        [XmlEnum("wood block")] woodblock,
     }
 }

@@ -1,91 +1,75 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "multiple-rest")]
-    [System.Xml.Serialization.XmlRootAttribute("multiple-rest", Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(TypeName = "multiple-rest")]
+    [XmlRoot("multiple-rest", Namespace = "", IsNullable = true)]
     public class MultipleRest
     {
-
+        private static XmlSerializer serializer;
         private YesNo useSymbolsField;
 
         private bool useSymbolsFieldSpecified;
 
         private string valueField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlAttributeAttribute("use-symbols")]
+        [XmlAttribute("use-symbols")]
         public YesNo useSymbols
         {
-            get
-            {
-                return useSymbolsField;
-            }
-            set
-            {
-                useSymbolsField = value;
-            }
+            get { return useSymbolsField; }
+            set { useSymbolsField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool useSymbolsSpecified
         {
-            get
-            {
-                return useSymbolsFieldSpecified;
-            }
-            set
-            {
-                useSymbolsFieldSpecified = value;
-            }
+            get { return useSymbolsFieldSpecified; }
+            set { useSymbolsFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlTextAttribute]
+        [XmlText]
         public string Value
         {
-            get
-            {
-                return valueField;
-            }
-            set
-            {
-                valueField = value;
-            }
+            get { return valueField; }
+            set { valueField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(MultipleRest));
+                    serializer = new XmlSerializer(typeof (MultipleRest));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current multiplerest object into an XML document
+        ///   Serializes current multiplerest object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -102,13 +86,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an multiplerest object
+        ///   Deserializes workflow markup into an multiplerest object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output multiplerest object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output multiplerest object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out MultipleRest obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out MultipleRest obj, out Exception exception)
         {
             exception = null;
             obj = default(MultipleRest);
@@ -117,7 +101,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -126,17 +110,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out MultipleRest obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static MultipleRest Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((MultipleRest)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((MultipleRest)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -148,12 +136,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current multiplerest object into file
+        ///   Serializes current multiplerest object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -161,7 +149,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -170,11 +158,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -189,13 +177,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an multiplerest object
+        ///   Deserializes xml markup from file into an multiplerest object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output multiplerest object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output multiplerest object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out MultipleRest obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out MultipleRest obj, out Exception exception)
         {
             exception = null;
             obj = default(MultipleRest);
@@ -204,7 +192,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -213,18 +201,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out MultipleRest obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static MultipleRest LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -242,16 +230,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this multiplerest object
+        ///   Create a clone of this multiplerest object
         /// </summary>
         public virtual MultipleRest Clone()
         {
-            return ((MultipleRest)(MemberwiseClone()));
+            return ((MultipleRest) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

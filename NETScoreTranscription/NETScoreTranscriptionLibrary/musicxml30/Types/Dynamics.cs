@@ -1,19 +1,26 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Dynamics
     {
+        private static XmlSerializer serializer;
+        private EnclosureShape enclosureField;
 
-        private object[] itemsField;
-
+        private bool enclosureFieldSpecified;
         private ItemsChoiceType5[] itemsElementNameField;
+        private object[] itemsField;
+        private string lineThroughField;
+        private string overlineField;
 
         private AboveBelow placementField;
 
@@ -21,185 +28,122 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         private string underlineField;
 
-        private string overlineField;
-
-        private string lineThroughField;
-
-        private EnclosureShape enclosureField;
-
-        private bool enclosureFieldSpecified;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlElementAttribute("f", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("ff", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("fff", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("ffff", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("fffff", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("ffffff", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("fp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("fz", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mf", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("other-dynamics", typeof(string), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("p", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("pp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("ppp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("pppp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("ppppp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("pppppp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rf", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rfz", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("sf", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("sffz", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("sfp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("sfpp", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("sfz", typeof(Empty), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        [XmlElement("f", typeof (Empty), Order = 0)]
+        [XmlElement("ff", typeof (Empty), Order = 0)]
+        [XmlElement("fff", typeof (Empty), Order = 0)]
+        [XmlElement("ffff", typeof (Empty), Order = 0)]
+        [XmlElement("fffff", typeof (Empty), Order = 0)]
+        [XmlElement("ffffff", typeof (Empty), Order = 0)]
+        [XmlElement("fp", typeof (Empty), Order = 0)]
+        [XmlElement("fz", typeof (Empty), Order = 0)]
+        [XmlElement("mf", typeof (Empty), Order = 0)]
+        [XmlElement("mp", typeof (Empty), Order = 0)]
+        [XmlElement("other-dynamics", typeof (string), Order = 0)]
+        [XmlElement("p", typeof (Empty), Order = 0)]
+        [XmlElement("pp", typeof (Empty), Order = 0)]
+        [XmlElement("ppp", typeof (Empty), Order = 0)]
+        [XmlElement("pppp", typeof (Empty), Order = 0)]
+        [XmlElement("ppppp", typeof (Empty), Order = 0)]
+        [XmlElement("pppppp", typeof (Empty), Order = 0)]
+        [XmlElement("rf", typeof (Empty), Order = 0)]
+        [XmlElement("rfz", typeof (Empty), Order = 0)]
+        [XmlElement("sf", typeof (Empty), Order = 0)]
+        [XmlElement("sffz", typeof (Empty), Order = 0)]
+        [XmlElement("sfp", typeof (Empty), Order = 0)]
+        [XmlElement("sfpp", typeof (Empty), Order = 0)]
+        [XmlElement("sfz", typeof (Empty), Order = 0)]
+        [XmlChoiceIdentifier("ItemsElementName")]
         public object[] Items
         {
-            get
-            {
-                return itemsField;
-            }
-            set
-            {
-                itemsField = value;
-            }
+            get { return itemsField; }
+            set { itemsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlElement("ItemsElementName", Order = 1)]
+        [XmlIgnore]
         public ItemsChoiceType5[] ItemsElementName
         {
-            get
-            {
-                return itemsElementNameField;
-            }
-            set
-            {
-                itemsElementNameField = value;
-            }
+            get { return itemsElementNameField; }
+            set { itemsElementNameField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public AboveBelow placement
         {
-            get
-            {
-                return placementField;
-            }
-            set
-            {
-                placementField = value;
-            }
+            get { return placementField; }
+            set { placementField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool placementSpecified
         {
-            get
-            {
-                return placementFieldSpecified;
-            }
-            set
-            {
-                placementFieldSpecified = value;
-            }
+            get { return placementFieldSpecified; }
+            set { placementFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [XmlAttribute(DataType = "nonNegativeInteger")]
         public string underline
         {
-            get
-            {
-                return underlineField;
-            }
-            set
-            {
-                underlineField = value;
-            }
+            get { return underlineField; }
+            set { underlineField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [XmlAttribute(DataType = "nonNegativeInteger")]
         public string overline
         {
-            get
-            {
-                return overlineField;
-            }
-            set
-            {
-                overlineField = value;
-            }
+            get { return overlineField; }
+            set { overlineField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("line-through", DataType = "nonNegativeInteger")]
+        [XmlAttribute("line-through", DataType = "nonNegativeInteger")]
         public string lineThrough
         {
-            get
-            {
-                return lineThroughField;
-            }
-            set
-            {
-                lineThroughField = value;
-            }
+            get { return lineThroughField; }
+            set { lineThroughField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public EnclosureShape enclosure
         {
-            get
-            {
-                return enclosureField;
-            }
-            set
-            {
-                enclosureField = value;
-            }
+            get { return enclosureField; }
+            set { enclosureField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool enclosureSpecified
         {
-            get
-            {
-                return enclosureFieldSpecified;
-            }
-            set
-            {
-                enclosureFieldSpecified = value;
-            }
+            get { return enclosureFieldSpecified; }
+            set { enclosureFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Dynamics));
+                    serializer = new XmlSerializer(typeof (Dynamics));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current dynamics object into an XML document
+        ///   Serializes current dynamics object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -216,13 +160,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an dynamics object
+        ///   Deserializes workflow markup into an dynamics object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output dynamics object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output dynamics object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Dynamics obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Dynamics obj, out Exception exception)
         {
             exception = null;
             obj = default(Dynamics);
@@ -231,7 +175,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -240,17 +184,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Dynamics obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Dynamics Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Dynamics)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Dynamics)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -262,12 +210,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current dynamics object into file
+        ///   Serializes current dynamics object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -275,7 +223,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -284,11 +232,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -303,13 +251,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an dynamics object
+        ///   Deserializes xml markup from file into an dynamics object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output dynamics object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output dynamics object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Dynamics obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Dynamics obj, out Exception exception)
         {
             exception = null;
             obj = default(Dynamics);
@@ -318,7 +266,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -327,18 +275,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Dynamics obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Dynamics LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -356,16 +304,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this dynamics object
+        ///   Create a clone of this dynamics object
         /// </summary>
         public virtual Dynamics Clone()
         {
-            return ((Dynamics)(MemberwiseClone()));
+            return ((Dynamics) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

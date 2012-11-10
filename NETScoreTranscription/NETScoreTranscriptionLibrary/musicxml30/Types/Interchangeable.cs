@@ -1,168 +1,119 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Interchangeable
     {
-
-        private TimeRelation timeRelationField;
-
-        private bool timeRelationFieldSpecified;
-
-        private string[] itemsField;
-
+        private static XmlSerializer serializer;
         private ItemsChoiceType9[] itemsElementNameField;
-
-        private TimeSymbol symbolField;
-
-        private bool symbolFieldSpecified;
+        private string[] itemsField;
 
         private TimeSeparator separatorField;
 
         private bool separatorFieldSpecified;
+        private TimeSymbol symbolField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private bool symbolFieldSpecified;
+        private TimeRelation timeRelationField;
 
-        [System.Xml.Serialization.XmlElementAttribute("time-relation", Order = 0)]
+        private bool timeRelationFieldSpecified;
+
+        [XmlElement("time-relation", Order = 0)]
         public TimeRelation timeRelation
         {
-            get
-            {
-                return timeRelationField;
-            }
-            set
-            {
-                timeRelationField = value;
-            }
+            get { return timeRelationField; }
+            set { timeRelationField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool timeRelationSpecified
         {
-            get
-            {
-                return timeRelationFieldSpecified;
-            }
-            set
-            {
-                timeRelationFieldSpecified = value;
-            }
+            get { return timeRelationFieldSpecified; }
+            set { timeRelationFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("beat-type", typeof(string), Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute("beats", typeof(string), Order = 1)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        [XmlElement("beat-type", typeof (string), Order = 1)]
+        [XmlElement("beats", typeof (string), Order = 1)]
+        [XmlChoiceIdentifier("ItemsElementName")]
         public string[] Items
         {
-            get
-            {
-                return itemsField;
-            }
-            set
-            {
-                itemsField = value;
-            }
+            get { return itemsField; }
+            set { itemsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 2)]
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlElement("ItemsElementName", Order = 2)]
+        [XmlIgnore]
         public ItemsChoiceType9[] ItemsElementName
         {
-            get
-            {
-                return itemsElementNameField;
-            }
-            set
-            {
-                itemsElementNameField = value;
-            }
+            get { return itemsElementNameField; }
+            set { itemsElementNameField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public TimeSymbol symbol
         {
-            get
-            {
-                return symbolField;
-            }
-            set
-            {
-                symbolField = value;
-            }
+            get { return symbolField; }
+            set { symbolField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool symbolSpecified
         {
-            get
-            {
-                return symbolFieldSpecified;
-            }
-            set
-            {
-                symbolFieldSpecified = value;
-            }
+            get { return symbolFieldSpecified; }
+            set { symbolFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public TimeSeparator separator
         {
-            get
-            {
-                return separatorField;
-            }
-            set
-            {
-                separatorField = value;
-            }
+            get { return separatorField; }
+            set { separatorField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool separatorSpecified
         {
-            get
-            {
-                return separatorFieldSpecified;
-            }
-            set
-            {
-                separatorFieldSpecified = value;
-            }
+            get { return separatorFieldSpecified; }
+            set { separatorFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Interchangeable));
+                    serializer = new XmlSerializer(typeof (Interchangeable));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current interchangeable object into an XML document
+        ///   Serializes current interchangeable object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -179,13 +130,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an interchangeable object
+        ///   Deserializes workflow markup into an interchangeable object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output interchangeable object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output interchangeable object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Interchangeable obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Interchangeable obj, out Exception exception)
         {
             exception = null;
             obj = default(Interchangeable);
@@ -194,7 +145,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -203,17 +154,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Interchangeable obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Interchangeable Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Interchangeable)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Interchangeable)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -225,12 +180,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current interchangeable object into file
+        ///   Serializes current interchangeable object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -238,7 +193,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -247,11 +202,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -266,13 +221,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an interchangeable object
+        ///   Deserializes xml markup from file into an interchangeable object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output interchangeable object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output interchangeable object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Interchangeable obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Interchangeable obj, out Exception exception)
         {
             exception = null;
             obj = default(Interchangeable);
@@ -281,7 +236,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -290,18 +245,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Interchangeable obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Interchangeable LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -319,16 +274,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this interchangeable object
+        ///   Create a clone of this interchangeable object
         /// </summary>
         public virtual Interchangeable Clone()
         {
-            return ((Interchangeable)(MemberwiseClone()));
+            return ((Interchangeable) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

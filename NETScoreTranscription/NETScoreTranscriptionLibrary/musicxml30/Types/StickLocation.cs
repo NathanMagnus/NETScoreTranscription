@@ -1,23 +1,24 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "stick-location")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "stick-location")]
     public enum StickLocation
     {
-
-        /// <remarks/>
+        /// <remarks />
         center,
 
-        /// <remarks/>
+        /// <remarks />
         rim,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("cymbal bell")]
-        cymbalbell,
+        /// <remarks />
+        [XmlEnum("cymbal bell")] cymbalbell,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("cymbal edge")]
-        cymbaledge,
+        /// <remarks />
+        [XmlEnum("cymbal edge")] cymbaledge,
     }
 }

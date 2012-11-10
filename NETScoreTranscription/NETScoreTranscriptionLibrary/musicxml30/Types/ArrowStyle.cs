@@ -1,30 +1,33 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "arrow-style")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "arrow-style")]
     public enum ArrowStyle
     {
-
-        /// <remarks/>
+        /// <remarks />
         single,
 
-        /// <remarks/>
+        /// <remarks />
         @double,
 
-        /// <remarks/>
+        /// <remarks />
         filled,
 
-        /// <remarks/>
+        /// <remarks />
         hollow,
 
-        /// <remarks/>
+        /// <remarks />
         paired,
 
-        /// <remarks/>
+        /// <remarks />
         combined,
 
-        /// <remarks/>
+        /// <remarks />
         other,
     }
 }

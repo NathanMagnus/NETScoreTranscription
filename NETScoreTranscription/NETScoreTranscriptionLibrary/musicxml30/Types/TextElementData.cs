@@ -1,300 +1,195 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "text-element-data")]
-    [System.Xml.Serialization.XmlRootAttribute("text-element-data", Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(TypeName = "text-element-data")]
+    [XmlRoot("text-element-data", Namespace = "", IsNullable = true)]
     public class TextElementData
     {
+        private static XmlSerializer serializer;
+        private string colorField;
+        private TextDirection dirField;
 
+        private bool dirFieldSpecified;
         private string fontFamilyField;
+        private string fontSizeField;
 
         private FontStyle fontStyleField;
 
         private bool fontStyleFieldSpecified;
 
-        private string fontSizeField;
-
         private FontWeight fontWeightField;
 
         private bool fontWeightFieldSpecified;
-
-        private string colorField;
-
-        private string underlineField;
-
-        private string overlineField;
+        private string langField;
+        private string letterSpacingField;
 
         private string lineThroughField;
+        private string overlineField;
 
         private decimal rotationField;
 
         private bool rotationFieldSpecified;
-
-        private string letterSpacingField;
-
-        private string langField;
-
-        private TextDirection dirField;
-
-        private bool dirFieldSpecified;
+        private string underlineField;
 
         private string valueField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
+        [XmlAttribute("font-family", DataType = "token")]
         public string fontFamily
         {
-            get
-            {
-                return fontFamilyField;
-            }
-            set
-            {
-                fontFamilyField = value;
-            }
+            get { return fontFamilyField; }
+            set { fontFamilyField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
+        [XmlAttribute("font-style")]
         public FontStyle fontStyle
         {
-            get
-            {
-                return fontStyleField;
-            }
-            set
-            {
-                fontStyleField = value;
-            }
+            get { return fontStyleField; }
+            set { fontStyleField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool fontStyleSpecified
         {
-            get
-            {
-                return fontStyleFieldSpecified;
-            }
-            set
-            {
-                fontStyleFieldSpecified = value;
-            }
+            get { return fontStyleFieldSpecified; }
+            set { fontStyleFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
+        [XmlAttribute("font-size")]
         public string fontSize
         {
-            get
-            {
-                return fontSizeField;
-            }
-            set
-            {
-                fontSizeField = value;
-            }
+            get { return fontSizeField; }
+            set { fontSizeField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
+        [XmlAttribute("font-weight")]
         public FontWeight fontWeight
         {
-            get
-            {
-                return fontWeightField;
-            }
-            set
-            {
-                fontWeightField = value;
-            }
+            get { return fontWeightField; }
+            set { fontWeightField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool fontWeightSpecified
         {
-            get
-            {
-                return fontWeightFieldSpecified;
-            }
-            set
-            {
-                fontWeightFieldSpecified = value;
-            }
+            get { return fontWeightFieldSpecified; }
+            set { fontWeightFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        [XmlAttribute(DataType = "token")]
         public string color
         {
-            get
-            {
-                return colorField;
-            }
-            set
-            {
-                colorField = value;
-            }
+            get { return colorField; }
+            set { colorField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [XmlAttribute(DataType = "nonNegativeInteger")]
         public string underline
         {
-            get
-            {
-                return underlineField;
-            }
-            set
-            {
-                underlineField = value;
-            }
+            get { return underlineField; }
+            set { underlineField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [XmlAttribute(DataType = "nonNegativeInteger")]
         public string overline
         {
-            get
-            {
-                return overlineField;
-            }
-            set
-            {
-                overlineField = value;
-            }
+            get { return overlineField; }
+            set { overlineField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("line-through", DataType = "nonNegativeInteger")]
+        [XmlAttribute("line-through", DataType = "nonNegativeInteger")]
         public string lineThrough
         {
-            get
-            {
-                return lineThroughField;
-            }
-            set
-            {
-                lineThroughField = value;
-            }
+            get { return lineThroughField; }
+            set { lineThroughField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public decimal rotation
         {
-            get
-            {
-                return rotationField;
-            }
-            set
-            {
-                rotationField = value;
-            }
+            get { return rotationField; }
+            set { rotationField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool rotationSpecified
         {
-            get
-            {
-                return rotationFieldSpecified;
-            }
-            set
-            {
-                rotationFieldSpecified = value;
-            }
+            get { return rotationFieldSpecified; }
+            set { rotationFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("letter-spacing")]
+        [XmlAttribute("letter-spacing")]
         public string letterSpacing
         {
-            get
-            {
-                return letterSpacingField;
-            }
-            set
-            {
-                letterSpacingField = value;
-            }
+            get { return letterSpacingField; }
+            set { letterSpacingField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string lang
         {
-            get
-            {
-                return langField;
-            }
-            set
-            {
-                langField = value;
-            }
+            get { return langField; }
+            set { langField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public TextDirection dir
         {
-            get
-            {
-                return dirField;
-            }
-            set
-            {
-                dirField = value;
-            }
+            get { return dirField; }
+            set { dirField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool dirSpecified
         {
-            get
-            {
-                return dirFieldSpecified;
-            }
-            set
-            {
-                dirFieldSpecified = value;
-            }
+            get { return dirFieldSpecified; }
+            set { dirFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlTextAttribute]
+        [XmlText]
         public string Value
         {
-            get
-            {
-                return valueField;
-            }
-            set
-            {
-                valueField = value;
-            }
+            get { return valueField; }
+            set { valueField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(TextElementData));
+                    serializer = new XmlSerializer(typeof (TextElementData));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current textelementdata object into an XML document
+        ///   Serializes current textelementdata object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -311,13 +206,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an textelementdata object
+        ///   Deserializes workflow markup into an textelementdata object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output textelementdata object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output textelementdata object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out TextElementData obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out TextElementData obj, out Exception exception)
         {
             exception = null;
             obj = default(TextElementData);
@@ -326,7 +221,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -335,17 +230,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out TextElementData obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static TextElementData Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((TextElementData)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((TextElementData)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -357,12 +256,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current textelementdata object into file
+        ///   Serializes current textelementdata object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -370,7 +269,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -379,11 +278,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -398,13 +297,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an textelementdata object
+        ///   Deserializes xml markup from file into an textelementdata object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output textelementdata object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output textelementdata object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out TextElementData obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out TextElementData obj, out Exception exception)
         {
             exception = null;
             obj = default(TextElementData);
@@ -413,7 +312,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -422,18 +321,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out TextElementData obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static TextElementData LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -451,16 +350,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this textelementdata object
+        ///   Create a clone of this textelementdata object
         /// </summary>
         public virtual TextElementData Clone()
         {
-            return ((TextElementData)(MemberwiseClone()));
+            return ((TextElementData) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

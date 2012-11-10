@@ -1,57 +1,56 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Mute
     {
-
-        /// <remarks/>
+        /// <remarks />
         on,
 
-        /// <remarks/>
+        /// <remarks />
         off,
 
-        /// <remarks/>
+        /// <remarks />
         straight,
 
-        /// <remarks/>
+        /// <remarks />
         cup,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("harmon-no-stem")]
-        harmonnostem,
+        /// <remarks />
+        [XmlEnum("harmon-no-stem")] harmonnostem,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("harmon-stem")]
-        harmonstem,
+        /// <remarks />
+        [XmlEnum("harmon-stem")] harmonstem,
 
-        /// <remarks/>
+        /// <remarks />
         bucket,
 
-        /// <remarks/>
+        /// <remarks />
         plunger,
 
-        /// <remarks/>
+        /// <remarks />
         hat,
 
-        /// <remarks/>
+        /// <remarks />
         solotone,
 
-        /// <remarks/>
+        /// <remarks />
         practice,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("stop-mute")]
-        stopmute,
+        /// <remarks />
+        [XmlEnum("stop-mute")] stopmute,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("stop-hand")]
-        stophand,
+        /// <remarks />
+        [XmlEnum("stop-hand")] stophand,
 
-        /// <remarks/>
+        /// <remarks />
         echo,
 
-        /// <remarks/>
+        /// <remarks />
         palm,
     }
 }

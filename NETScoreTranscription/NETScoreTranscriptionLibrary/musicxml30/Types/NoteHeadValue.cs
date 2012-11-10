@@ -1,95 +1,90 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "noteHead-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "noteHead-value")]
     public enum NoteHeadValue
     {
-
-        /// <remarks/>
+        /// <remarks />
         slash,
 
-        /// <remarks/>
+        /// <remarks />
         triangle,
 
-        /// <remarks/>
+        /// <remarks />
         diamond,
 
-        /// <remarks/>
+        /// <remarks />
         square,
 
-        /// <remarks/>
+        /// <remarks />
         cross,
 
-        /// <remarks/>
+        /// <remarks />
         x,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("circle-x")]
-        circlex,
+        /// <remarks />
+        [XmlEnum("circle-x")] circlex,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("inverted triangle")]
-        invertedtriangle,
+        /// <remarks />
+        [XmlEnum("inverted triangle")] invertedtriangle,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("arrow down")]
-        arrowdown,
+        /// <remarks />
+        [XmlEnum("arrow down")] arrowdown,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("arrow up")]
-        arrowup,
+        /// <remarks />
+        [XmlEnum("arrow up")] arrowup,
 
-        /// <remarks/>
+        /// <remarks />
         slashed,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("back slashed")]
-        backslashed,
+        /// <remarks />
+        [XmlEnum("back slashed")] backslashed,
 
-        /// <remarks/>
+        /// <remarks />
         normal,
 
-        /// <remarks/>
+        /// <remarks />
         cluster,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("circle dot")]
-        circledot,
+        /// <remarks />
+        [XmlEnum("circle dot")] circledot,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("left triangle")]
-        lefttriangle,
+        /// <remarks />
+        [XmlEnum("left triangle")] lefttriangle,
 
-        /// <remarks/>
+        /// <remarks />
         rectangle,
 
-        /// <remarks/>
+        /// <remarks />
         none,
 
-        /// <remarks/>
+        /// <remarks />
         @do,
 
-        /// <remarks/>
+        /// <remarks />
         re,
 
-        /// <remarks/>
+        /// <remarks />
         mi,
 
-        /// <remarks/>
+        /// <remarks />
         fa,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("fa up")]
-        faup,
+        /// <remarks />
+        [XmlEnum("fa up")] faup,
 
-        /// <remarks/>
+        /// <remarks />
         so,
 
-        /// <remarks/>
+        /// <remarks />
         la,
 
-        /// <remarks/>
+        /// <remarks />
         ti,
     }
 }

@@ -1,120 +1,91 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Degree
     {
-
-        private DegreeValue degreeValueField;
-
+        private static XmlSerializer serializer;
         private DegreeAlter degreeAlterField;
 
         private DegreeType degreeTypeField;
+        private DegreeValue degreeValueField;
 
         private YesNo printObjectField;
 
         private bool printObjectFieldSpecified;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlElementAttribute("degree-value", Order = 0)]
+        [XmlElement("degree-value", Order = 0)]
         public DegreeValue degreeValue
         {
-            get
-            {
-                return degreeValueField;
-            }
-            set
-            {
-                degreeValueField = value;
-            }
+            get { return degreeValueField; }
+            set { degreeValueField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("degree-alter", Order = 1)]
+        [XmlElement("degree-alter", Order = 1)]
         public DegreeAlter degreeAlter
         {
-            get
-            {
-                return degreeAlterField;
-            }
-            set
-            {
-                degreeAlterField = value;
-            }
+            get { return degreeAlterField; }
+            set { degreeAlterField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("degree-type", Order = 2)]
+        [XmlElement("degree-type", Order = 2)]
         public DegreeType degreeType
         {
-            get
-            {
-                return degreeTypeField;
-            }
-            set
-            {
-                degreeTypeField = value;
-            }
+            get { return degreeTypeField; }
+            set { degreeTypeField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("print-object")]
+        [XmlAttribute("print-object")]
         public YesNo printObject
         {
-            get
-            {
-                return printObjectField;
-            }
-            set
-            {
-                printObjectField = value;
-            }
+            get { return printObjectField; }
+            set { printObjectField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool printObjectSpecified
         {
-            get
-            {
-                return printObjectFieldSpecified;
-            }
-            set
-            {
-                printObjectFieldSpecified = value;
-            }
+            get { return printObjectFieldSpecified; }
+            set { printObjectFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Degree));
+                    serializer = new XmlSerializer(typeof (Degree));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current degree object into an XML document
+        ///   Serializes current degree object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -131,13 +102,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an degree object
+        ///   Deserializes workflow markup into an degree object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output degree object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output degree object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Degree obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Degree obj, out Exception exception)
         {
             exception = null;
             obj = default(Degree);
@@ -146,7 +117,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -155,17 +126,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Degree obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Degree Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Degree)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Degree)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -177,12 +152,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current degree object into file
+        ///   Serializes current degree object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -190,7 +165,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -199,11 +174,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -218,13 +193,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an degree object
+        ///   Deserializes xml markup from file into an degree object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output degree object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output degree object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Degree obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Degree obj, out Exception exception)
         {
             exception = null;
             obj = default(Degree);
@@ -233,7 +208,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -242,18 +217,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Degree obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Degree LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -271,16 +246,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this degree object
+        ///   Create a clone of this degree object
         /// </summary>
         public virtual Degree Clone()
         {
-            return ((Degree)(MemberwiseClone()));
+            return ((Degree) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

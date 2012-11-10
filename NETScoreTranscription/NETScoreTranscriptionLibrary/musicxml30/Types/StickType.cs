@@ -1,26 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "stick-type")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "stick-type")]
     public enum StickType
     {
+        /// <remarks />
+        [XmlEnum("bass drum")] bassdrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("bass drum")]
-        bassdrum,
+        /// <remarks />
+        [XmlEnum("double bass drum")] doublebassdrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double bass drum")]
-        doublebassdrum,
-
-        /// <remarks/>
+        /// <remarks />
         timpani,
 
-        /// <remarks/>
+        /// <remarks />
         xylophone,
 
-        /// <remarks/>
+        /// <remarks />
         yarn,
     }
 }

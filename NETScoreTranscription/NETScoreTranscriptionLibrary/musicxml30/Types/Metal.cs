@@ -1,91 +1,80 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Metal
     {
-
-        /// <remarks/>
+        /// <remarks />
         almglocken,
 
-        /// <remarks/>
+        /// <remarks />
         bell,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("bell plate")]
-        bellplate,
+        /// <remarks />
+        [XmlEnum("bell plate")] bellplate,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("brake drum")]
-        brakedrum,
+        /// <remarks />
+        [XmlEnum("brake drum")] brakedrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Chinese cymbal")]
-        Chinesecymbal,
+        /// <remarks />
+        [XmlEnum("Chinese cymbal")] Chinesecymbal,
 
-        /// <remarks/>
+        /// <remarks />
         cowbell,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("crash cymbals")]
-        crashcymbals,
+        /// <remarks />
+        [XmlEnum("crash cymbals")] crashcymbals,
 
-        /// <remarks/>
+        /// <remarks />
         crotale,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("cymbal tongs")]
-        cymbaltongs,
+        /// <remarks />
+        [XmlEnum("cymbal tongs")] cymbaltongs,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("domed gong")]
-        domedgong,
+        /// <remarks />
+        [XmlEnum("domed gong")] domedgong,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("finger cymbals")]
-        fingercymbals,
+        /// <remarks />
+        [XmlEnum("finger cymbals")] fingercymbals,
 
-        /// <remarks/>
+        /// <remarks />
         flexatone,
 
-        /// <remarks/>
+        /// <remarks />
         gong,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("hi-hat")]
-        hihat,
+        /// <remarks />
+        [XmlEnum("hi-hat")] hihat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("high-hat cymbals")]
-        highhatcymbals,
+        /// <remarks />
+        [XmlEnum("high-hat cymbals")] highhatcymbals,
 
-        /// <remarks/>
+        /// <remarks />
         handbell,
 
-        /// <remarks/>
+        /// <remarks />
         sistrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sizzle cymbal")]
-        sizzlecymbal,
+        /// <remarks />
+        [XmlEnum("sizzle cymbal")] sizzlecymbal,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sleigh bells")]
-        sleighbells,
+        /// <remarks />
+        [XmlEnum("sleigh bells")] sleighbells,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("suspended cymbal")]
-        suspendedcymbal,
+        /// <remarks />
+        [XmlEnum("suspended cymbal")] suspendedcymbal,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("tam tam")]
-        tamtam,
+        /// <remarks />
+        [XmlEnum("tam tam")] tamtam,
 
-        /// <remarks/>
+        /// <remarks />
         triangle,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Vietnamese hat")]
-        Vietnamesehat,
+        /// <remarks />
+        [XmlEnum("Vietnamese hat")] Vietnamesehat,
     }
 }

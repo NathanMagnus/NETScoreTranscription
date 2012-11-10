@@ -1,18 +1,21 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "measure-numbering-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "measure-numbering-value")]
     public enum MeasureNumberingValue
     {
-
-        /// <remarks/>
+        /// <remarks />
         none,
 
-        /// <remarks/>
+        /// <remarks />
         measure,
 
-        /// <remarks/>
+        /// <remarks />
         system,
     }
 }

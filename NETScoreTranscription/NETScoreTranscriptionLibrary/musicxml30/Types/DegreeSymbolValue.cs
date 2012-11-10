@@ -1,25 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "degree-symbol-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "degree-symbol-value")]
     public enum DegreeSymbolValue
     {
-
-        /// <remarks/>
+        /// <remarks />
         major,
 
-        /// <remarks/>
+        /// <remarks />
         minor,
 
-        /// <remarks/>
+        /// <remarks />
         augmented,
 
-        /// <remarks/>
+        /// <remarks />
         diminished,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("half-diminished")]
-        halfdiminished,
+        /// <remarks />
+        [XmlEnum("half-diminished")] halfdiminished,
     }
 }

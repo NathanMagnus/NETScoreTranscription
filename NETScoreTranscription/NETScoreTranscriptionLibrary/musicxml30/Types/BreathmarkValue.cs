@@ -1,19 +1,21 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "breath-mark-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "breath-mark-value")]
     public enum BreathmarkValue
     {
+        /// <remarks />
+        [XmlEnum("")] Item,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("")]
-        Item,
+        /// <remarks />
+        Comma,
 
-        /// <remarks/>
-        comma,
-
-        /// <remarks/>
-        tick,
+        /// <remarks />
+        Tick,
     }
 }

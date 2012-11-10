@@ -1,30 +1,30 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType8
     {
-
-        /// <remarks/>
+        /// <remarks />
         cancel,
 
-        /// <remarks/>
+        /// <remarks />
         fifths,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("key-accidental")]
-        keyaccidental,
+        /// <remarks />
+        [XmlEnum("key-accidental")] keyaccidental,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("key-alter")]
-        keyalter,
+        /// <remarks />
+        [XmlEnum("key-alter")] keyalter,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("key-step")]
-        keystep,
+        /// <remarks />
+        [XmlEnum("key-step")] keystep,
 
-        /// <remarks/>
+        /// <remarks />
         mode,
     }
 }

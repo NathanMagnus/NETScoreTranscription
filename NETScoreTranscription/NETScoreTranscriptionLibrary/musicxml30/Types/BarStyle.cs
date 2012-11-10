@@ -1,46 +1,45 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "bar-style")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "bar-style")]
     public enum BarStyle
     {
-
-        /// <remarks/>
+        /// <remarks />
         regular,
 
-        /// <remarks/>
+        /// <remarks />
         dotted,
 
-        /// <remarks/>
+        /// <remarks />
         dashed,
 
-        /// <remarks/>
+        /// <remarks />
         heavy,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("light-light")]
-        lightlight,
+        /// <remarks />
+        [XmlEnum("light-light")] lightlight,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("light-heavy")]
-        lightheavy,
+        /// <remarks />
+        [XmlEnum("light-heavy")] lightheavy,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("heavy-light")]
-        heavylight,
+        /// <remarks />
+        [XmlEnum("heavy-light")] heavylight,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("heavy-heavy")]
-        heavyheavy,
+        /// <remarks />
+        [XmlEnum("heavy-heavy")] heavyheavy,
 
-        /// <remarks/>
+        /// <remarks />
         tick,
 
-        /// <remarks/>
+        /// <remarks />
         @short,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

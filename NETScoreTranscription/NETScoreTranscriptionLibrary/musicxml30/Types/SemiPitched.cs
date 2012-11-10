@@ -1,30 +1,30 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "semi-pitched")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "semi-pitched")]
     public enum SemiPitched
     {
-
-        /// <remarks/>
+        /// <remarks />
         high,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("medium-high")]
-        mediumhigh,
+        /// <remarks />
+        [XmlEnum("medium-high")] mediumhigh,
 
-        /// <remarks/>
+        /// <remarks />
         medium,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("medium-low")]
-        mediumlow,
+        /// <remarks />
+        [XmlEnum("medium-low")] mediumlow,
 
-        /// <remarks/>
+        /// <remarks />
         low,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("very-low")]
-        verylow,
+        /// <remarks />
+        [XmlEnum("very-low")] verylow,
     }
 }

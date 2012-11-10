@@ -1,26 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType
     {
-
-        /// <remarks/>
+        /// <remarks />
         encoder,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("encoding-date")]
-        encodingdate,
+        /// <remarks />
+        [XmlEnum("encoding-date")] encodingdate,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("encoding-description")]
-        encodingdescription,
+        /// <remarks />
+        [XmlEnum("encoding-description")] encodingdescription,
 
-        /// <remarks/>
+        /// <remarks />
         software,
 
-        /// <remarks/>
+        /// <remarks />
         supports,
     }
 }

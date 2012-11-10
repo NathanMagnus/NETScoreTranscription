@@ -1,24 +1,20 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Frame
     {
-
-        private string frameStringsField;
-
-        private string frameFretsField;
-
-        private FirstFret firstFretField;
-
-        private Framenote[] framenoteField;
-
+        private static XmlSerializer serializer;
+        private string colorField;
         private decimal defaultXField;
 
         private bool defaultXFieldSpecified;
@@ -26,6 +22,16 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal defaultYField;
 
         private bool defaultYFieldSpecified;
+        private FirstFret firstFretField;
+        private string frameFretsField;
+        private string frameStringsField;
+        private Framenote[] framenoteField;
+        private LeftCenterRight halignField;
+
+        private bool halignFieldSpecified;
+        private decimal heightField;
+
+        private bool heightFieldSpecified;
 
         private decimal relativeXField;
 
@@ -34,342 +40,198 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal relativeYField;
 
         private bool relativeYFieldSpecified;
-
-        private string colorField;
-
-        private LeftCenterRight halignField;
-
-        private bool halignFieldSpecified;
+        private string unplayedField;
 
         private ValignImage valignField;
 
         private bool valignFieldSpecified;
 
-        private decimal heightField;
-
-        private bool heightFieldSpecified;
-
         private decimal widthField;
 
         private bool widthFieldSpecified;
 
-        private string unplayedField;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlElementAttribute("frame-strings", DataType = "positiveInteger", Order = 0)]
+        [XmlElement("frame-strings", DataType = "positiveInteger", Order = 0)]
         public string frameStrings
         {
-            get
-            {
-                return frameStringsField;
-            }
-            set
-            {
-                frameStringsField = value;
-            }
+            get { return frameStringsField; }
+            set { frameStringsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("frame-frets", DataType = "positiveInteger", Order = 1)]
+        [XmlElement("frame-frets", DataType = "positiveInteger", Order = 1)]
         public string frameFrets
         {
-            get
-            {
-                return frameFretsField;
-            }
-            set
-            {
-                frameFretsField = value;
-            }
+            get { return frameFretsField; }
+            set { frameFretsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("first-fret", Order = 2)]
+        [XmlElement("first-fret", Order = 2)]
         public FirstFret firstFret
         {
-            get
-            {
-                return firstFretField;
-            }
-            set
-            {
-                firstFretField = value;
-            }
+            get { return firstFretField; }
+            set { firstFretField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("frame-note", Order = 3)]
+        [XmlElement("frame-note", Order = 3)]
         public Framenote[] frameNote
         {
-            get
-            {
-                return framenoteField;
-            }
-            set
-            {
-                framenoteField = value;
-            }
+            get { return framenoteField; }
+            set { framenoteField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
+        [XmlAttribute("default-x")]
         public decimal defaultX
         {
-            get
-            {
-                return defaultXField;
-            }
-            set
-            {
-                defaultXField = value;
-            }
+            get { return defaultXField; }
+            set { defaultXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultXSpecified
         {
-            get
-            {
-                return defaultXFieldSpecified;
-            }
-            set
-            {
-                defaultXFieldSpecified = value;
-            }
+            get { return defaultXFieldSpecified; }
+            set { defaultXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
+        [XmlAttribute("default-y")]
         public decimal defaultY
         {
-            get
-            {
-                return defaultYField;
-            }
-            set
-            {
-                defaultYField = value;
-            }
+            get { return defaultYField; }
+            set { defaultYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultYSpecified
         {
-            get
-            {
-                return defaultYFieldSpecified;
-            }
-            set
-            {
-                defaultYFieldSpecified = value;
-            }
+            get { return defaultYFieldSpecified; }
+            set { defaultYFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
+        [XmlAttribute("relative-x")]
         public decimal relativeX
         {
-            get
-            {
-                return relativeXField;
-            }
-            set
-            {
-                relativeXField = value;
-            }
+            get { return relativeXField; }
+            set { relativeXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeXSpecified
         {
-            get
-            {
-                return relativeXFieldSpecified;
-            }
-            set
-            {
-                relativeXFieldSpecified = value;
-            }
+            get { return relativeXFieldSpecified; }
+            set { relativeXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
+        [XmlAttribute("relative-y")]
         public decimal relativeY
         {
-            get
-            {
-                return relativeYField;
-            }
-            set
-            {
-                relativeYField = value;
-            }
+            get { return relativeYField; }
+            set { relativeYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeYSpecified
         {
-            get
-            {
-                return relativeYFieldSpecified;
-            }
-            set
-            {
-                relativeYFieldSpecified = value;
-            }
+            get { return relativeYFieldSpecified; }
+            set { relativeYFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        [XmlAttribute(DataType = "token")]
         public string color
         {
-            get
-            {
-                return colorField;
-            }
-            set
-            {
-                colorField = value;
-            }
+            get { return colorField; }
+            set { colorField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public LeftCenterRight halign
         {
-            get
-            {
-                return halignField;
-            }
-            set
-            {
-                halignField = value;
-            }
+            get { return halignField; }
+            set { halignField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool halignSpecified
         {
-            get
-            {
-                return halignFieldSpecified;
-            }
-            set
-            {
-                halignFieldSpecified = value;
-            }
+            get { return halignFieldSpecified; }
+            set { halignFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public ValignImage valign
         {
-            get
-            {
-                return valignField;
-            }
-            set
-            {
-                valignField = value;
-            }
+            get { return valignField; }
+            set { valignField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool valignSpecified
         {
-            get
-            {
-                return valignFieldSpecified;
-            }
-            set
-            {
-                valignFieldSpecified = value;
-            }
+            get { return valignFieldSpecified; }
+            set { valignFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public decimal height
         {
-            get
-            {
-                return heightField;
-            }
-            set
-            {
-                heightField = value;
-            }
+            get { return heightField; }
+            set { heightField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool heightSpecified
         {
-            get
-            {
-                return heightFieldSpecified;
-            }
-            set
-            {
-                heightFieldSpecified = value;
-            }
+            get { return heightFieldSpecified; }
+            set { heightFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public decimal width
         {
-            get
-            {
-                return widthField;
-            }
-            set
-            {
-                widthField = value;
-            }
+            get { return widthField; }
+            set { widthField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool widthSpecified
         {
-            get
-            {
-                return widthFieldSpecified;
-            }
-            set
-            {
-                widthFieldSpecified = value;
-            }
+            get { return widthFieldSpecified; }
+            set { widthFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        [XmlAttribute(DataType = "token")]
         public string unplayed
         {
-            get
-            {
-                return unplayedField;
-            }
-            set
-            {
-                unplayedField = value;
-            }
+            get { return unplayedField; }
+            set { unplayedField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Frame));
+                    serializer = new XmlSerializer(typeof (Frame));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current frame object into an XML document
+        ///   Serializes current frame object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -386,13 +248,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an frame object
+        ///   Deserializes workflow markup into an frame object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output frame object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output frame object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Frame obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Frame obj, out Exception exception)
         {
             exception = null;
             obj = default(Frame);
@@ -401,7 +263,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -410,17 +272,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Frame obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Frame Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Frame)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Frame)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -432,12 +298,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current frame object into file
+        ///   Serializes current frame object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -445,7 +311,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -454,11 +320,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -473,13 +339,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an frame object
+        ///   Deserializes xml markup from file into an frame object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output frame object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output frame object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Frame obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Frame obj, out Exception exception)
         {
             exception = null;
             obj = default(Frame);
@@ -488,7 +354,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -497,18 +363,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Frame obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Frame LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -526,16 +392,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this frame object
+        ///   Create a clone of this frame object
         /// </summary>
         public virtual Frame Clone()
         {
-            return ((Frame)(MemberwiseClone()));
+            return ((Frame) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

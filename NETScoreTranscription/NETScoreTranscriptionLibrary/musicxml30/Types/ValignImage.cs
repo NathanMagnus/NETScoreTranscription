@@ -1,18 +1,21 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "valign-image")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "valign-image")]
     public enum ValignImage
     {
-
-        /// <remarks/>
+        /// <remarks />
         top,
 
-        /// <remarks/>
+        /// <remarks />
         middle,
 
-        /// <remarks/>
+        /// <remarks />
         bottom,
     }
 }

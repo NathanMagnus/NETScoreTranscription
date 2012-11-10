@@ -1,29 +1,31 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Step
     {
-
-        /// <remarks/>
+        /// <remarks />
         A,
 
-        /// <remarks/>
+        /// <remarks />
         B,
 
-        /// <remarks/>
+        /// <remarks />
         C,
 
-        /// <remarks/>
+        /// <remarks />
         D,
 
-        /// <remarks/>
+        /// <remarks />
         E,
 
-        /// <remarks/>
+        /// <remarks />
         F,
 
-        /// <remarks/>
+        /// <remarks />
         G,
     }
 }

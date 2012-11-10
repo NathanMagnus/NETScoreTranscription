@@ -1,140 +1,114 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "accidental-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "accidental-value")]
     public enum AccidentalValue
     {
-
-        /// <remarks/>
+        /// <remarks />
         sharp,
 
-        /// <remarks/>
+        /// <remarks />
         natural,
 
-        /// <remarks/>
+        /// <remarks />
         flat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double-sharp")]
-        doublesharp,
+        /// <remarks />
+        [XmlEnum("double-sharp")] doublesharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-sharp")]
-        sharpsharp,
+        /// <remarks />
+        [XmlEnum("sharp-sharp")] sharpsharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-flat")]
-        flatflat,
+        /// <remarks />
+        [XmlEnum("flat-flat")] flatflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("natural-sharp")]
-        naturalsharp,
+        /// <remarks />
+        [XmlEnum("natural-sharp")] naturalsharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("natural-flat")]
-        naturalflat,
+        /// <remarks />
+        [XmlEnum("natural-flat")] naturalflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("quarter-flat")]
-        quarterflat,
+        /// <remarks />
+        [XmlEnum("quarter-flat")] quarterflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("quarter-sharp")]
-        quartersharp,
+        /// <remarks />
+        [XmlEnum("quarter-sharp")] quartersharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("three-quarters-flat")]
-        threequartersflat,
+        /// <remarks />
+        [XmlEnum("three-quarters-flat")] threequartersflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("three-quarters-sharp")]
-        threequarterssharp,
+        /// <remarks />
+        [XmlEnum("three-quarters-sharp")] threequarterssharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-down")]
-        sharpdown,
+        /// <remarks />
+        [XmlEnum("sharp-down")] sharpdown,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-up")]
-        sharpup,
+        /// <remarks />
+        [XmlEnum("sharp-up")] sharpup,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("natural-down")]
-        naturaldown,
+        /// <remarks />
+        [XmlEnum("natural-down")] naturaldown,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("natural-up")]
-        naturalup,
+        /// <remarks />
+        [XmlEnum("natural-up")] naturalup,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-down")]
-        flatdown,
+        /// <remarks />
+        [XmlEnum("flat-down")] flatdown,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-up")]
-        flatup,
+        /// <remarks />
+        [XmlEnum("flat-up")] flatup,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("triple-sharp")]
-        triplesharp,
+        /// <remarks />
+        [XmlEnum("triple-sharp")] triplesharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("triple-flat")]
-        tripleflat,
+        /// <remarks />
+        [XmlEnum("triple-flat")] tripleflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("slash-quarter-sharp")]
-        slashquartersharp,
+        /// <remarks />
+        [XmlEnum("slash-quarter-sharp")] slashquartersharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("slash-sharp")]
-        slashsharp,
+        /// <remarks />
+        [XmlEnum("slash-sharp")] slashsharp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("slash-flat")]
-        slashflat,
+        /// <remarks />
+        [XmlEnum("slash-flat")] slashflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double-slash-flat")]
-        doubleslashflat,
+        /// <remarks />
+        [XmlEnum("double-slash-flat")] doubleslashflat,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-1")]
-        sharp1,
+        /// <remarks />
+        [XmlEnum("sharp-1")] sharp1,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-2")]
-        sharp2,
+        /// <remarks />
+        [XmlEnum("sharp-2")] sharp2,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-3")]
-        sharp3,
+        /// <remarks />
+        [XmlEnum("sharp-3")] sharp3,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("sharp-5")]
-        sharp5,
+        /// <remarks />
+        [XmlEnum("sharp-5")] sharp5,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-1")]
-        flat1,
+        /// <remarks />
+        [XmlEnum("flat-1")] flat1,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-2")]
-        flat2,
+        /// <remarks />
+        [XmlEnum("flat-2")] flat2,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-3")]
-        flat3,
+        /// <remarks />
+        [XmlEnum("flat-3")] flat3,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("flat-4")]
-        flat4,
+        /// <remarks />
+        [XmlEnum("flat-4")] flat4,
 
-        /// <remarks/>
+        /// <remarks />
         sori,
 
-        /// <remarks/>
+        /// <remarks />
         koron,
     }
 }

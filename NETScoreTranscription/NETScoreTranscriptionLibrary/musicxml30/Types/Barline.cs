@@ -1,261 +1,172 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Barline
     {
-
+        private static XmlSerializer serializer;
         private BarStyleColor barStyleField;
-
-        private FormattedText footnoteField;
-
-        private Level levelField;
-
-        private WavyLine wavylineField;
-
-        private EmptyPrintStyleAlign segnoField;
-
-        private EmptyPrintStyleAlign codaField;
-
-        private Fermata[] fermataField;
-
-        private Ending endingField;
-
-        private Repeat repeatField;
-
-        private RightLeftMiddle locationField;
-
-        private string segno1Field;
-
         private string coda1Field;
 
+        private EmptyPrintStyleAlign codaField;
         private decimal divisionsField;
 
         private bool divisionsFieldSpecified;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private Ending endingField;
+        private Fermata[] fermataField;
+        private FormattedText footnoteField;
+
+        private Level levelField;
+
+        private RightLeftMiddle locationField;
+        private Repeat repeatField;
+
+        private string segno1Field;
+        private EmptyPrintStyleAlign segnoField;
+        private WavyLine wavylineField;
 
         public Barline()
         {
             locationField = RightLeftMiddle.right;
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("bar-style", Order = 0)]
+        [XmlElement("bar-style", Order = 0)]
         public BarStyleColor barStyle
         {
-            get
-            {
-                return barStyleField;
-            }
-            set
-            {
-                barStyleField = value;
-            }
+            get { return barStyleField; }
+            set { barStyleField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [XmlElement(Order = 1)]
         public FormattedText footnote
         {
-            get
-            {
-                return footnoteField;
-            }
-            set
-            {
-                footnoteField = value;
-            }
+            get { return footnoteField; }
+            set { footnoteField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [XmlElement(Order = 2)]
         public Level level
         {
-            get
-            {
-                return levelField;
-            }
-            set
-            {
-                levelField = value;
-            }
+            get { return levelField; }
+            set { levelField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("wavy-line", Order = 3)]
+        [XmlElement("wavy-line", Order = 3)]
         public WavyLine wavyline
         {
-            get
-            {
-                return wavylineField;
-            }
-            set
-            {
-                wavylineField = value;
-            }
+            get { return wavylineField; }
+            set { wavylineField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        [XmlElement(Order = 4)]
         public EmptyPrintStyleAlign segno
         {
-            get
-            {
-                return segnoField;
-            }
-            set
-            {
-                segnoField = value;
-            }
+            get { return segnoField; }
+            set { segnoField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        [XmlElement(Order = 5)]
         public EmptyPrintStyleAlign coda
         {
-            get
-            {
-                return codaField;
-            }
-            set
-            {
-                codaField = value;
-            }
+            get { return codaField; }
+            set { codaField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("fermata", Order = 6)]
+        [XmlElement("fermata", Order = 6)]
         public Fermata[] fermata
         {
-            get
-            {
-                return fermataField;
-            }
-            set
-            {
-                fermataField = value;
-            }
+            get { return fermataField; }
+            set { fermataField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
+        [XmlElement(Order = 7)]
         public Ending ending
         {
-            get
-            {
-                return endingField;
-            }
-            set
-            {
-                endingField = value;
-            }
+            get { return endingField; }
+            set { endingField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
+        [XmlElement(Order = 8)]
         public Repeat repeat
         {
-            get
-            {
-                return repeatField;
-            }
-            set
-            {
-                repeatField = value;
-            }
+            get { return repeatField; }
+            set { repeatField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
-        [System.ComponentModel.DefaultValueAttribute(RightLeftMiddle.right)]
+        [XmlAttribute]
+        [DefaultValue(RightLeftMiddle.right)]
         public RightLeftMiddle location
         {
-            get
-            {
-                return locationField;
-            }
-            set
-            {
-                locationField = value;
-            }
+            get { return locationField; }
+            set { locationField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("segno", DataType = "token")]
+        [XmlAttribute("segno", DataType = "token")]
         public string segno1
         {
-            get
-            {
-                return segno1Field;
-            }
-            set
-            {
-                segno1Field = value;
-            }
+            get { return segno1Field; }
+            set { segno1Field = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("coda", DataType = "token")]
+        [XmlAttribute("coda", DataType = "token")]
         public string coda1
         {
-            get
-            {
-                return coda1Field;
-            }
-            set
-            {
-                coda1Field = value;
-            }
+            get { return coda1Field; }
+            set { coda1Field = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public decimal divisions
         {
-            get
-            {
-                return divisionsField;
-            }
-            set
-            {
-                divisionsField = value;
-            }
+            get { return divisionsField; }
+            set { divisionsField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool divisionsSpecified
         {
-            get
-            {
-                return divisionsFieldSpecified;
-            }
-            set
-            {
-                divisionsFieldSpecified = value;
-            }
+            get { return divisionsFieldSpecified; }
+            set { divisionsFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Barline));
+                    serializer = new XmlSerializer(typeof (Barline));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current barline object into an XML document
+        ///   Serializes current barline object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -272,13 +183,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an barline object
+        ///   Deserializes workflow markup into an barline object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output barline object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output barline object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Barline obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Barline obj, out Exception exception)
         {
             exception = null;
             obj = default(Barline);
@@ -287,7 +198,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -296,17 +207,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Barline obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Barline Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Barline)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Barline)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -318,12 +233,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current barline object into file
+        ///   Serializes current barline object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -331,7 +246,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -340,11 +255,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -359,13 +274,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an barline object
+        ///   Deserializes xml markup from file into an barline object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output barline object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output barline object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Barline obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Barline obj, out Exception exception)
         {
             exception = null;
             obj = default(Barline);
@@ -374,7 +289,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -383,18 +298,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Barline obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Barline LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -412,16 +327,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this barline object
+        ///   Create a clone of this barline object
         /// </summary>
         public virtual Barline Clone()
         {
-            return ((Barline)(MemberwiseClone()));
+            return ((Barline) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

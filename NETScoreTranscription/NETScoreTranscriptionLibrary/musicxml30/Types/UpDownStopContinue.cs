@@ -1,21 +1,24 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "up-down-stop-continue")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "up-down-stop-continue")]
     public enum UpDownStopContinue
     {
-
-        /// <remarks/>
+        /// <remarks />
         up,
 
-        /// <remarks/>
+        /// <remarks />
         down,
 
-        /// <remarks/>
+        /// <remarks />
         stop,
 
-        /// <remarks/>
+        /// <remarks />
         @continue,
     }
 }

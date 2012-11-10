@@ -1,24 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "group-symbol-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "group-symbol-value")]
     public enum GroupSymbolValue
     {
-
-        /// <remarks/>
+        /// <remarks />
         none,
 
-        /// <remarks/>
+        /// <remarks />
         brace,
 
-        /// <remarks/>
+        /// <remarks />
         line,
 
-        /// <remarks/>
+        /// <remarks />
         bracket,
 
-        /// <remarks/>
+        /// <remarks />
         square,
     }
 }

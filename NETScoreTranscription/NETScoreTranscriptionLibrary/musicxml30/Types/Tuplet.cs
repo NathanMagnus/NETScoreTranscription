@@ -1,38 +1,22 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Tuplet
     {
-
-        private TupletPortion tupletActualField;
-
-        private TupletPortion tupletNormalField;
-
-        private StartStop typeField;
-
-        private string numberField;
-
+        private static XmlSerializer serializer;
         private YesNo bracketField;
 
         private bool bracketFieldSpecified;
-
-        private ShowTuplet showNumberField;
-
-        private bool showNumberFieldSpecified;
-
-        private ShowTuplet showtypeField;
-
-        private bool showtypeFieldSpecified;
-
-        private LineShape lineShapeField;
-
-        private bool lineShapeFieldSpecified;
 
         private decimal defaultXField;
 
@@ -41,6 +25,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal defaultYField;
 
         private bool defaultYFieldSpecified;
+        private LineShape lineShapeField;
+
+        private bool lineShapeFieldSpecified;
+        private string numberField;
+        private AboveBelow placementField;
+
+        private bool placementFieldSpecified;
 
         private decimal relativeXField;
 
@@ -49,326 +40,201 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal relativeYField;
 
         private bool relativeYFieldSpecified;
+        private ShowTuplet showNumberField;
 
-        private AboveBelow placementField;
+        private bool showNumberFieldSpecified;
 
-        private bool placementFieldSpecified;
+        private ShowTuplet showtypeField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private bool showtypeFieldSpecified;
+        private TupletPortion tupletActualField;
 
-        [System.Xml.Serialization.XmlElementAttribute("tuplet-actual", Order = 0)]
+        private TupletPortion tupletNormalField;
+
+        private StartStop typeField;
+
+        [XmlElement("tuplet-actual", Order = 0)]
         public TupletPortion tupletActual
         {
-            get
-            {
-                return tupletActualField;
-            }
-            set
-            {
-                tupletActualField = value;
-            }
+            get { return tupletActualField; }
+            set { tupletActualField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("tuplet-normal", Order = 1)]
+        [XmlElement("tuplet-normal", Order = 1)]
         public TupletPortion tupletNormal
         {
-            get
-            {
-                return tupletNormalField;
-            }
-            set
-            {
-                tupletNormalField = value;
-            }
+            get { return tupletNormalField; }
+            set { tupletNormalField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public StartStop type
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            get { return typeField; }
+            set { typeField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [XmlAttribute(DataType = "positiveInteger")]
         public string number
         {
-            get
-            {
-                return numberField;
-            }
-            set
-            {
-                numberField = value;
-            }
+            get { return numberField; }
+            set { numberField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public YesNo bracket
         {
-            get
-            {
-                return bracketField;
-            }
-            set
-            {
-                bracketField = value;
-            }
+            get { return bracketField; }
+            set { bracketField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool bracketSpecified
         {
-            get
-            {
-                return bracketFieldSpecified;
-            }
-            set
-            {
-                bracketFieldSpecified = value;
-            }
+            get { return bracketFieldSpecified; }
+            set { bracketFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("show-number")]
+        [XmlAttribute("show-number")]
         public ShowTuplet showNumber
         {
-            get
-            {
-                return showNumberField;
-            }
-            set
-            {
-                showNumberField = value;
-            }
+            get { return showNumberField; }
+            set { showNumberField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool showNumberSpecified
         {
-            get
-            {
-                return showNumberFieldSpecified;
-            }
-            set
-            {
-                showNumberFieldSpecified = value;
-            }
+            get { return showNumberFieldSpecified; }
+            set { showNumberFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("show-type")]
+        [XmlAttribute("show-type")]
         public ShowTuplet showtype
         {
-            get
-            {
-                return showtypeField;
-            }
-            set
-            {
-                showtypeField = value;
-            }
+            get { return showtypeField; }
+            set { showtypeField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool showtypeSpecified
         {
-            get
-            {
-                return showtypeFieldSpecified;
-            }
-            set
-            {
-                showtypeFieldSpecified = value;
-            }
+            get { return showtypeFieldSpecified; }
+            set { showtypeFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("line-shape")]
+        [XmlAttribute("line-shape")]
         public LineShape lineShape
         {
-            get
-            {
-                return lineShapeField;
-            }
-            set
-            {
-                lineShapeField = value;
-            }
+            get { return lineShapeField; }
+            set { lineShapeField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool lineShapeSpecified
         {
-            get
-            {
-                return lineShapeFieldSpecified;
-            }
-            set
-            {
-                lineShapeFieldSpecified = value;
-            }
+            get { return lineShapeFieldSpecified; }
+            set { lineShapeFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
+        [XmlAttribute("default-x")]
         public decimal defaultX
         {
-            get
-            {
-                return defaultXField;
-            }
-            set
-            {
-                defaultXField = value;
-            }
+            get { return defaultXField; }
+            set { defaultXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultXSpecified
         {
-            get
-            {
-                return defaultXFieldSpecified;
-            }
-            set
-            {
-                defaultXFieldSpecified = value;
-            }
+            get { return defaultXFieldSpecified; }
+            set { defaultXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
+        [XmlAttribute("default-y")]
         public decimal defaultY
         {
-            get
-            {
-                return defaultYField;
-            }
-            set
-            {
-                defaultYField = value;
-            }
+            get { return defaultYField; }
+            set { defaultYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultYSpecified
         {
-            get
-            {
-                return defaultYFieldSpecified;
-            }
-            set
-            {
-                defaultYFieldSpecified = value;
-            }
+            get { return defaultYFieldSpecified; }
+            set { defaultYFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
+        [XmlAttribute("relative-x")]
         public decimal relativeX
         {
-            get
-            {
-                return relativeXField;
-            }
-            set
-            {
-                relativeXField = value;
-            }
+            get { return relativeXField; }
+            set { relativeXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeXSpecified
         {
-            get
-            {
-                return relativeXFieldSpecified;
-            }
-            set
-            {
-                relativeXFieldSpecified = value;
-            }
+            get { return relativeXFieldSpecified; }
+            set { relativeXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
+        [XmlAttribute("relative-y")]
         public decimal relativeY
         {
-            get
-            {
-                return relativeYField;
-            }
-            set
-            {
-                relativeYField = value;
-            }
+            get { return relativeYField; }
+            set { relativeYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeYSpecified
         {
-            get
-            {
-                return relativeYFieldSpecified;
-            }
-            set
-            {
-                relativeYFieldSpecified = value;
-            }
+            get { return relativeYFieldSpecified; }
+            set { relativeYFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute]
+        [XmlAttribute]
         public AboveBelow placement
         {
-            get
-            {
-                return placementField;
-            }
-            set
-            {
-                placementField = value;
-            }
+            get { return placementField; }
+            set { placementField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool placementSpecified
         {
-            get
-            {
-                return placementFieldSpecified;
-            }
-            set
-            {
-                placementFieldSpecified = value;
-            }
+            get { return placementFieldSpecified; }
+            set { placementFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Tuplet));
+                    serializer = new XmlSerializer(typeof (Tuplet));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current tuplet object into an XML document
+        ///   Serializes current tuplet object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -385,13 +251,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an tuplet object
+        ///   Deserializes workflow markup into an tuplet object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output tuplet object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output tuplet object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Tuplet obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Tuplet obj, out Exception exception)
         {
             exception = null;
             obj = default(Tuplet);
@@ -400,7 +266,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -409,17 +275,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Tuplet obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Tuplet Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Tuplet)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Tuplet)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -431,12 +301,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current tuplet object into file
+        ///   Serializes current tuplet object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -444,7 +314,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -453,11 +323,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -472,13 +342,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an tuplet object
+        ///   Deserializes xml markup from file into an tuplet object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output tuplet object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output tuplet object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Tuplet obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Tuplet obj, out Exception exception)
         {
             exception = null;
             obj = default(Tuplet);
@@ -487,7 +357,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -496,18 +366,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Tuplet obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Tuplet LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -525,16 +395,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this tuplet object
+        ///   Create a clone of this tuplet object
         /// </summary>
         public virtual Tuplet Clone()
         {
-            return ((Tuplet)(MemberwiseClone()));
+            return ((Tuplet) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

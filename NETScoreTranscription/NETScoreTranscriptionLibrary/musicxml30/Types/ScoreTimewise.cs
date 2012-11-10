@@ -1,187 +1,130 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute("score-timewise", Namespace = "", IsNullable = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    [XmlRoot("score-timewise", Namespace = "", IsNullable = false)]
     public class ScoreTimewise
     {
-
-        private Work workField;
-
+        private static XmlSerializer serializer;
+        private Credit[] creditField;
+        private Defaults defaultsField;
+        private Identification identificationField;
+        private ScoreTimewiseMeasure[] measureField;
         private string movementNumberField;
 
         private string movementTitleField;
 
-        private Identification identificationField;
-
-        private Defaults defaultsField;
-
-        private Credit[] creditField;
-
         private PartList partListField;
 
-        private ScoreTimewiseMeasure[] measureField;
-
         private string versionField;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private Work workField;
 
         public ScoreTimewise()
         {
             versionField = "1.0";
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        [XmlElement(Order = 0)]
         public Work work
         {
-            get
-            {
-                return workField;
-            }
-            set
-            {
-                workField = value;
-            }
+            get { return workField; }
+            set { workField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("movement-number", Order = 1)]
+        [XmlElement("movement-number", Order = 1)]
         public string movementNumber
         {
-            get
-            {
-                return movementNumberField;
-            }
-            set
-            {
-                movementNumberField = value;
-            }
+            get { return movementNumberField; }
+            set { movementNumberField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("movement-title", Order = 2)]
+        [XmlElement("movement-title", Order = 2)]
         public string movementTitle
         {
-            get
-            {
-                return movementTitleField;
-            }
-            set
-            {
-                movementTitleField = value;
-            }
+            get { return movementTitleField; }
+            set { movementTitleField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        [XmlElement(Order = 3)]
         public Identification identification
         {
-            get
-            {
-                return identificationField;
-            }
-            set
-            {
-                identificationField = value;
-            }
+            get { return identificationField; }
+            set { identificationField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        [XmlElement(Order = 4)]
         public Defaults defaults
         {
-            get
-            {
-                return defaultsField;
-            }
-            set
-            {
-                defaultsField = value;
-            }
+            get { return defaultsField; }
+            set { defaultsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("credit", Order = 5)]
+        [XmlElement("credit", Order = 5)]
         public Credit[] credit
         {
-            get
-            {
-                return creditField;
-            }
-            set
-            {
-                creditField = value;
-            }
+            get { return creditField; }
+            set { creditField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("part-list", Order = 6)]
+        [XmlElement("part-list", Order = 6)]
         public PartList partList
         {
-            get
-            {
-                return partListField;
-            }
-            set
-            {
-                partListField = value;
-            }
+            get { return partListField; }
+            set { partListField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("measure", Order = 7)]
+        [XmlElement("measure", Order = 7)]
         public ScoreTimewiseMeasure[] measure
         {
-            get
-            {
-                return measureField;
-            }
-            set
-            {
-                measureField = value;
-            }
+            get { return measureField; }
+            set { measureField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
-        [System.ComponentModel.DefaultValueAttribute("1.0")]
+        [XmlAttribute(DataType = "token")]
+        [DefaultValue("1.0")]
         public string version
         {
-            get
-            {
-                return versionField;
-            }
-            set
-            {
-                versionField = value;
-            }
+            get { return versionField; }
+            set { versionField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(ScoreTimewise));
+                    serializer = new XmlSerializer(typeof (ScoreTimewise));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current scoretimewise object into an XML document
+        ///   Serializes current scoretimewise object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -198,13 +141,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an scoretimewise object
+        ///   Deserializes workflow markup into an scoretimewise object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output scoretimewise object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output scoretimewise object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out ScoreTimewise obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out ScoreTimewise obj, out Exception exception)
         {
             exception = null;
             obj = default(ScoreTimewise);
@@ -213,7 +156,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -222,17 +165,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out ScoreTimewise obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static ScoreTimewise Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((ScoreTimewise)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((ScoreTimewise)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -244,12 +191,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current scoretimewise object into file
+        ///   Serializes current scoretimewise object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -257,7 +204,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -266,11 +213,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -285,13 +232,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an scoretimewise object
+        ///   Deserializes xml markup from file into an scoretimewise object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output scoretimewise object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output scoretimewise object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out ScoreTimewise obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out ScoreTimewise obj, out Exception exception)
         {
             exception = null;
             obj = default(ScoreTimewise);
@@ -300,7 +247,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -309,18 +256,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out ScoreTimewise obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static ScoreTimewise LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -338,16 +285,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this scoretimewise object
+        ///   Create a clone of this scoretimewise object
         /// </summary>
         public virtual ScoreTimewise Clone()
         {
-            return ((ScoreTimewise)(MemberwiseClone()));
+            return ((ScoreTimewise) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

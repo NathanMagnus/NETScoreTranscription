@@ -1,82 +1,84 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType5
     {
-
-        /// <remarks/>
+        /// <remarks />
         f,
 
-        /// <remarks/>
+        /// <remarks />
         ff,
 
-        /// <remarks/>
+        /// <remarks />
         fff,
 
-        /// <remarks/>
+        /// <remarks />
         ffff,
 
-        /// <remarks/>
+        /// <remarks />
         fffff,
 
-        /// <remarks/>
+        /// <remarks />
         ffffff,
 
-        /// <remarks/>
+        /// <remarks />
         fp,
 
-        /// <remarks/>
+        /// <remarks />
         fz,
 
-        /// <remarks/>
+        /// <remarks />
         mf,
 
-        /// <remarks/>
+        /// <remarks />
         mp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("other-dynamics")]
-        otherdynamics,
+        /// <remarks />
+        [XmlEnum("other-dynamics")] otherdynamics,
 
-        /// <remarks/>
+        /// <remarks />
         p,
 
-        /// <remarks/>
+        /// <remarks />
         pp,
 
-        /// <remarks/>
+        /// <remarks />
         ppp,
 
-        /// <remarks/>
+        /// <remarks />
         pppp,
 
-        /// <remarks/>
+        /// <remarks />
         ppppp,
 
-        /// <remarks/>
+        /// <remarks />
         pppppp,
 
-        /// <remarks/>
+        /// <remarks />
         rf,
 
-        /// <remarks/>
+        /// <remarks />
         rfz,
 
-        /// <remarks/>
+        /// <remarks />
         sf,
 
-        /// <remarks/>
+        /// <remarks />
         sffz,
 
-        /// <remarks/>
+        /// <remarks />
         sfp,
 
-        /// <remarks/>
+        /// <remarks />
         sfpp,
 
-        /// <remarks/>
+        /// <remarks />
         sfz,
     }
 }

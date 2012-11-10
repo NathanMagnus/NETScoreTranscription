@@ -1,52 +1,47 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Membrane
     {
+        /// <remarks />
+        [XmlEnum("bass drum")] bassdrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("bass drum")]
-        bassdrum,
+        /// <remarks />
+        [XmlEnum("bass drum on side")] bassdrumonside,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("bass drum on side")]
-        bassdrumonside,
-
-        /// <remarks/>
+        /// <remarks />
         bongos,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("conga drum")]
-        congadrum,
+        /// <remarks />
+        [XmlEnum("conga drum")] congadrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("goblet drum")]
-        gobletdrum,
+        /// <remarks />
+        [XmlEnum("goblet drum")] gobletdrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("military drum")]
-        militarydrum,
+        /// <remarks />
+        [XmlEnum("military drum")] militarydrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("snare drum")]
-        snaredrum,
+        /// <remarks />
+        [XmlEnum("snare drum")] snaredrum,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("snare drum snares off")]
-        snaredrumsnaresoff,
+        /// <remarks />
+        [XmlEnum("snare drum snares off")] snaredrumsnaresoff,
 
-        /// <remarks/>
+        /// <remarks />
         tambourine,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("tenor drum")]
-        tenordrum,
+        /// <remarks />
+        [XmlEnum("tenor drum")] tenordrum,
 
-        /// <remarks/>
+        /// <remarks />
         timbales,
 
-        /// <remarks/>
+        /// <remarks />
         tomtom,
     }
 }

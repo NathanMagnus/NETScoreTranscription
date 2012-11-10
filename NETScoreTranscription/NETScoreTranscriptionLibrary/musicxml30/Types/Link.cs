@@ -1,35 +1,21 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Link
     {
-
-        private string hrefField;
-
-        private OpusType typeField;
-
-        private bool typeFieldSpecified;
-
-        private string roleField;
-
-        private string titleField;
-
-        private OpusShow showField;
-
+        private static XmlSerializer serializer;
         private OpusActuate actuateField;
-
-        private string nameField;
-
-        private string elementField;
-
-        private string positionField;
 
         private decimal defaultXField;
 
@@ -38,6 +24,10 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal defaultYField;
 
         private bool defaultYFieldSpecified;
+        private string elementField;
+        private string hrefField;
+        private string nameField;
+        private string positionField;
 
         private decimal relativeXField;
 
@@ -46,8 +36,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         private decimal relativeYField;
 
         private bool relativeYFieldSpecified;
+        private string roleField;
+        private OpusShow showField;
+        private string titleField;
+        private OpusType typeField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
+        private bool typeFieldSpecified;
 
         public Link()
         {
@@ -56,269 +50,162 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
             actuateField = OpusActuate.onRequest;
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "anyURI")]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "anyURI")]
         public string href
         {
-            get
-            {
-                return hrefField;
-            }
-            set
-            {
-                hrefField = value;
-            }
+            get { return hrefField; }
+            set { hrefField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
         public OpusType type
         {
-            get
-            {
-                return typeField;
-            }
-            set
-            {
-                typeField = value;
-            }
+            get { return typeField; }
+            set { typeField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool typeSpecified
         {
-            get
-            {
-                return typeFieldSpecified;
-            }
-            set
-            {
-                typeFieldSpecified = value;
-            }
+            get { return typeFieldSpecified; }
+            set { typeFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "token")]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "token")]
         public string role
         {
-            get
-            {
-                return roleField;
-            }
-            set
-            {
-                roleField = value;
-            }
+            get { return roleField; }
+            set { roleField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "token")]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink", DataType = "token")]
         public string title
         {
-            get
-            {
-                return titleField;
-            }
-            set
-            {
-                titleField = value;
-            }
+            get { return titleField; }
+            set { titleField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
-        [System.ComponentModel.DefaultValueAttribute(OpusShow.replace)]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
+        [DefaultValue(OpusShow.replace)]
         public OpusShow show
         {
-            get
-            {
-                return showField;
-            }
-            set
-            {
-                showField = value;
-            }
+            get { return showField; }
+            set { showField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
-        [System.ComponentModel.DefaultValueAttribute(OpusActuate.onRequest)]
+        [XmlAttribute(Form = XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/1999/xlink")]
+        [DefaultValue(OpusActuate.onRequest)]
         public OpusActuate actuate
         {
-            get
-            {
-                return actuateField;
-            }
-            set
-            {
-                actuateField = value;
-            }
+            get { return actuateField; }
+            set { actuateField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        [XmlAttribute(DataType = "token")]
         public string name
         {
-            get
-            {
-                return nameField;
-            }
-            set
-            {
-                nameField = value;
-            }
+            get { return nameField; }
+            set { nameField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "NMTOKEN")]
+        [XmlAttribute(DataType = "NMTOKEN")]
         public string element
         {
-            get
-            {
-                return elementField;
-            }
-            set
-            {
-                elementField = value;
-            }
+            get { return elementField; }
+            set { elementField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [XmlAttribute(DataType = "positiveInteger")]
         public string position
         {
-            get
-            {
-                return positionField;
-            }
-            set
-            {
-                positionField = value;
-            }
+            get { return positionField; }
+            set { positionField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-x")]
+        [XmlAttribute("default-x")]
         public decimal defaultX
         {
-            get
-            {
-                return defaultXField;
-            }
-            set
-            {
-                defaultXField = value;
-            }
+            get { return defaultXField; }
+            set { defaultXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultXSpecified
         {
-            get
-            {
-                return defaultXFieldSpecified;
-            }
-            set
-            {
-                defaultXFieldSpecified = value;
-            }
+            get { return defaultXFieldSpecified; }
+            set { defaultXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("default-y")]
+        [XmlAttribute("default-y")]
         public decimal defaultY
         {
-            get
-            {
-                return defaultYField;
-            }
-            set
-            {
-                defaultYField = value;
-            }
+            get { return defaultYField; }
+            set { defaultYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool defaultYSpecified
         {
-            get
-            {
-                return defaultYFieldSpecified;
-            }
-            set
-            {
-                defaultYFieldSpecified = value;
-            }
+            get { return defaultYFieldSpecified; }
+            set { defaultYFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-x")]
+        [XmlAttribute("relative-x")]
         public decimal relativeX
         {
-            get
-            {
-                return relativeXField;
-            }
-            set
-            {
-                relativeXField = value;
-            }
+            get { return relativeXField; }
+            set { relativeXField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeXSpecified
         {
-            get
-            {
-                return relativeXFieldSpecified;
-            }
-            set
-            {
-                relativeXFieldSpecified = value;
-            }
+            get { return relativeXFieldSpecified; }
+            set { relativeXFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("relative-y")]
+        [XmlAttribute("relative-y")]
         public decimal relativeY
         {
-            get
-            {
-                return relativeYField;
-            }
-            set
-            {
-                relativeYField = value;
-            }
+            get { return relativeYField; }
+            set { relativeYField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool relativeYSpecified
         {
-            get
-            {
-                return relativeYFieldSpecified;
-            }
-            set
-            {
-                relativeYFieldSpecified = value;
-            }
+            get { return relativeYFieldSpecified; }
+            set { relativeYFieldSpecified = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Link));
+                    serializer = new XmlSerializer(typeof (Link));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current link object into an XML document
+        ///   Serializes current link object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -335,13 +222,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an link object
+        ///   Deserializes workflow markup into an link object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output link object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output link object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Link obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Link obj, out Exception exception)
         {
             exception = null;
             obj = default(Link);
@@ -350,7 +237,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -359,17 +246,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Link obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Link Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Link)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Link)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -381,12 +272,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current link object into file
+        ///   Serializes current link object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -394,7 +285,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -403,11 +294,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -422,13 +313,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an link object
+        ///   Deserializes xml markup from file into an link object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output link object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output link object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Link obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Link obj, out Exception exception)
         {
             exception = null;
             obj = default(Link);
@@ -437,7 +328,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -446,18 +337,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Link obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Link LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -475,16 +366,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this link object
+        ///   Create a clone of this link object
         /// </summary>
         public virtual Link Clone()
         {
-            return ((Link)(MemberwiseClone()));
+            return ((Link) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

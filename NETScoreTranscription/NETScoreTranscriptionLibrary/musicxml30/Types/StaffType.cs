@@ -1,24 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "staff-type")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "staff-type")]
     public enum StaffType
     {
-
-        /// <remarks/>
+        /// <remarks />
         ossia,
 
-        /// <remarks/>
+        /// <remarks />
         cue,
 
-        /// <remarks/>
+        /// <remarks />
         editorial,
 
-        /// <remarks/>
+        /// <remarks />
         regular,
 
-        /// <remarks/>
+        /// <remarks />
         alternate,
     }
 }

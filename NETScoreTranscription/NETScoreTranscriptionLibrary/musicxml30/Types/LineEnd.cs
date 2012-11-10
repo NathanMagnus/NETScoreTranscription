@@ -1,24 +1,27 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "line-end")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "line-end")]
     public enum LineEnd
     {
-
-        /// <remarks/>
+        /// <remarks />
         up,
 
-        /// <remarks/>
+        /// <remarks />
         down,
 
-        /// <remarks/>
+        /// <remarks />
         both,
 
-        /// <remarks/>
+        /// <remarks />
         arrow,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

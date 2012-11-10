@@ -1,58 +1,54 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "note-type-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "note-type-value")]
     public enum NoteTypeValue
     {
+        /// <remarks />
+        [XmlEnum("1024th")] Item1024th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("1024th")]
-        Item1024th,
+        /// <remarks />
+        [XmlEnum("512th")] Item512th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("512th")]
-        Item512th,
+        /// <remarks />
+        [XmlEnum("256th")] Item256th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("256th")]
-        Item256th,
+        /// <remarks />
+        [XmlEnum("128th")] Item128th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("128th")]
-        Item128th,
+        /// <remarks />
+        [XmlEnum("64th")] Item64th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("64th")]
-        Item64th,
+        /// <remarks />
+        [XmlEnum("32nd")] Item32nd,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("32nd")]
-        Item32nd,
+        /// <remarks />
+        [XmlEnum("16th")] Item16th,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("16th")]
-        Item16th,
-
-        /// <remarks/>
+        /// <remarks />
         eighth,
 
-        /// <remarks/>
+        /// <remarks />
         quarter,
 
-        /// <remarks/>
+        /// <remarks />
         half,
 
-        /// <remarks/>
+        /// <remarks />
         whole,
 
-        /// <remarks/>
+        /// <remarks />
         breve,
 
-        /// <remarks/>
+        /// <remarks />
         @long,
 
-        /// <remarks/>
+        /// <remarks />
         maxima,
     }
 }

@@ -1,61 +1,53 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Effect
     {
-
-        /// <remarks/>
+        /// <remarks />
         anvil,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("auto horn")]
-        autohorn,
+        /// <remarks />
+        [XmlEnum("auto horn")] autohorn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("bird whistle")]
-        birdwhistle,
+        /// <remarks />
+        [XmlEnum("bird whistle")] birdwhistle,
 
-        /// <remarks/>
+        /// <remarks />
         cannon,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("duck call")]
-        duckcall,
+        /// <remarks />
+        [XmlEnum("duck call")] duckcall,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("gun shot")]
-        gunshot,
+        /// <remarks />
+        [XmlEnum("gun shot")] gunshot,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("klaxon horn")]
-        klaxonhorn,
+        /// <remarks />
+        [XmlEnum("klaxon horn")] klaxonhorn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("lions roar")]
-        lionsroar,
+        /// <remarks />
+        [XmlEnum("lions roar")] lionsroar,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("police whistle")]
-        policewhistle,
+        /// <remarks />
+        [XmlEnum("police whistle")] policewhistle,
 
-        /// <remarks/>
+        /// <remarks />
         siren,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("slide whistle")]
-        slidewhistle,
+        /// <remarks />
+        [XmlEnum("slide whistle")] slidewhistle,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("thunder sheet")]
-        thundersheet,
+        /// <remarks />
+        [XmlEnum("thunder sheet")] thundersheet,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("wind machine")]
-        windmachine,
+        /// <remarks />
+        [XmlEnum("wind machine")] windmachine,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("wind whistle")]
-        windwhistle,
+        /// <remarks />
+        [XmlEnum("wind whistle")] windwhistle,
     }
 }

@@ -1,16 +1,18 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemChoiceType1
     {
+        /// <remarks />
+        [XmlEnum("pre-bend")] prebend,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("pre-bend")]
-        prebend,
-
-        /// <remarks/>
+        /// <remarks />
         release,
     }
 }

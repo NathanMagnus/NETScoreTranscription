@@ -1,60 +1,54 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType2
     {
+        /// <remarks />
+        [XmlEnum("accidental-mark")] accidentalmark,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("accidental-mark")]
-        accidentalmark,
+        /// <remarks />
+        [XmlEnum("delayed-inverted-turn")] delayedinvertedturn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("delayed-inverted-turn")]
-        delayedinvertedturn,
+        /// <remarks />
+        [XmlEnum("delayed-turn")] delayedturn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("delayed-turn")]
-        delayedturn,
+        /// <remarks />
+        [XmlEnum("inverted-mordent")] invertedmordent,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("inverted-mordent")]
-        invertedmordent,
+        /// <remarks />
+        [XmlEnum("inverted-turn")] invertedturn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("inverted-turn")]
-        invertedturn,
-
-        /// <remarks/>
+        /// <remarks />
         mordent,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("other-ornament")]
-        otherornament,
+        /// <remarks />
+        [XmlEnum("other-ornament")] otherornament,
 
-        /// <remarks/>
+        /// <remarks />
         schleifer,
 
-        /// <remarks/>
+        /// <remarks />
         shake,
 
-        /// <remarks/>
+        /// <remarks />
         tremolo,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("trill-mark")]
-        trillmark,
+        /// <remarks />
+        [XmlEnum("trill-mark")] trillmark,
 
-        /// <remarks/>
+        /// <remarks />
         turn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("vertical-turn")]
-        verticalturn,
+        /// <remarks />
+        [XmlEnum("vertical-turn")] verticalturn,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("wavy-line")]
-        wavyline,
+        /// <remarks />
+        [XmlEnum("wavy-line")] wavyline,
     }
 }

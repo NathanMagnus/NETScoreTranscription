@@ -1,148 +1,111 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlRoot(Namespace = "", IsNullable = true)]
     public class Identification
     {
-
+        private static XmlSerializer serializer;
         private TypedText[] creatorField;
-
-        private TypedText[] rightsField;
 
         private Encoding encodingField;
 
+        private MiscellaneousField[] miscellaneousField;
+        private TypedText[] relationField;
+        private TypedText[] rightsField;
         private string sourceField;
 
-        private TypedText[] relationField;
-
-        private MiscellaneousField[] miscellaneousField;
-
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
         /// <summary>
-        /// The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus, there can be multiple creators within an identification. Standard type values are composer, lyricist, and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator / contributor distinction from Dublin Core.
+        ///   The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus, there can be multiple creators within an identification. Standard type values are composer, lyricist, and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator / contributor distinction from Dublin Core.
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("creator", Order = 0)]
+        [XmlElement("creator", Order = 0)]
         public TypedText[] creator
         {
-            get
-            {
-                return creatorField;
-            }
-            set
-            {
-                creatorField = value;
-            }
+            get { return creatorField; }
+            set { creatorField = value; }
         }
 
         /// <summary>
-        /// The rights element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words, music, and derivatives can have different types, so multiple rights tags with different type attributes are supported. Standard type values are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple rights elements.
+        ///   The rights element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words, music, and derivatives can have different types, so multiple rights tags with different type attributes are supported. Standard type values are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple rights elements.
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("rights", Order = 1)]
+        [XmlElement("rights", Order = 1)]
         public TypedText[] rights
         {
-            get
-            {
-                return rightsField;
-            }
-            set
-            {
-                rightsField = value;
-            }
+            get { return rightsField; }
+            set { rightsField = value; }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [XmlElement(Order = 2)]
         public Encoding encoding
         {
-            get
-            {
-                return encodingField;
-            }
-            set
-            {
-                encodingField = value;
-            }
+            get { return encodingField; }
+            set { encodingField = value; }
         }
 
         /// <summary>
-        /// The source for the music that is encoded. This is similar to the Dublin Core source element.
+        ///   The source for the music that is encoded. This is similar to the Dublin Core source element.
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        [XmlElement(Order = 3)]
         public string source
         {
-            get
-            {
-                return sourceField;
-            }
-            set
-            {
-                sourceField = value;
-            }
+            get { return sourceField; }
+            set { sourceField = value; }
         }
 
         /// <summary>
-        /// A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music, words, and arrangement, but other types may be used.
+        ///   A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music, words, and arrangement, but other types may be used.
         /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute("relation", Order = 4)]
+        [XmlElement("relation", Order = 4)]
         public TypedText[] relation
         {
-            get
-            {
-                return relationField;
-            }
-            set
-            {
-                relationField = value;
-            }
+            get { return relationField; }
+            set { relationField = value; }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        [XmlArray(Order = 5)]
+        [XmlArrayItem(IsNullable = false)]
         public MiscellaneousField[] miscellaneous
         {
-            get
-            {
-                return miscellaneousField;
-            }
-            set
-            {
-                miscellaneousField = value;
-            }
+            get { return miscellaneousField; }
+            set { miscellaneousField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(Identification));
+                    serializer = new XmlSerializer(typeof (Identification));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current identification object into an XML document
+        ///   Serializes current identification object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -159,13 +122,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an identification object
+        ///   Deserializes workflow markup into an identification object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output identification object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output identification object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out Identification obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out Identification obj, out Exception exception)
         {
             exception = null;
             obj = default(Identification);
@@ -174,7 +137,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -183,17 +146,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out Identification obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static Identification Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((Identification)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((Identification)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -205,12 +172,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current identification object into file
+        ///   Serializes current identification object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -218,7 +185,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -227,11 +194,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -246,13 +213,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an identification object
+        ///   Deserializes xml markup from file into an identification object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output identification object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output identification object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out Identification obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out Identification obj, out Exception exception)
         {
             exception = null;
             obj = default(Identification);
@@ -261,7 +228,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -270,18 +237,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out Identification obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static Identification LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -299,16 +266,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this identification object
+        ///   Create a clone of this identification object
         /// </summary>
         public virtual Identification Clone()
         {
-            return ((Identification)(MemberwiseClone()));
+            return ((Identification) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

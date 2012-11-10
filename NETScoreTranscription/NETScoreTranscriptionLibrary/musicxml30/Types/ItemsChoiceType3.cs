@@ -1,91 +1,84 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType3
     {
-
-        /// <remarks/>
+        /// <remarks />
         arrow,
 
-        /// <remarks/>
+        /// <remarks />
         bend,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("double-tongue")]
-        doubletongue,
+        /// <remarks />
+        [XmlEnum("double-tongue")] doubletongue,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("down-bow")]
-        downbow,
+        /// <remarks />
+        [XmlEnum("down-bow")] downbow,
 
-        /// <remarks/>
+        /// <remarks />
         fingering,
 
-        /// <remarks/>
+        /// <remarks />
         fingernails,
 
-        /// <remarks/>
+        /// <remarks />
         fret,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("hammer-on")]
-        hammeron,
+        /// <remarks />
+        [XmlEnum("hammer-on")] hammeron,
 
-        /// <remarks/>
+        /// <remarks />
         handbell,
 
-        /// <remarks/>
+        /// <remarks />
         harmonic,
 
-        /// <remarks/>
+        /// <remarks />
         heel,
 
-        /// <remarks/>
+        /// <remarks />
         hole,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("open-string")]
-        openstring,
+        /// <remarks />
+        [XmlEnum("open-string")] openstring,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("other-technical")]
-        othertechnical,
+        /// <remarks />
+        [XmlEnum("other-technical")] othertechnical,
 
-        /// <remarks/>
+        /// <remarks />
         pluck,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("pull-off")]
-        pulloff,
+        /// <remarks />
+        [XmlEnum("pull-off")] pulloff,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("snap-pizzicato")]
-        snappizzicato,
+        /// <remarks />
+        [XmlEnum("snap-pizzicato")] snappizzicato,
 
-        /// <remarks/>
+        /// <remarks />
         stopped,
 
-        /// <remarks/>
+        /// <remarks />
         @string,
 
-        /// <remarks/>
+        /// <remarks />
         tap,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("thumb-position")]
-        thumbposition,
+        /// <remarks />
+        [XmlEnum("thumb-position")] thumbposition,
 
-        /// <remarks/>
+        /// <remarks />
         toe,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("triple-tongue")]
-        tripletongue,
+        /// <remarks />
+        [XmlEnum("triple-tongue")] tripletongue,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("up-bow")]
-        upbow,
+        /// <remarks />
+        [XmlEnum("up-bow")] upbow,
     }
 }

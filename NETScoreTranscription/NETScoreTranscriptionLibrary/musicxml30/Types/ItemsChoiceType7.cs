@@ -1,82 +1,78 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType7
     {
+        /// <remarks />
+        [XmlEnum("accordion-registration")] accordionregistration,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("accordion-registration")]
-        accordionregistration,
-
-        /// <remarks/>
+        /// <remarks />
         bracket,
 
-        /// <remarks/>
+        /// <remarks />
         coda,
 
-        /// <remarks/>
+        /// <remarks />
         damp,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("damp-all")]
-        dampall,
+        /// <remarks />
+        [XmlEnum("damp-all")] dampall,
 
-        /// <remarks/>
+        /// <remarks />
         dashes,
 
-        /// <remarks/>
+        /// <remarks />
         dynamics,
 
-        /// <remarks/>
+        /// <remarks />
         eyeglasses,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("harp-pedals")]
-        harppedals,
+        /// <remarks />
+        [XmlEnum("harp-pedals")] harppedals,
 
-        /// <remarks/>
+        /// <remarks />
         image,
 
-        /// <remarks/>
+        /// <remarks />
         metronome,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("octave-shift")]
-        octaveshift,
+        /// <remarks />
+        [XmlEnum("octave-shift")] octaveshift,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("other-direction")]
-        otherdirection,
+        /// <remarks />
+        [XmlEnum("other-direction")] otherdirection,
 
-        /// <remarks/>
+        /// <remarks />
         pedal,
 
-        /// <remarks/>
+        /// <remarks />
         percussion,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("principal-voice")]
-        principalvoice,
+        /// <remarks />
+        [XmlEnum("principal-voice")] principalvoice,
 
-        /// <remarks/>
+        /// <remarks />
         rehearsal,
 
-        /// <remarks/>
+        /// <remarks />
         scordatura,
 
-        /// <remarks/>
+        /// <remarks />
         segno,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("string-mute")]
-        stringmute,
+        /// <remarks />
+        [XmlEnum("string-mute")] stringmute,
 
-        /// <remarks/>
+        /// <remarks />
         wedge,
 
-        /// <remarks/>
+        /// <remarks />
         words,
     }
 }

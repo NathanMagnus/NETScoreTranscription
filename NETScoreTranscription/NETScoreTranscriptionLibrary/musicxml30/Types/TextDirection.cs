@@ -1,21 +1,24 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "text-direction")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "text-direction")]
     public enum TextDirection
     {
-
-        /// <remarks/>
+        /// <remarks />
         ltr,
 
-        /// <remarks/>
+        /// <remarks />
         rtl,
 
-        /// <remarks/>
+        /// <remarks />
         lro,
 
-        /// <remarks/>
+        /// <remarks />
         rlo,
     }
 }

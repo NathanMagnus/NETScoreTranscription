@@ -1,17 +1,19 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
     public enum Fan
     {
-
-        /// <remarks/>
+        /// <remarks />
         accel,
 
-        /// <remarks/>
+        /// <remarks />
         rit,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

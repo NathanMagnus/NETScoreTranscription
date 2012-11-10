@@ -1,33 +1,36 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "enclosure-shape")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "enclosure-shape")]
     public enum EnclosureShape
     {
-
-        /// <remarks/>
+        /// <remarks />
         rectangle,
 
-        /// <remarks/>
+        /// <remarks />
         square,
 
-        /// <remarks/>
+        /// <remarks />
         oval,
 
-        /// <remarks/>
+        /// <remarks />
         circle,
 
-        /// <remarks/>
+        /// <remarks />
         bracket,
 
-        /// <remarks/>
+        /// <remarks />
         triangle,
 
-        /// <remarks/>
+        /// <remarks />
         diamond,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

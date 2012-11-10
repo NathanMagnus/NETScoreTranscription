@@ -1,18 +1,21 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "show-tuplet")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "show-tuplet")]
     public enum ShowTuplet
     {
-
-        /// <remarks/>
+        /// <remarks />
         actual,
 
-        /// <remarks/>
+        /// <remarks />
         both,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

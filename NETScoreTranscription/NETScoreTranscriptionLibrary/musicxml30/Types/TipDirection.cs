@@ -1,33 +1,36 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "tip-direction")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "tip-direction")]
     public enum TipDirection
     {
-
-        /// <remarks/>
+        /// <remarks />
         up,
 
-        /// <remarks/>
+        /// <remarks />
         down,
 
-        /// <remarks/>
+        /// <remarks />
         left,
 
-        /// <remarks/>
+        /// <remarks />
         right,
 
-        /// <remarks/>
+        /// <remarks />
         northwest,
 
-        /// <remarks/>
+        /// <remarks />
         northeast,
 
-        /// <remarks/>
+        /// <remarks />
         southeast,
 
-        /// <remarks/>
+        /// <remarks />
         southwest,
     }
 }

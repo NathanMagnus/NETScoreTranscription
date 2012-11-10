@@ -1,22 +1,24 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "fermata-shape")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "fermata-shape")]
     public enum FermataShape
     {
-
-        /// <remarks/>
+        /// <remarks />
         normal,
 
-        /// <remarks/>
+        /// <remarks />
         angled,
 
-        /// <remarks/>
+        /// <remarks />
         square,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("")]
-        Item,
+        /// <remarks />
+        [XmlEnum("")] Item,
     }
 }

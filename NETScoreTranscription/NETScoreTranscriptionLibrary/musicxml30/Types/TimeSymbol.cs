@@ -1,29 +1,30 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "time-symbol")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "time-symbol")]
     public enum TimeSymbol
     {
-
-        /// <remarks/>
+        /// <remarks />
         common,
 
-        /// <remarks/>
+        /// <remarks />
         cut,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("single-number")]
-        singlenumber,
+        /// <remarks />
+        [XmlEnum("single-number")] singlenumber,
 
-        /// <remarks/>
+        /// <remarks />
         note,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("dotted-note")]
-        dottednote,
+        /// <remarks />
+        [XmlEnum("dotted-note")] dottednote,
 
-        /// <remarks/>
+        /// <remarks />
         normal,
     }
 }

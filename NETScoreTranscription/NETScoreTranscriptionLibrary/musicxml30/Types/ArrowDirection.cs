@@ -1,52 +1,51 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "arrow-direction")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "arrow-direction")]
     public enum ArrowDirection
     {
-
-        /// <remarks/>
+        /// <remarks />
         left,
 
-        /// <remarks/>
+        /// <remarks />
         up,
 
-        /// <remarks/>
+        /// <remarks />
         right,
 
-        /// <remarks/>
+        /// <remarks />
         down,
 
-        /// <remarks/>
+        /// <remarks />
         northwest,
 
-        /// <remarks/>
+        /// <remarks />
         northeast,
 
-        /// <remarks/>
+        /// <remarks />
         southeast,
 
-        /// <remarks/>
+        /// <remarks />
         southwest,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("left right")]
-        leftright,
+        /// <remarks />
+        [XmlEnum("left right")] leftright,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("up down")]
-        updown,
+        /// <remarks />
+        [XmlEnum("up down")] updown,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("northwest southeast")]
-        northwestsoutheast,
+        /// <remarks />
+        [XmlEnum("northwest southeast")] northwestsoutheast,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("northeast southwest")]
-        northeastsouthwest,
+        /// <remarks />
+        [XmlEnum("northeast southwest")] northeastsouthwest,
 
-        /// <remarks/>
+        /// <remarks />
         other,
     }
 }

@@ -1,184 +1,129 @@
-﻿using System.IO;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.IO;
 using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
+using System.Xml.Serialization;
 
 namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "measure-style")]
-    [System.Xml.Serialization.XmlRootAttribute("measure-style", Namespace = "", IsNullable = true)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(TypeName = "measure-style")]
+    [XmlRoot("measure-style", Namespace = "", IsNullable = true)]
     public class MeasureStyle
     {
-
-        private object itemField;
-
-        private string numberField;
-
+        private static XmlSerializer serializer;
+        private string colorField;
         private string fontFamilyField;
+        private string fontSizeField;
 
         private FontStyle fontStyleField;
 
         private bool fontStyleFieldSpecified;
 
-        private string fontSizeField;
-
         private FontWeight fontWeightField;
 
         private bool fontWeightFieldSpecified;
+        private object itemField;
 
-        private string colorField;
+        private string numberField;
 
-        private static System.Xml.Serialization.XmlSerializer serializer;
-
-        [System.Xml.Serialization.XmlElementAttribute("beat-repeat", typeof(BeatRepeat), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("measure-repeat", typeof(MeasureRepeat), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("multiple-rest", typeof(MultipleRest), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("slash", typeof(Slash), Order = 0)]
+        [XmlElement("beat-repeat", typeof (BeatRepeat), Order = 0)]
+        [XmlElement("measure-repeat", typeof (MeasureRepeat), Order = 0)]
+        [XmlElement("multiple-rest", typeof (MultipleRest), Order = 0)]
+        [XmlElement("slash", typeof (Slash), Order = 0)]
         public object Item
         {
-            get
-            {
-                return itemField;
-            }
-            set
-            {
-                itemField = value;
-            }
+            get { return itemField; }
+            set { itemField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [XmlAttribute(DataType = "positiveInteger")]
         public string number
         {
-            get
-            {
-                return numberField;
-            }
-            set
-            {
-                numberField = value;
-            }
+            get { return numberField; }
+            set { numberField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-family", DataType = "token")]
+        [XmlAttribute("font-family", DataType = "token")]
         public string fontFamily
         {
-            get
-            {
-                return fontFamilyField;
-            }
-            set
-            {
-                fontFamilyField = value;
-            }
+            get { return fontFamilyField; }
+            set { fontFamilyField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-style")]
+        [XmlAttribute("font-style")]
         public FontStyle fontStyle
         {
-            get
-            {
-                return fontStyleField;
-            }
-            set
-            {
-                fontStyleField = value;
-            }
+            get { return fontStyleField; }
+            set { fontStyleField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool fontStyleSpecified
         {
-            get
-            {
-                return fontStyleFieldSpecified;
-            }
-            set
-            {
-                fontStyleFieldSpecified = value;
-            }
+            get { return fontStyleFieldSpecified; }
+            set { fontStyleFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-size")]
+        [XmlAttribute("font-size")]
         public string fontSize
         {
-            get
-            {
-                return fontSizeField;
-            }
-            set
-            {
-                fontSizeField = value;
-            }
+            get { return fontSizeField; }
+            set { fontSizeField = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute("font-weight")]
+        [XmlAttribute("font-weight")]
         public FontWeight fontWeight
         {
-            get
-            {
-                return fontWeightField;
-            }
-            set
-            {
-                fontWeightField = value;
-            }
+            get { return fontWeightField; }
+            set { fontWeightField = value; }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute]
+        [XmlIgnore]
         public bool fontWeightSpecified
         {
-            get
-            {
-                return fontWeightFieldSpecified;
-            }
-            set
-            {
-                fontWeightFieldSpecified = value;
-            }
+            get { return fontWeightFieldSpecified; }
+            set { fontWeightFieldSpecified = value; }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        [XmlAttribute(DataType = "token")]
         public string color
         {
-            get
-            {
-                return colorField;
-            }
-            set
-            {
-                colorField = value;
-            }
+            get { return colorField; }
+            set { colorField = value; }
         }
 
-        private static System.Xml.Serialization.XmlSerializer Serializer
+        private static XmlSerializer Serializer
         {
             get
             {
                 if ((serializer == null))
                 {
-                    serializer = new System.Xml.Serialization.XmlSerializer(typeof(MeasureStyle));
+                    serializer = new XmlSerializer(typeof (MeasureStyle));
                 }
                 return serializer;
             }
         }
 
         #region Serialize/Deserialize
+
         /// <summary>
-        /// Serializes current measurestyle object into an XML document
+        ///   Serializes current measurestyle object into an XML document
         /// </summary>
         /// <returns>string XML value</returns>
         public virtual string Serialize()
         {
-            System.IO.StreamReader streamReader = null;
-            System.IO.MemoryStream memoryStream = null;
+            StreamReader streamReader = null;
+            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new System.IO.MemoryStream();
+                memoryStream = new MemoryStream();
                 Serializer.Serialize(memoryStream, this);
-                memoryStream.Seek(0, System.IO.SeekOrigin.Begin);
-                streamReader = new System.IO.StreamReader(memoryStream);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(memoryStream);
                 return streamReader.ReadToEnd();
             }
             finally
@@ -195,13 +140,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes workflow markup into an measurestyle object
+        ///   Deserializes workflow markup into an measurestyle object
         /// </summary>
-        /// <param name="xml">string workflow markup to deserialize</param>
-        /// <param name="obj">Output measurestyle object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "xml">string workflow markup to deserialize</param>
+        /// <param name = "obj">Output measurestyle object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool Deserialize(string xml, out MeasureStyle obj, out System.Exception exception)
+        public static bool Deserialize(string xml, out MeasureStyle obj, out Exception exception)
         {
             exception = null;
             obj = default(MeasureStyle);
@@ -210,7 +155,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = Deserialize(xml);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -219,17 +164,21 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool Deserialize(string xml, out MeasureStyle obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return Deserialize(xml, out obj, out exception);
         }
 
         public static MeasureStyle Deserialize(string xml)
         {
-            System.IO.StringReader stringReader = null;
+            StringReader stringReader = null;
             try
             {
-                stringReader = new System.IO.StringReader(xml);
-                return ((MeasureStyle)(Serializer.Deserialize(System.Xml.XmlReader.Create(stringReader, new XmlReaderSettings { DtdProcessing = DtdProcessing.Parse }))));
+                stringReader = new StringReader(xml);
+                return
+                    ((MeasureStyle)
+                     (Serializer.Deserialize(XmlReader.Create(stringReader,
+                                                              new XmlReaderSettings
+                                                                  {DtdProcessing = DtdProcessing.Parse}))));
             }
             finally
             {
@@ -241,12 +190,12 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Serializes current measurestyle object into file
+        ///   Serializes current measurestyle object into file
         /// </summary>
-        /// <param name="fileName">full path of outupt xml file</param>
-        /// <param name="exception">output Exception value if failed</param>
+        /// <param name = "fileName">full path of outupt xml file</param>
+        /// <param name = "exception">output Exception value if failed</param>
         /// <returns>true if can serialize and save into file; otherwise, false</returns>
-        public virtual bool SaveToFile(string fileName, out System.Exception exception)
+        public virtual bool SaveToFile(string fileName, out Exception exception)
         {
             exception = null;
             try
@@ -254,7 +203,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 SaveToFile(fileName);
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 exception = e;
                 return false;
@@ -263,11 +212,11 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public virtual void SaveToFile(string fileName)
         {
-            System.IO.StreamWriter streamWriter = null;
+            StreamWriter streamWriter = null;
             try
             {
                 string xmlString = Serialize();
-                System.IO.FileInfo xmlFile = new System.IO.FileInfo(fileName);
+                FileInfo xmlFile = new FileInfo(fileName);
                 streamWriter = xmlFile.CreateText();
                 streamWriter.WriteLine(xmlString);
                 streamWriter.Close();
@@ -282,13 +231,13 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         }
 
         /// <summary>
-        /// Deserializes xml markup from file into an measurestyle object
+        ///   Deserializes xml markup from file into an measurestyle object
         /// </summary>
-        /// <param name="fileName">string xml file to load and deserialize</param>
-        /// <param name="obj">Output measurestyle object</param>
-        /// <param name="exception">output Exception value if deserialize failed</param>
+        /// <param name = "fileName">string xml file to load and deserialize</param>
+        /// <param name = "obj">Output measurestyle object</param>
+        /// <param name = "exception">output Exception value if deserialize failed</param>
         /// <returns>true if this XmlSerializer can deserialize the object; otherwise, false</returns>
-        public static bool LoadFromFile(string fileName, out MeasureStyle obj, out System.Exception exception)
+        public static bool LoadFromFile(string fileName, out MeasureStyle obj, out Exception exception)
         {
             exception = null;
             obj = default(MeasureStyle);
@@ -297,7 +246,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 obj = LoadFromFile(fileName);
                 return true;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
                 return false;
@@ -306,18 +255,18 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
 
         public static bool LoadFromFile(string fileName, out MeasureStyle obj)
         {
-            System.Exception exception = null;
+            Exception exception = null;
             return LoadFromFile(fileName, out obj, out exception);
         }
 
         public static MeasureStyle LoadFromFile(string fileName)
         {
-            System.IO.FileStream file = null;
-            System.IO.StreamReader sr = null;
+            FileStream file = null;
+            StreamReader sr = null;
             try
             {
-                file = new System.IO.FileStream(fileName, FileMode.Open, FileAccess.Read);
-                sr = new System.IO.StreamReader(file);
+                file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(file);
                 string xmlString = sr.ReadToEnd();
                 sr.Close();
                 file.Close();
@@ -335,16 +284,19 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
                 }
             }
         }
+
         #endregion
 
         #region Clone method
+
         /// <summary>
-        /// Create a clone of this measurestyle object
+        ///   Create a clone of this measurestyle object
         /// </summary>
         public virtual MeasureStyle Clone()
         {
-            return ((MeasureStyle)(MemberwiseClone()));
+            return ((MeasureStyle) (MemberwiseClone()));
         }
+
         #endregion
     }
 }

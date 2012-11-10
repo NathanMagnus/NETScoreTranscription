@@ -1,21 +1,24 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "stem-value")]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(TypeName = "stem-value")]
     public enum stemvalue
     {
-
-        /// <remarks/>
+        /// <remarks />
         down,
 
-        /// <remarks/>
+        /// <remarks />
         up,
 
-        /// <remarks/>
+        /// <remarks />
         @double,
 
-        /// <remarks/>
+        /// <remarks />
         none,
     }
 }

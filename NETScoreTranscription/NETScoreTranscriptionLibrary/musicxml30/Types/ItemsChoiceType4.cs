@@ -1,61 +1,60 @@
-﻿namespace NETScoreTranscriptionLibrary.musicxml30.Types
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Xml.Serialization;
+
+namespace NETScoreTranscriptionLibrary.musicxml30.Types
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute]
-    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema = false)]
+    [GeneratedCode("System.Xml", "4.0.30319.233")]
+    [Serializable]
+    [XmlType(IncludeInSchema = false)]
     public enum ItemsChoiceType4
     {
-
-        /// <remarks/>
+        /// <remarks />
         accent,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("breath-mark")]
-        breathmark,
+        /// <remarks />
+        [XmlEnum("breath-mark")] breathmark,
 
-        /// <remarks/>
+        /// <remarks />
         caesura,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("detached-legato")]
-        detachedlegato,
+        /// <remarks />
+        [XmlEnum("detached-legato")] detachedlegato,
 
-        /// <remarks/>
+        /// <remarks />
         doit,
 
-        /// <remarks/>
+        /// <remarks />
         falloff,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("other-articulation")]
-        otherarticulation,
+        /// <remarks />
+        [XmlEnum("other-articulation")] otherarticulation,
 
-        /// <remarks/>
+        /// <remarks />
         plop,
 
-        /// <remarks/>
+        /// <remarks />
         scoop,
 
-        /// <remarks/>
+        /// <remarks />
         spiccato,
 
-        /// <remarks/>
+        /// <remarks />
         staccatissimo,
 
-        /// <remarks/>
+        /// <remarks />
         staccato,
 
-        /// <remarks/>
+        /// <remarks />
         stress,
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("strong-accent")]
-        strongaccent,
+        /// <remarks />
+        [XmlEnum("strong-accent")] strongaccent,
 
-        /// <remarks/>
+        /// <remarks />
         tenuto,
 
-        /// <remarks/>
+        /// <remarks />
         unstress,
     }
 }
