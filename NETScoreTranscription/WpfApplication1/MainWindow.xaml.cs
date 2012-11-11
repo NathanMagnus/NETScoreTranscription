@@ -1,23 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 using NETScoreTranscription;
 using NETScoreTranscriptionLibrary;
-using System.Xml;
-using NETScoreTranscriptionLibrary.MusicXML30;
 using NETScoreTranscriptionLibrary.Drawing;
 using NETScoreTranscriptionLibrary.musicxml30.Types;
 
@@ -50,8 +37,9 @@ namespace WpfApplication1
                                     "<clef><sign>G</sign><line>2</line></clef></attributes>" +
                                     "</measure></part></score-partwise>";
 
-                //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
-                ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\NM\NETScoreTranscription\MusicXMLSamples\BrahWiMeSample.xml");
+                ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("BrahWiMeSample.xml"));
+                //ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\Users\nathan\Documents\GitHub\NETScoreTranscription\NETScoreTranscription\NETScoreTranscriptionLibrary\MusicXMLSamples\BrahWiMeSample.xml");
+                //ScorePartwise sp = ScorePartwise.LoadFromFile("");
 
                 WPFRendering wpfmrLarge = new WPFRendering(100);
                 FrameworkElement largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);

@@ -340,8 +340,12 @@
     <Compile Include="Drawing\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Drawing\WPFRendering.cs" />
+    <Compile Include="XMLStringFetcher.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MusicXMLSamples\BrahWiMeSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="musicxml30\attributes.mod" />
     <Content Include="musicxml30\barline.mod" />
     <Content Include="musicxml30\common.mod" />
@@ -359,9 +363,480 @@
     <Content Include="musicxml30\to10.xsl" />
     <Content Include="musicxml30\to11.xsl" />
     <Content Include="musicxml30\to20.xsl" />
+    <Content Include="MusicXMLSamples\ActorPreludeSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\BeetAnGeSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Binchois.png" />
+    <Content Include="MusicXMLSamples\Binchois.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\BrookeWestSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Chant.png" />
+    <Content Include="MusicXMLSamples\Chant.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\DebuMandSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Dichterliebe01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Echigo-Jishi.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\FaurReveSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\MahlFaGe4Sample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\MozaChloSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\MozartPianoSonata.png" />
+    <Content Include="MusicXMLSamples\MozartPianoSonata.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\MozartTrio.png" />
+    <Content Include="MusicXMLSamples\MozartTrio.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\MozaVeilSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Saltarello.png" />
+    <Content Include="MusicXMLSamples\Saltarello.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\SchbAvMaSample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLSamples\Telemann.png" />
+    <Content Include="MusicXMLSamples\Telemann.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01a-Pitches-Pitches.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01b-Pitches-Intervals.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01c-Pitches-NoVoiceElement.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01d-Pitches-Microtones.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01e-Pitches-ParenthesizedAccidentals.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\01f-Pitches-ParenthesizedMicrotoneAccidentals.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\02a-Rests-Durations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\02b-Rests-PitchedRests.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\02c-Rests-MultiMeasureRests.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\02d-Rests-Multimeasure-TimeSignatures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\02e-Rests-NoType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\03a-Rhythm-Durations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\03b-Rhythm-Backup.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\03c-Rhythm-DivisionChange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\03d-Rhythm-DottedDurations-Factors.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11a-TimeSignatures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11b-TimeSignatures-NoTime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11c-TimeSignatures-CompoundSimple.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11d-TimeSignatures-CompoundMultiple.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11e-TimeSignatures-CompoundMixed.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11f-TimeSignatures-SymbolMeaning.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11g-TimeSignatures-SingleNumber.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\11h-TimeSignatures-SenzaMisura.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\12a-Clefs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\12b-Clefs-NoKeyOrClef.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\13a-KeySignatures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\13b-KeySignatures-ChurchModes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\13c-KeySignatures-NonTraditional.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\13d-KeySignatures-Microtones.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\14a-StaffDetails-LineChanges.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21a-Chord-Basic.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21b-Chords-TwoNotes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21c-Chords-ThreeNotesDuration.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21d-Chords-SchubertStabatMater.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21e-Chords-PickupMeasures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\21f-Chord-ElementInBetween.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\22a-Noteheads.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\22b-Staff-Notestyles.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\22c-Noteheads-Chords.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\22d-Parenthesized-Noteheads.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23a-Tuplets.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23b-Tuplets-Styles.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23c-Tuplet-Display-NonStandard.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23d-Tuplets-Nested.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23e-Tuplets-Tremolo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\23f-Tuplets-DurationButNoBracket.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24a-GraceNotes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24b-ChordAsGraceNote.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24c-GraceNote-MeasureEnd.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24d-AfterGrace.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24e-GraceNote-StaffChange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\24f-GraceNote-Slur.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\31a-Directions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\31c-MetronomeMarks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\32a-Notations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\32b-Articulations-Texts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\32c-MultipleNotationChildren.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\32d-Arpeggio.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33a-Spanners.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33b-Spanners-Tie.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33c-Spanners-Slurs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33d-Spanners-OctaveShifts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33e-Spanners-OctaveShifts-InvalidSize.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33f-Trill-EndingOnGraceNote.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33g-Slur-ChordedNotes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33h-Spanners-Glissando.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\33i-Ties-NotEnded.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41a-MultiParts-Partorder.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41b-MultiParts-MoreThan10.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41c-StaffGroups.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41d-StaffGroups-Nested.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41e-StaffGroups-InstrumentNames-Linebroken.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41f-StaffGroups-Overlapping.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41g-PartNoId.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41h-TooManyParts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\41i-PartNameDisplay-Override.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\42b-MultiVoice-MidMeasureClefChange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\43a-PianoStaff.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\43b-MultiStaff-DifferentKeys.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\43c-MultiStaff-DifferentKeysAfterBackup.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\43d-MultiStaff-StaffChange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\43e-Multistaff-ClefDynamics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45a-SimpleRepeat.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45b-RepeatWithAlternatives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45c-RepeatMultipleTimes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45d-Repeats-Nested-Alternatives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45e-Repeats-Nested-Alternatives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45f-Repeats-InvalidEndings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\45g-Repeats-NotEnded.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46a-Barlines.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46b-MidmeasureBarline.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46c-Midmeasure-Clef.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46d-PickupMeasure-ImplicitMeasures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46e-PickupMeasure-SecondVoiceStartsLater.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46f-IncompleteMeasures.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\46g-PickupMeasure-Chordnames-FiguredBass.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\51b-Header-Quotes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\51c-MultipleRights.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\51d-EmptyTitle.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\52a-PageLayout.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\52b-Breaks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61a-Lyrics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61b-MultipleLyrics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61c-Lyrics-Pianostaff.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61d-Lyrics-Melisma.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61e-Lyrics-Chords.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61f-Lyrics-GracedNotes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61g-Lyrics-NameNumber.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61h-Lyrics-BeamsMelismata.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61i-Lyrics-Chords.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61j-Lyrics-Elisions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\61k-Lyrics-SpannersExtenders.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71a-Chordnames.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71c-ChordsFrets.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71d-ChordsFrets-Multistaff.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71e-TabStaves.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71f-AllChordTypes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\71g-MultipleChordnames.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\72a-TransposingInstruments.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\72b-TransposingInstruments-Full.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\72c-TransposingInstruments-Change.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\73a-Percussion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\74a-FiguredBass.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\75a-AccordionRegistrations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\99a-Sibelius5-IgnoreBeaming.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MusicXMLTestSuite\99b-Lyrics-BeamsMelismata-IgnoreBeams.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="OtherDocs\Features.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MusicXMLSamples\ActorPreludeSample.mxl" />
+    <None Include="MusicXMLSamples\ActorPreludeSample.pdf" />
+    <None Include="MusicXMLSamples\BeetAnGeSample.mxl" />
+    <None Include="MusicXMLSamples\BeetAnGeSample.pdf" />
+    <None Include="MusicXMLSamples\Binchois.mxl" />
+    <None Include="MusicXMLSamples\BrahWiMeSample.mxl" />
+    <None Include="MusicXMLSamples\BrahWiMeSample.pdf" />
+    <None Include="MusicXMLSamples\BrookeWestSample.mxl" />
+    <None Include="MusicXMLSamples\BrookeWestSample.pdf" />
+    <None Include="MusicXMLSamples\Chant.mxl" />
+    <None Include="MusicXMLSamples\DebuMandSample.mxl" />
+    <None Include="MusicXMLSamples\DebuMandSample.pdf" />
+    <None Include="MusicXMLSamples\Dichterliebe01.mxl" />
+    <None Include="MusicXMLSamples\Dichterliebe01.pdf" />
+    <None Include="MusicXMLSamples\Echigo-Jishi.mxl" />
+    <None Include="MusicXMLSamples\Echigo-Jishi.pdf" />
+    <None Include="MusicXMLSamples\FaurReveSample.mxl" />
+    <None Include="MusicXMLSamples\FaurReveSample.pdf" />
+    <None Include="MusicXMLSamples\MahlFaGe4Sample.mxl" />
+    <None Include="MusicXMLSamples\MahlFaGe4Sample.pdf" />
+    <None Include="MusicXMLSamples\MozaChloSample.mxl" />
+    <None Include="MusicXMLSamples\MozaChloSample.pdf" />
+    <None Include="MusicXMLSamples\MozartPianoSonata.mxl" />
+    <None Include="MusicXMLSamples\MozartTrio.mxl" />
+    <None Include="MusicXMLSamples\MozaVeilSample.mxl" />
+    <None Include="MusicXMLSamples\MozaVeilSample.pdf" />
+    <None Include="MusicXMLSamples\Saltarello.mxl" />
+    <None Include="MusicXMLSamples\SchbAvMaSample.mxl" />
+    <None Include="MusicXMLSamples\SchbAvMaSample.pdf" />
+    <None Include="MusicXMLSamples\Telemann.mxl" />
+    <Content Include="MusicXMLTestSuite\90a-Compressed-MusicXML.mxl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Fonts\Musica.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

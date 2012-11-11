@@ -40,8 +40,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         [XmlEnum("jazz stick")] JazzStick,
 
         /// <remarks />
-        [XmlEnum("knitting needle")] Knitt
-            ingNeedle,
+        [XmlEnum("knitting needle")] KnittingNeedle,
 
         /// <remarks />
         [XmlEnum("metal hammer")] MetalHammer,
