@@ -24,8 +24,10 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Parse the contents of a note and prepare the basic label
         /// </summary>
         /// <param name="note">The note to parse and create a label for</param>
+        /// <param name="fontSize">The size of the font being used</param>
+        /// <param name="clefSign">The sign of the clef for this note. Default is G</param>
         /// <returns>A label with the note in it</returns>
-        public static Panel RenderNoteOrRest(Note note, double fontSize)
+        public static Panel RenderNoteOrRest(Note note, double fontSize, ClefSign clefSign = ClefSign.G)
         {
             //todo: Render appropriate connectors
             //todo: render barline
@@ -37,14 +39,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             
 
             //todo: if it has a rest, then parse as rest, otherwise parse as note
-            bool isRest = false;
-            try
-            {
-                note.Items.Single(i => i.GetType() == typeof(Rest));
-                isRest = true;
-            }
-            catch { }
-
+            bool isRest = note.Items.SingleOrDefault(i => i.GetType() == typeof(Rest)) != null;
             if (!isRest)
             {
                 double yOffset = WPFRendering.GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
@@ -62,28 +57,63 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2.5 / 5;
 
                 //todo: use stemvalue to do up or down
-                // add the stem
-                System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
+                double y1 = 0;
+                double y2 = 0;
+                if (note.stem.Value == stemvalue.up)
+                {
+                    y1 = yOffset + noteHead.ActualHeight/2;
+                    y2 = yOffset + noteHead.ActualHeight/2 - stemHeight;
+                }
+                else if(note.stem.Value == stemvalue.down)
+                {
+                    y1 = yOffset + noteHead.ActualHeight / 2;
+                    y2 = yOffset + noteHead.ActualHeight / 2 + stemHeight;
+                }
+                else if(note.stem.Value == stemvalue.@double)
+                {
+                    //TODO: figure this out
+                }
+
+                if (note.stem.Value != stemvalue.none)
+                {
+                    // add the stem
+                    System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
                     {
                         X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
                         X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
-                        Y1 = yOffset + noteHead.ActualHeight / 2,
-                        Y2 = yOffset + noteHead.ActualHeight / 2 - stemHeight,
+                        Y1 = y1,
+                        Y2 = y2,
                         StrokeThickness = CalculateLineWidth(fontSize),
                         Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
                     };
+                    grid.Children.Add(noteStem);
+                }
                 //todo: get the pitch object from the item list, use character value to calc steps, move steps up and down one step at a time
                 //todo: use the octave shift function: moves up by a 8 steps
-
-
-                grid.Children.Add(noteStem);
-
-                
+                //get pitch object
+                Pitch pitch = (Pitch)note.Items.SingleOrDefault(t => t.GetType() == typeof (Pitch));
+                if (pitch != null)
+                {
+                    //move grid up or down appropriately
+                    Step clefDefaultStep = Constants.Note.TrebelDefaults.PITCH.step;
+                    switch(clefSign)
+                    {
+                        case ClefSign.G:
+                            clefDefaultStep = Constants.Note.TrebelDefaults.PITCH.step;
+                            break;
+                        //todo: bass clef
+                        //todo: more clef signs
+                    }
+                    //todo: make this work properly - doesn't move the note down right now.
+                    int stepDifference = clefDefaultStep - pitch.step;
+                    grid.Margin = new Thickness(grid.Margin.Left, grid.Margin.Top + (stepDifference * 10), grid.Margin.Right, grid.Margin.Bottom);
+                    Console.Out.WriteLine("Was {0} now {1}", grid.Margin.Top, grid.Margin.Top + (stepDifference * 10));
+                }
 
                 //todo: accidentals
                 //todo: clef change on note
                 //todo: other notes?
-                
+
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
                 /*
@@ -100,7 +130,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 grid.Children.Add(restElement);
             }
 
-            grid.VerticalAlignment = VerticalAlignment.Top;
+            //grid.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(grid);
             return grid;
         }
