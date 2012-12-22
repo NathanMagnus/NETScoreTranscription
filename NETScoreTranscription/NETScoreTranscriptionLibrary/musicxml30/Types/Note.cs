@@ -171,7 +171,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         [XmlElement(Order = 10)]
         public Stem stem
         {
-            get { return stemField; }
+            get { return stemField ?? (stemField = new Stem()); }
             set { stemField = value; }
         }
 

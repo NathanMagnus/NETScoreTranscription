@@ -92,7 +92,7 @@ namespace NETScoreTranscriptionLibrary.musicxml30.Types
         [XmlAttribute(DataType = "token")]
         public string color
         {
-            get { return colorField; }
+            get { return colorField ?? string.Empty; }
             set { colorField = value; }
         }
 

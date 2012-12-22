@@ -37,9 +37,12 @@ namespace WpfApplication1
                                     "<clef><sign>G</sign><line>2</line></clef></attributes>" +
                                     "</measure></part></score-partwise>";
 
-                ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("BrahWiMeSample.xml"));
+                ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("00-BasicPitches.xml"));
+                //ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("BrahWiMeSample.xml"));
+                //ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("01a-Pitches-Pitches.xml"));
                 //ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\Users\nathan\Documents\GitHub\NETScoreTranscription\NETScoreTranscription\NETScoreTranscriptionLibrary\MusicXMLSamples\BrahWiMeSample.xml");
                 //ScorePartwise sp = ScorePartwise.LoadFromFile("");
+                //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
 
                 WPFRendering wpfmrLarge = new WPFRendering(100);
                 FrameworkElement largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);

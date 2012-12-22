@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-using NETScoreTranscriptionLibrary.MusicXML30;
 using NETScoreTranscription;
 using System.Windows;
 using System.Windows.Media;
@@ -19,6 +18,24 @@ namespace NETScoreTranscriptionLibrary.Drawing
     /// </summary>
     public static class WpfMeasureRendering
     {
+
+        private static Pitch GetDefaultPitch(ClefSign clefSign)
+        {
+            switch (clefSign)
+            {
+                case ClefSign.C:
+                    break;
+                case ClefSign.F:
+                    break;
+                case ClefSign.G:
+                default:
+                    return Constants.Note.TrebelDefaults.PITCH;
+                    break;
+                //todo: bass clef
+                //todo: more clef signs
+            }
+        }
+
         //todo: put note rendering into its own class
         /// <summary>
         /// Parse the contents of a note and prepare the basic label
@@ -57,6 +74,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2.5 / 5;
 
                 //todo: use stemvalue to do up or down
+                //todo: put into function
                 double y1 = 0;
                 double y2 = 0;
                 if (note.stem.Value == stemvalue.up)
@@ -74,10 +92,12 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     //TODO: figure this out
                 }
 
+                System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line();
                 if (note.stem.Value != stemvalue.none)
                 {
+                    //todo: make into function
                     // add the stem
-                    System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line()
+                    noteStem = new System.Windows.Shapes.Line()
                     {
                         X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
                         X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
@@ -92,28 +112,37 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 //todo: use the octave shift function: moves up by a 8 steps
                 //get pitch object
                 Pitch pitch = (Pitch)note.Items.SingleOrDefault(t => t.GetType() == typeof (Pitch));
+
+                
+
                 if (pitch != null)
                 {
+                    //todo: make into function
                     //move grid up or down appropriately
-                    Step clefDefaultStep = Constants.Note.TrebelDefaults.PITCH.step;
-                    switch(clefSign)
-                    {
-                        case ClefSign.G:
-                            clefDefaultStep = Constants.Note.TrebelDefaults.PITCH.step;
-                            break;
-                        //todo: bass clef
-                        //todo: more clef signs
-                    }
+                    Pitch clefDefaultPitch = GetDefaultPitch(clefSign);
+
                     //todo: make this work properly - doesn't move the note down right now.
-                    int stepDifference = clefDefaultStep - pitch.step;
-                    grid.Margin = new Thickness(grid.Margin.Left, grid.Margin.Top + (stepDifference * 10), grid.Margin.Right, grid.Margin.Bottom);
-                    Console.Out.WriteLine("Was {0} now {1}", grid.Margin.Top, grid.Margin.Top + (stepDifference * 10));
+                    int stepDifference = clefDefaultPitch.step - pitch.step + (int.Parse(Constants.Note.TrebelDefaults.PITCH.octave) - int.Parse(pitch.octave)) * 8;
+                    if(pitch.step == Step.A || pitch.step == Step.B)
+                    {
+                        stepDifference -= 7;
+                    }
+
+                    double halfStepDistance = stepDifference/2;
+                    const double stepDistance = 5.5;
+                    double marginTop = noteHead.Margin.Top + (stepDifference * WPFRendering.GetFontFraction(stepDistance, fontSize));
+                    noteHead.Margin = new Thickness(noteHead.Margin.Left, marginTop, noteHead.Margin.Right, noteHead.Margin.Bottom);
+                    noteStem.Margin = new Thickness(noteStem.Margin.Left, marginTop, noteStem.Margin.Right, noteStem.Margin.Bottom);
+                    Console.Out.WriteLine("default: " + Constants.Note.TrebelDefaults.PITCH.step + "  " + pitch.step + pitch.octave + "   " + stepDifference);
+                    
+                    //todo: octave
                 }
 
                 //todo: accidentals
                 //todo: clef change on note
                 //todo: other notes?
 
+                //todo: make into function
                 //todo: if is above half of the staff, rotate so everything points down
                 // rotate head
                 /*
@@ -144,7 +173,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             //todo: chords
             //todo: different shapes of note heads
-            String noteChar = "";
             Panel noteHeadGrid = WPFRendering.CreateAutoSizingGrid();
             FrameworkElement noteHead = new Label();
             FrameworkElement noteHeadInside = new Label();
@@ -164,7 +192,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
                 //todo: size note heads using width expected for font
                 case NoteTypeValue.whole:
-                    noteChar = Constants.Note.Characters.WHOLE_NOTE;
+                    Constants.Note.Characters.WHOLE_NOTE;
                     // make outside
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     hollow = true;
@@ -173,7 +201,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     hollowRT.Angle = Constants.Note.HeadRotations.WHOLE_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.half:
-                    noteChar = Constants.Note.Characters.HALF_NOTE;
+                    Constants.Note.Characters.HALF_NOTE;
                     // make outside
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
@@ -183,52 +211,45 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     hollowRT.Angle = Constants.Note.HeadRotations.HALF_NOTE_HOLLOW; //todo: make this rotation a constant, note same as head rotation
                     break;
                 case NoteTypeValue.quarter:
-                    noteChar = Constants.Note.Characters.QUARTER_NOTE;
+                    Constants.Note.Characters.QUARTER_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.eighth:
-                    noteChar = Constants.Note.Characters.EIGHTH_NOTE;
+                    Constants.Note.Characters.EIGHTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item16th:
-                    noteChar = Constants.Note.Characters.SIXTEETH_NOTE;
+                    Constants.Note.Characters.SIXTEETH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item32nd:
-                    noteChar = Constants.Note.Characters.THIRTYSECOND_NOTE;
+                    Constants.Note.Characters.THIRTYSECOND_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item64th:
-                    noteChar = Constants.Note.Characters.SIXTYFOURTH_NOTE;
+                    Constants.Note.Characters.SIXTYFOURTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item128th:
-                    noteChar = Constants.Note.Characters.ONETWENTYEIGHTH_NOTE;
+                    Constants.Note.Characters.ONETWENTYEIGHTH_NOTE;
                     noteHead = new Ellipse() { Fill = noteBrush, Height = noteHeadHeight, Width = noteHeadWidth };
                     rotateHead = true;
                     break;
                 case NoteTypeValue.Item256th:
                     rotateHead = true;
-                    noteChar = "!";
                     break;
                 case NoteTypeValue.Item512th:
                     rotateHead = true;
-                    noteChar = "!";
                     break;
             }
 
             if (rotateHead)
-            {
-                // rotate head
-                RotateTransform rt = new RotateTransform();
-                rt.Angle = Constants.Note.HeadRotations.SOLID_NOTE;
-                noteHead.LayoutTransform = rt;
-            }
+                RotateNoteHead(noteHead);
 
             noteHeadGrid.Children.Add(noteHead);
 
@@ -243,6 +264,14 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //todo: Render modifiers
 
             return noteHeadGrid;
+        }
+
+        private static void RotateNoteHead(FrameworkElement noteHead)
+        {
+            // rotate head
+            RotateTransform rt = new RotateTransform();
+            rt.Angle = Constants.Note.HeadRotations.SOLID_NOTE;
+            noteHead.LayoutTransform = rt;
         }
 
         /// <summary>
@@ -464,12 +493,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>A canvas with the attributes of a measure rendered onto it</returns>
         private static Panel RenderAttributes(Attributes attributes, int staff, double fontSize)
         {
-            FrameworkElement element;
             Panel grid = WPFRendering.CreateAutoSizingGrid();
             double left = 0;
 
             //todo: render multiple clefs because of multi-line parts
-            element = RenderClef(attributes.clef[0], fontSize);
+            FrameworkElement element = RenderClef(attributes.clef[0], fontSize);
             element.Margin = new Thickness(fontSize * 2 / 3, 0, 0, 0);
             grid.Children.Add(element);
             left += fontSize * 2 / 3;
@@ -501,6 +529,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Render the time signature to a Grid
         /// </summary>
         /// <param name="time">The time signature to render</param>
+        /// <param name="fontSize">The size of the font currently being used</param>
         /// <returns>Time signature on a grid</returns>
         public static FrameworkElement RenderTimeSignature(Time time, double fontSize)
         {
@@ -546,6 +575,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             Label clefLabel = WPFRendering.GetMusicalLabel(symbol, fontSize); //todo: get the clef from getmusic label
             clefLabel.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(clefLabel);
+
+            clefLabel.Background = Brushes.Red;
             return clefLabel;
         }
 

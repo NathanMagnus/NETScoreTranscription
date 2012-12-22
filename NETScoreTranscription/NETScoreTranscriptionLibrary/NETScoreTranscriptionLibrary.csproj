@@ -420,6 +420,9 @@
     <Content Include="MusicXMLSamples\Telemann.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MusicXMLTestSuite\00-BasicPitches.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="MusicXMLTestSuite\01a-Pitches-Pitches.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
