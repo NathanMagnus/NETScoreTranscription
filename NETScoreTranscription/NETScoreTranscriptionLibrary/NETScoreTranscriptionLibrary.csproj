@@ -336,6 +336,7 @@
     <Compile Include="musicxml30\Types\Work.cs" />
     <Compile Include="musicxml30\Types\YesNo.cs" />
     <Compile Include="Page.cs" />
+    <Compile Include="PitchComparer.cs" />
     <Compile Include="PropertyGenerator.cs" />
     <Compile Include="Drawing\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

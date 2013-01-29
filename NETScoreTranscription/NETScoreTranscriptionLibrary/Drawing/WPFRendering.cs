@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Controls;
 using NETScoreTranscriptionLibrary.MusicXML30;
 using System.Windows.Media;
-using NETScoreTranscription;
 using System.Windows;
 using NETScoreTranscriptionLibrary.Drawing.Interfaces;
 using NETScoreTranscriptionLibrary.musicxml30.Types;
