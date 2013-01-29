@@ -15,8 +15,13 @@ namespace NETScoreTranscriptionLibrary.Drawing
     /// </summary>
     public class WPFRendering : Canvas, IRendering
     {
+        /// <summary>
+        /// The font size to use for this rendering
+        /// </summary>
         public double FontSize { get; set; }
 
+        //todo: properties with public getter and private setter for the Pages/Lines/Measures
+        
         /// <summary>
         /// Constructor for the WPFRendering component
         /// </summary>

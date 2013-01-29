@@ -28,14 +28,31 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             public static double LINE_WIDTH = 2;
             public static double STAFF_PADDING = 10;
+            public static double LEDGER_LINE_EXTENSION = 2;
         }
 
         /// <summary>
-        /// Constants relating to colors
+        /// Constants relating to colors.
+        /// Can use any built in color by System.Windows.Media.Colors.XXX.ToString();
         /// </summary>
         public static class Colors
         {
-            public static String DEFAULT_NOTE_COLOR = "#000000";
+            public static String DEFAULT_NOTE_COLOR = System.Windows.Media.Colors.Black.ToString();
+            public static String RED = GetSystemColorValue(System.Windows.Media.Colors.Red);
+            public static String BLACK = GetSystemColorValue(System.Windows.Media.Colors.Black);
+            public static String BLUE = GetSystemColorValue(System.Windows.Media.Colors.Blue);
+            public static String GREEN = GetSystemColorValue(System.Windows.Media.Colors.Green);
+            public static String GOLD = GetSystemColorValue(System.Windows.Media.Colors.Gold);
+            public static String ORANGE = GetSystemColorValue(System.Windows.Media.Colors.Orange);
+            public static String PURPLE = GetSystemColorValue(System.Windows.Media.Colors.Purple);
+            public static String AQUA = GetSystemColorValue(System.Windows.Media.Colors.Aqua);
+            public static String FUCHSIA = GetSystemColorValue(System.Windows.Media.Colors.Fuchsia);
+            
+            // todo move into a different file
+            public static String GetSystemColorValue(System.Windows.Media.Color color)
+            {
+                return color.ToString();
+            }
             //TODO: different color values?
         }
 
@@ -88,6 +105,9 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
                 public static Pitch PITCH = new Pitch() { octave = "5", step = Step.G };
                 public static UpDown STEM_DIRECTION = UpDown.up;
+
+                public static Pitch BOTTOM_OF_STAFF = new Pitch() {octave = "3", step = Step.E};
+                public static Pitch TOP_OF_STAFF = new Pitch() {octave = "5", step = Step.F};
             }
 
             //todo: bass and other clefs
@@ -95,6 +115,9 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
 
             }
+
+            public static double LEDGER_LINE_EXTENSION = Staff.LEDGER_LINE_EXTENSION;
+            public static double STEM_X_OFFSET = 3;
         }
 
         

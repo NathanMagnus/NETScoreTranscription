@@ -37,6 +37,8 @@ namespace WpfApplication1
                                     "</measure></part></score-partwise>";
 
                 ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("00-BasicPitches.xml"));
+                Note v = sp.part[0].measure[0].Items[1] as Note;
+                
                 //ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("BrahWiMeSample.xml"));
                 //ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("01a-Pitches-Pitches.xml"));
                 //ScorePartwise sp = ScorePartwise.LoadFromFile(@"C:\Users\nathan\Documents\GitHub\NETScoreTranscription\NETScoreTranscription\NETScoreTranscriptionLibrary\MusicXMLSamples\BrahWiMeSample.xml");
@@ -45,6 +47,10 @@ namespace WpfApplication1
 
                 WPFRendering wpfmrLarge = new WPFRendering(100);
                 FrameworkElement largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);
+                v.color = "#00FF00";
+                largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);
+                //todo: figure out how to refresh without having to redraw everything
+
 
                 WPFRendering wpfmrBase = new WPFRendering(Constants.MusicFonts.DEFAULT_SIZE);
                 FrameworkElement baseGrid = wpfmrBase.RenderMeasure(sp.part[0].measure[0]);

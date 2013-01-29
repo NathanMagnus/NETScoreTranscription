@@ -100,8 +100,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     // add the stem
                     noteStem = new System.Windows.Shapes.Line()
                     {
-                        X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize), //todo: constant for 3
-                        X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(3, fontSize),
+                        X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
+                        X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
                         Y1 = y1,
                         Y2 = y2,
                         StrokeThickness = CalculateLineWidth(fontSize),
@@ -109,20 +109,16 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     };
                     grid.Children.Add(noteStem);
                 }
-                //todo: get the pitch object from the item list, use character value to calc steps, move steps up and down one step at a time
-                //todo: use the octave shift function: moves up by a 8 steps
+                
                 //get pitch object
                 Pitch pitch = (Pitch)note.Items.SingleOrDefault(t => t.GetType() == typeof (Pitch));
-
                 
-
                 if (pitch != null)
                 {
                     //todo: make into function
                     //move grid up or down appropriately
                     Pitch clefDefaultPitch = GetDefaultPitch(clefSign);
 
-                    //todo: make this work properly - doesn't move the note down right now.
                     int stepDifference = clefDefaultPitch.step - pitch.step + (int.Parse(Constants.Note.TrebelDefaults.PITCH.octave) - int.Parse(pitch.octave)) * 8;
                     if(pitch.step == Step.A || pitch.step == Step.B)
                     {
@@ -147,22 +143,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     Console.Out.WriteLine("default: " + Constants.Note.TrebelDefaults.PITCH.step + "  " + pitch.step + pitch.octave + "   " + stepDifference);
                 }
                 
-                // todo: lines through note head
+                // render ledger line if necessary
                 if(LineThroughNoteHead(pitch, clefSign))
                 {
-                    double lineMiddle = noteHead.ActualHeight/2;
-                    // add the stem
-                    System.Windows.Shapes.Line line = new System.Windows.Shapes.Line()
-                    {
-                        X1 = WPFRendering.GetFontFraction(-2, fontSize), //todo: constant
-                        X2 = noteHead.ActualWidth + WPFRendering.GetFontFraction(2, fontSize),
-                        Y1 = lineMiddle,
-                        Y2 = lineMiddle,
-                        StrokeThickness = CalculateLineWidth(fontSize),
-                        Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Constants.Colors.DEFAULT_NOTE_COLOR)) //todo: change to default staff color
-                    };
-                    line.Margin = noteHead.Margin;
-                    grid.Children.Add(line);
+                    FrameworkElement ledgerLine = RenderLedgerLine(noteHead, fontSize);
+                    grid.Children.Add(ledgerLine);
                 }
 
                 //todo: accidentals
@@ -191,6 +176,23 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return grid;
         }
 
+        private static FrameworkElement RenderLedgerLine(FrameworkElement noteHead, double fontSize)
+        {
+            double lineMiddle = noteHead.ActualHeight / 2;
+            // add the stem
+            System.Windows.Shapes.Line ledgerLine = new System.Windows.Shapes.Line()
+            {
+                X1 = WPFRendering.GetFontFraction(-Constants.Staff.LEDGER_LINE_EXTENSION, fontSize),
+                X2 = noteHead.ActualWidth + WPFRendering.GetFontFraction(Constants.Staff.LEDGER_LINE_EXTENSION, fontSize),
+                Y1 = lineMiddle,
+                Y2 = lineMiddle,
+                StrokeThickness = CalculateLineWidth(fontSize),
+                Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Constants.Colors.DEFAULT_NOTE_COLOR)) //todo: change to default staff color
+            };
+            ledgerLine.Margin = noteHead.Margin;
+            return ledgerLine;
+        }
+
         /// <summary>
         /// Determine if there should be a line through the note head because it is off the staff
         /// </summary>
@@ -205,8 +207,8 @@ namespace NETScoreTranscriptionLibrary.Drawing
             switch(clefSign)
             {
                 case ClefSign.G:
-                    bottomOfStaff = new Pitch() {octave = "3", step = Step.E};
-                    topOfStaff = new Pitch() {octave = "5", step = Step.F};
+                    bottomOfStaff = Constants.Note.TrebelDefaults.BOTTOM_OF_STAFF;
+                    topOfStaff = Constants.Note.TrebelDefaults.TOP_OF_STAFF;
                     break;
                 case ClefSign.F:
                     //todo: F values
@@ -406,7 +408,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 default:
                     barlineChar = Constants.Barlines.REGULAR;
                     break;
-                //todo: rest of barlines
+                //todo: remainder of barlines
             }
 
             Label barlineLabel = WPFRendering.GetMusicalLabel(barlineChar);
@@ -597,7 +599,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             grid.Children.Add(beatsLabel);
 
             Label beatType = WPFRendering.GetMusicalLabel(time.BeatType, halfFont);
-            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.DEFAULT), 0, 0); //todo: font size and type properly
+            beatType.Margin = new Thickness(0, WPFRendering.GetFontHeight(fontSize / 3, Constants.MusicFonts.DEFAULT), 0, 0);
             grid.Children.Add(beatType);
 
             //todo: interchangable and other type of time signature, see definition of Time to hunt it down
