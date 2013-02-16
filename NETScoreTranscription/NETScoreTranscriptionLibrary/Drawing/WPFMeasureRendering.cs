@@ -47,6 +47,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>A label with the note in it</returns>
         public static Panel RenderNoteOrRest(Note note, double fontSize, ClefSign clefSign = ClefSign.G)
         {
+            double yOffset = WPFRendering.GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
             //todo: Render appropriate connectors
             //todo: render barline
             //todo: tuplets, triplets, beams
@@ -60,56 +61,13 @@ namespace NETScoreTranscriptionLibrary.Drawing
             bool isRest = note.Items.SingleOrDefault(i => i.GetType() == typeof(Rest)) != null;
             if (!isRest)
             {
-                double yOffset = WPFRendering.GetFontFraction(-2, fontSize); //offset cause not exactly in right spot
                 FrameworkElement noteHead = RenderNoteHead(note, fontSize);
-                //todo: move to right position on staff
                 noteHead.Margin = new Thickness(noteHead.Margin.Left, noteHead.Margin.Top + yOffset, noteHead.Margin.Right, noteHead.Margin.Bottom);
                 grid.Children.Add(noteHead);
                 
                 //todo: stems when beamed... This will likely require stems to be drawn after the note heads of the beaming
                 //      however, beaming is not supposed to go over measures so this will save some of the problems that this could have
 
-                if (String.IsNullOrEmpty(note.stem.color))
-                    note.stem.color = Constants.Colors.DEFAULT_NOTE_COLOR;
-                
-                double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2.5 / 5;
-
-                //todo: use stemvalue to do up or down
-                //todo: put into function
-                double y1 = 0;
-                double y2 = 0;
-                if (note.stem.Value == stemvalue.up)
-                {
-                    y1 = yOffset + noteHead.ActualHeight/2;
-                    y2 = yOffset + noteHead.ActualHeight/2 - stemHeight;
-                }
-                else if(note.stem.Value == stemvalue.down)
-                {
-                    y1 = yOffset + noteHead.ActualHeight / 2;
-                    y2 = yOffset + noteHead.ActualHeight / 2 + stemHeight;
-                }
-                else if(note.stem.Value == stemvalue.@double)
-                {
-                    //TODO: figure this out
-                }
-
-                System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line();
-                if (note.stem.Value != stemvalue.none)
-                {
-                    //todo: make into function
-                    // add the stem
-                    noteStem = new System.Windows.Shapes.Line()
-                    {
-                        X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
-                        X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
-                        Y1 = y1,
-                        Y2 = y2,
-                        StrokeThickness = CalculateLineWidth(fontSize),
-                        Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
-                    };
-                    grid.Children.Add(noteStem);
-                }
-                
                 //get pitch object
                 Pitch pitch = (Pitch)note.Items.SingleOrDefault(t => t.GetType() == typeof (Pitch));
                 
@@ -136,13 +94,21 @@ namespace NETScoreTranscriptionLibrary.Drawing
                     const double stepDistance = 5.5;
                     double topOffset = WPFRendering.GetFontFraction(39, fontSize);
                     double marginTop = noteHead.Margin.Top + (stepDifference * WPFRendering.GetFontFraction(stepDistance, fontSize)) + topOffset;
+
+                    // create and add note stem
+                    System.Windows.Shapes.Line noteStem = new System.Windows.Shapes.Line();
+                    if (note.stem.Value != stemvalue.none)
+                        noteStem = CreateNoteStem(yOffset, note, noteHead, fontSize);
+                    grid.Children.Add(noteStem);
+                    
+                    // add the note head
                     noteHead.Margin = new Thickness(noteHead.Margin.Left, marginTop, noteHead.Margin.Right, noteHead.Margin.Bottom);
                     noteStem.Margin = new Thickness(noteStem.Margin.Left, marginTop, noteStem.Margin.Right, noteStem.Margin.Bottom);
                     
                     //debug: remove
                     Console.Out.WriteLine("default: " + Constants.Note.TrebelDefaults.PITCH.step + "  " + pitch.step + pitch.octave + "   " + stepDifference);
                 }
-                
+
                 // render ledger line if necessary
                 if(LineThroughNoteHead(pitch, clefSign))
                 {
@@ -174,6 +140,41 @@ namespace NETScoreTranscriptionLibrary.Drawing
             //grid.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(grid);
             return grid;
+        }
+
+        private static System.Windows.Shapes.Line CreateNoteStem(double yOffset, Note note, FrameworkElement noteHead, double fontSize)
+        {
+            if (String.IsNullOrEmpty(note.stem.color))
+                note.stem.color = Constants.Colors.DEFAULT_NOTE_COLOR;
+
+            double stemHeight = WPFRendering.GetFontHeight(fontSize, Constants.MusicFonts.DEFAULT) * 2.5 / 5;
+
+            double y1 = 0;
+            double y2 = 0;
+            if (note.stem.Value == stemvalue.up)
+            {
+                y1 = yOffset + noteHead.ActualHeight / 2;
+                y2 = yOffset + noteHead.ActualHeight / 2 - stemHeight;
+            }
+            else if (note.stem.Value == stemvalue.down)
+            {
+                y1 = yOffset + noteHead.ActualHeight / 2;
+                y2 = yOffset + noteHead.ActualHeight / 2 + stemHeight;
+            }
+            else if (note.stem.Value == stemvalue.@double)
+            {
+                //TODO: figure this out
+            }
+
+            return new System.Windows.Shapes.Line()
+            {
+                X1 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
+                X2 = noteHead.ActualWidth - WPFRendering.GetFontFraction(Constants.Note.STEM_X_OFFSET, fontSize),
+                Y1 = y1,
+                Y2 = y2,
+                StrokeThickness = CalculateLineWidth(fontSize),
+                Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString(note.stem.color))
+            };
         }
 
         private static FrameworkElement RenderLedgerLine(FrameworkElement noteHead, double fontSize)

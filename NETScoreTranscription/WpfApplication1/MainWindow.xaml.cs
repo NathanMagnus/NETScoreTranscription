@@ -45,21 +45,20 @@ namespace WpfApplication1
                 //ScorePartwise sp = ScorePartwise.LoadFromFile("");
                 //ScorePartwise sp = ScorePartwise.Deserialize(testString1);
 
-                WPFRendering wpfmrLarge = new WPFRendering(100);
+                WPFRendering wpfmrLarge = new WPFRendering(sp, new Size(400, 900), 100);
                 FrameworkElement largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);
-                v.color = "#00FF00";
-                largeGrid = wpfmrLarge.RenderMeasure(sp.part[0].measure[0]);
+                v.color = "#00FF00"; //todo: remove
+                largeGrid = wpfmrLarge.RenderLine();
                 //todo: figure out how to refresh without having to redraw everything
 
+                WPFRendering wpfmrBase = new WPFRendering(sp, Constants.MusicFonts.DEFAULT_SIZE);
+                FrameworkElement baseGrid = wpfmrBase.RenderLine();
 
-                WPFRendering wpfmrBase = new WPFRendering(Constants.MusicFonts.DEFAULT_SIZE);
-                FrameworkElement baseGrid = wpfmrBase.RenderMeasure(sp.part[0].measure[0]);
+                WPFRendering wpfmrSmall = new WPFRendering(sp, 50);
+                FrameworkElement smallGrid = wpfmrSmall.RenderLine();
 
-                WPFRendering wpfmrSmall = new WPFRendering(50);
-                FrameworkElement smallGrid = wpfmrSmall.RenderMeasure(sp.part[0].measure[0]);
-
-                WPFRendering wpfmrSmallest = new WPFRendering(25);
-                FrameworkElement smallestGrid = wpfmrSmallest.RenderMeasure(sp.part[0].measure[0]);
+                WPFRendering wpfmrSmallest = new WPFRendering(sp, 25);
+                FrameworkElement smallestGrid = wpfmrSmallest.RenderLine();
 
                 // put content on screen and into a grid
                 Grid contentGrid = new Grid();

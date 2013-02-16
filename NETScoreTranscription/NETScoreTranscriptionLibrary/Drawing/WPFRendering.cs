@@ -4,11 +4,14 @@ using System.Windows.Controls;
 using NETScoreTranscriptionLibrary.MusicXML30;
 using System.Windows.Media;
 using System.Windows;
+using System.Linq;
 using NETScoreTranscriptionLibrary.Drawing.Interfaces;
 using NETScoreTranscriptionLibrary.musicxml30.Types;
 
 namespace NETScoreTranscriptionLibrary.Drawing
 {
+    // TODO: refresh option that refreshes only the notes/measures/lines/pages that have changed
+
     /// <summary>
     /// Rendering class. This class exists to hold information that cannot be represented
     /// in the MusicXML definition.
@@ -20,15 +23,51 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// </summary>
         public double FontSize { get; set; }
 
+        public Size ScoreSize { get; set; }
+
+        private IList<ScorePartwisePartMeasure> _allMeasures = null;
+        public IList<ScorePartwisePartMeasure> AllMeasures
+        {
+            get
+            {
+                if(_allMeasures == null)
+                {
+                    _allMeasures = new List<ScorePartwisePartMeasure>();
+                    foreach (var part in ScorePartwise.part)
+                        foreach(var measure in part.measure)
+                            _allMeasures.Add(measure);
+                }
+                return _allMeasures;
+            }
+            private set { _allMeasures = value; }
+        }
+        private ScorePartwise _originalScore = null;
+
+        private ScorePartwise _scorePartwise = null;
+        public ScorePartwise ScorePartwise
+        {
+            get { return (_scorePartwise != null) ? _scorePartwise : _originalScore; }
+            set { _scorePartwise = value; }
+        }
+
         //todo: properties with public getter and private setter for the Pages/Lines/Measures
         
         /// <summary>
         /// Constructor for the WPFRendering component
         /// </summary>
         /// <param name="fontSize">The size of the font to use</param>
-        public WPFRendering(double fontSize)
+        public WPFRendering(ScorePartwise originalScore, double fontSize)
         {
             FontSize = fontSize;
+            ScoreSize = new Size(Application.Current.MainWindow.Width, Application.Current.MainWindow.Height);
+
+            // keep a copy of the original score
+            _originalScore = originalScore;
+        }
+
+        public WPFRendering(ScorePartwise originalScore, Size size, double fontSize) : this(originalScore, fontSize)
+        {
+            ScoreSize = size;
         }
 
         /* TODO: Calculate size
@@ -44,8 +83,12 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             //todo: add up measure widths until line full
             //      if measure in X column on next line is larger, recalc all previous lines
-            return 0;
+            double maxWidth = AllMeasures.Max(x => CalculateMeasureWidth(x)); //todo: this should use allmeasures which is a reference to another object which has rendered the measures?
+            //todo: staff properly above
+            
+            return (int)Math.Ceiling(ScoreSize.Width / maxWidth);
         }
+
 
         public int CalculateLinesPerPage(IList<Line> scoreLines)
         { 
@@ -53,12 +96,14 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return 0;
         }
 
-
-        public double CalculateMeasureWidth()
+        /// <summary>
+        /// Calculate the width of a measure
+        /// </summary>
+        /// <param name="measure">The measure to calculate the width of</param>
+        /// <returns>The width of the measure inserted</returns>
+        public double CalculateMeasureWidth(ScorePartwisePartMeasure measure)
         { 
-            //todo: for each item, calculate width, then add it all up
-            //      maybe just render it and then take the width of that, though that is a lot of processing for nothing
-            return 0d;
+            return RenderMeasure(measure).ActualWidth;
         }
         
         public double CalculateLineHeight(Line line)
@@ -96,13 +141,15 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>A Label that has the string in the appropriate musical font</returns>
         public static Label GetMusicalLabel(string str, double fontSize)
         {
-            Label stringLabel = new Label();
-            stringLabel.Content = str;
-            stringLabel.FontFamily = Constants.MusicFonts.DEFAULT; //todo: multiple font options
-            stringLabel.FontSize = fontSize;
+            Label stringLabel = new Label
+                                    {
+                                        Content = str,
+                                        FontFamily = Constants.MusicFonts.DEFAULT,
+                                        FontSize = fontSize,
+                                        Padding = new Thickness(0, 0, 0, 0),
+                                        Margin = new Thickness(0, 0, 0, 0)
+                                    };
 
-            stringLabel.Padding = new Thickness(0, 0, 0, 0);
-            stringLabel.Margin = new Thickness(0, 0, 0, 0);
             RecalculateSize(stringLabel);
             return stringLabel;
         }
@@ -124,7 +171,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// <returns>Canvas with a page rendered on it</returns>
         public Grid RenderPage(Page page)
         {
-            Grid grid = new Grid();
+            Grid grid = WPFRendering.CreateAutoSizingGrid();
             //todo: render score info (large on page 1, small on pages after) (optionally selectable)
             //todo: render each line
             //todo: render page number
@@ -143,6 +190,12 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return WpfMeasureRendering.RenderMeasure(measure, 0, FontSize);
         }
 
+        public Panel RenderMeasure(ScorePartwisePartMeasure measure, List<int> staves)
+        {
+            // todo: only render certain staves of a line of music
+            return WPFRendering.CreateAutoSizingGrid();
+        }
+
         /// <summary>
         /// Get a grid that auto sizes to the size of its elements
         /// </summary>
@@ -159,11 +212,25 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Render a line of music
         /// </summary>
         /// <returns>A Grid containing a line of the musical score</returns>
-        public Grid RenderLine() 
+        public Grid RenderLine()
         {
-            Grid grid = new Grid();
+            Grid grid = WPFRendering.CreateAutoSizingGrid();
             //todo: render staff
-            //todo: render each masure
+            int measuresPerLine = Math.Min(CalculateMeasuresPerLine(), AllMeasures.Count);
+
+            FrameworkElement prev = null;
+            for (int i = 0; i < measuresPerLine; i++)
+            {
+                var measure = RenderMeasure(AllMeasures[i]);
+                if (prev != null)
+                {
+                    measure.Margin = new Thickness(prev.Margin.Left + prev.ActualWidth, prev.Margin.Top, 0, 0);
+                }
+
+                grid.Children.Add(measure);
+                prev = measure;
+                //todo: should be a f(n) of line number and measure OR use a line class to hold
+            }
             return grid;
         }
 
