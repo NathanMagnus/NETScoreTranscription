@@ -49,7 +49,7 @@
     <Compile Include="Exceptions\Drawing\NullElementException.cs" />
     <Compile Include="Exceptions\Drawing\NullMeasureElementException.cs" />
     <Compile Include="Exceptions\NETScoreTranscriptionLibraryException.cs" />
-    <Compile Include="Line.cs" />
+    <Compile Include="WPFLine.cs" />
     <Compile Include="musicxml30\Opus.cs">
       <DependentUpon>opus.xsd</DependentUpon>
     </Compile>
@@ -335,7 +335,8 @@
     <Compile Include="musicxml30\Types\Wood.cs" />
     <Compile Include="musicxml30\Types\Work.cs" />
     <Compile Include="musicxml30\Types\YesNo.cs" />
-    <Compile Include="Page.cs" />
+    <Compile Include="WPFMeasure.cs" />
+    <Compile Include="WPFPage.cs" />
     <Compile Include="PitchComparer.cs" />
     <Compile Include="PropertyGenerator.cs" />
     <Compile Include="Drawing\Constants.cs" />
@@ -423,6 +424,7 @@
     </Content>
     <Content Include="MusicXMLTestSuite\00-BasicPitches.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="MusicXMLTestSuite\01a-Pitches-Pitches.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

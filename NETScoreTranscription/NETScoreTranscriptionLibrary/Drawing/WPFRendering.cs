@@ -25,17 +25,17 @@ namespace NETScoreTranscriptionLibrary.Drawing
 
         public Size ScoreSize { get; set; }
 
-        private IList<ScorePartwisePartMeasure> _allMeasures = null;
-        public IList<ScorePartwisePartMeasure> AllMeasures
+        private IList<WPFMeasure> _allMeasures = null;
+        public IList<WPFMeasure> AllMeasures
         {
             get
             {
                 if(_allMeasures == null)
                 {
-                    _allMeasures = new List<ScorePartwisePartMeasure>();
+                    _allMeasures = new List<WPFMeasure>();
                     foreach (var part in ScorePartwise.part)
                         foreach(var measure in part.measure)
-                            _allMeasures.Add(measure);
+                            _allMeasures.Add(new WPFMeasure(measure, FontSize));
                 }
                 return _allMeasures;
             }
@@ -83,14 +83,13 @@ namespace NETScoreTranscriptionLibrary.Drawing
         {
             //todo: add up measure widths until line full
             //      if measure in X column on next line is larger, recalc all previous lines
-            double maxWidth = AllMeasures.Max(x => CalculateMeasureWidth(x)); //todo: this should use allmeasures which is a reference to another object which has rendered the measures?
-            //todo: staff properly above
+            double maxWidth = AllMeasures.Max(x => x.MeasureFrameworkElement.ActualWidth);
             
             return (int)Math.Ceiling(ScoreSize.Width / maxWidth);
         }
 
 
-        public int CalculateLinesPerPage(IList<Line> scoreLines)
+        public int CalculateLinesPerPage(IList<WPFLine> scoreLines)
         { 
             //todo: for each line use max height so far and calculate until page full
             return 0;
@@ -106,7 +105,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             return RenderMeasure(measure).ActualWidth;
         }
         
-        public double CalculateLineHeight(Line line)
+        public double CalculateLineHeight(WPFLine wpfLine)
         {
             //todo: for each measure, calculate height of all measures then take max
             return 0d;
@@ -169,7 +168,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// definition of MusicXML can be passed in.
         /// </summary>
         /// <returns>Canvas with a page rendered on it</returns>
-        public Grid RenderPage(Page page)
+        public Grid RenderPage(WPFPage wpfPage)
         {
             Grid grid = WPFRendering.CreateAutoSizingGrid();
             //todo: render score info (large on page 1, small on pages after) (optionally selectable)
@@ -221,7 +220,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
             FrameworkElement prev = null;
             for (int i = 0; i < measuresPerLine; i++)
             {
-                var measure = RenderMeasure(AllMeasures[i]);
+                var measure = AllMeasures[i].MeasureFrameworkElement;
                 if (prev != null)
                 {
                     measure.Margin = new Thickness(prev.Margin.Left + prev.ActualWidth, prev.Margin.Top, 0, 0);

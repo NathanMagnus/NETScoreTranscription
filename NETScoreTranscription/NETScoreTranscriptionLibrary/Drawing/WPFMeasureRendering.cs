@@ -385,8 +385,9 @@ namespace NETScoreTranscriptionLibrary.Drawing
         /// Parse the barline information given and create an appropriate label that can be put onto a canvas.
         /// </summary>
         /// <param name="barline">The Barline information to parse</param>
+        /// <param name="fontSize">The fontsize to use</param>
         /// <returns>Label that holds the barline</returns>
-        public static Label ParseBarline(Barline barline)
+        public static FrameworkElement RenderBarline(Barline barline, double fontSize)
         {
             string barlineChar;
             switch (barline.barStyle.Value)
@@ -412,7 +413,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 //todo: remainder of barlines
             }
 
-            Label barlineLabel = WPFRendering.GetMusicalLabel(barlineChar);
+            FrameworkElement barlineLabel = WPFRendering.GetMusicalLabel(barlineChar, fontSize);
             WPFRendering.RecalculateSize(barlineLabel);
             return barlineLabel;
         }
@@ -444,11 +445,11 @@ namespace NETScoreTranscriptionLibrary.Drawing
             {
                 object obj = itemList.ElementAt(i);
                 Type type = obj.GetType();
-                
+
 
                 if (type == typeof(Attributes))
                 {
-                    Attributes attributes = (Attributes)obj;
+                    Attributes attributes = (Attributes) obj;
                     element = RenderAttributes(attributes, staff, fontSize);
                 }
                 else if (type == typeof(Note))
@@ -460,7 +461,7 @@ namespace NETScoreTranscriptionLibrary.Drawing
                 else if (type == typeof(Barline))
                 {
                     Barline barline = (Barline)obj;
-                    element = ParseBarline(barline);
+                    element = RenderBarline(barline, fontSize);
                 }
                 else if (type == typeof(Print))
                 {
@@ -634,8 +635,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
             Label clefLabel = WPFRendering.GetMusicalLabel(symbol, fontSize); //todo: get the clef from getmusic label
             clefLabel.VerticalAlignment = VerticalAlignment.Top;
             WPFRendering.RecalculateSize(clefLabel);
-
-            clefLabel.Background = Brushes.Red;
             return clefLabel;
         }
 
@@ -645,11 +644,6 @@ namespace NETScoreTranscriptionLibrary.Drawing
         }
 
         public static void RenderNoteConnection()
-        {
-
-        }
-
-        public static void RenderBarline()
         {
 
         }

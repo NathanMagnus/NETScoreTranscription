@@ -36,6 +36,8 @@ namespace WpfApplication1
                                     "<clef><sign>G</sign><line>2</line></clef></attributes>" +
                                     "</measure></part></score-partwise>";
 
+                bool onlyRenderOne = true; //todo: remove for regular debugging
+
                 ScorePartwise sp = ScorePartwise.Deserialize(XMLStringFetcher.GetXMLFile("00-BasicPitches.xml"));
                 Note v = sp.part[0].measure[0].Items[1] as Note;
                 
@@ -50,16 +52,24 @@ namespace WpfApplication1
                 v.color = "#00FF00"; //todo: remove
                 largeGrid = wpfmrLarge.RenderLine();
                 //todo: figure out how to refresh without having to redraw everything
+                WPFRendering wpfmrBase;
+                WPFRendering wpfmrSmall;
+                WPFRendering wpfmrSmallest;
 
-                WPFRendering wpfmrBase = new WPFRendering(sp, Constants.MusicFonts.DEFAULT_SIZE);
-                FrameworkElement baseGrid = wpfmrBase.RenderLine();
+                FrameworkElement baseGrid = new FrameworkElement();
+                FrameworkElement smallGrid = new FrameworkElement();
+                FrameworkElement smallestGrid = new FrameworkElement();
+                if (!onlyRenderOne)
+                {
+                    wpfmrBase = new WPFRendering(sp, Constants.MusicFonts.DEFAULT_SIZE);
+                    baseGrid = wpfmrBase.RenderLine();
 
-                WPFRendering wpfmrSmall = new WPFRendering(sp, 50);
-                FrameworkElement smallGrid = wpfmrSmall.RenderLine();
+                    wpfmrSmall = new WPFRendering(sp, 50);
+                    smallGrid = wpfmrSmall.RenderLine();
 
-                WPFRendering wpfmrSmallest = new WPFRendering(sp, 25);
-                FrameworkElement smallestGrid = wpfmrSmallest.RenderLine();
-
+                    wpfmrSmallest = new WPFRendering(sp, 25);
+                    smallestGrid = wpfmrSmallest.RenderLine();
+                }
                 // put content on screen and into a grid
                 Grid contentGrid = new Grid();
                 contentGrid.RowDefinitions.Add(new RowDefinition());
@@ -68,14 +78,21 @@ namespace WpfApplication1
                 contentGrid.RowDefinitions.Add(new RowDefinition());
 
                 Grid.SetRow(largeGrid, 0);
-                Grid.SetRow(baseGrid, 1);
-                Grid.SetRow(smallGrid, 2);
-                Grid.SetRow(smallestGrid, 3);
+                if (!onlyRenderOne)
+                {
+                    Grid.SetRow(baseGrid, 1);
+                    Grid.SetRow(smallGrid, 2);
+                    Grid.SetRow(smallestGrid, 3);
+                }
                 contentGrid.Children.Add(largeGrid);
-                contentGrid.Children.Add(baseGrid);
-                contentGrid.Children.Add(smallGrid);
-                contentGrid.Children.Add(smallestGrid);
 
+                if (!onlyRenderOne)
+                {
+                    contentGrid.Children.Add(baseGrid);
+                    contentGrid.Children.Add(smallGrid);
+                    contentGrid.Children.Add(smallestGrid);
+                }
+                
                 //set window stuff
                 this.Content = contentGrid;
                 this.Height = 900;
